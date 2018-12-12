@@ -1,0 +1,85 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "celestinosalim",
+      "password_digest": "ASDASDASDSADASDJBhdsafiagvweogbwevjabs"
+    }
+  ],
+  "resumes": [
+    {
+      "id": 1,
+      "Profile": {
+        "title": "Software Engineer",
+        "about": "Looking for an oportunity as a junior software dev",
+        "background_image": "http://backgroundimage.com",
+        "details": {
+          "name": "Celestino Salim",
+          "age": 26,
+          "location": "27A Cooper St",
+          "number": "646-704-8637",
+          "profile_picture": "https://cdn.mamamia.com.au/wp/wp-content/uploads/2015/01/fbookprofile_featured.png"
+        },
+        "social_media": {
+          "facebook": "http://facebook.com/alex",
+          "twitter": "http://twitter.com/alex",
+          "github": "http://github.com/alex",
+          "linked_in": "http://linked_in.com/alex"
+        }
+      },
+      "educations": [
+        {
+          "id": 1,
+          "start-date": "05-23-1992",
+          "end-date": "05-23-2018",
+          "location": "81 Prospect St",
+          "degree": "Software Developer",
+          "university": "Flatiron School",
+          "description": "Immersive program where you can learn a shit ton of languages such as ruby, javascript and libraries as react, rails."
+        }
+      ],
+      "experiences": [
+        {
+          "id": 1,
+          "start-date": "05-23-1992",
+          "end-date": "05-23-2018",
+          "location": "81 Prospect St",
+          "role": "Software Developer",
+          "company": "Flatiron School",
+          "description": "TCF teaching coaching fellow, worked as a software developer advisor."
+        }
+      ],
+      "skills": [
+        {
+          "id": 1,
+          "others": [
+            {
+              "id": 1,
+              "name": "English"
+            }
+          ],
+          "languages": [
+            {
+              "id": 1,
+              "name": "javascript"
+            }
+          ],
+          "tools": [
+            {
+              "name": "rails"
+            }
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "My First Project",
+          "description": "This was my first cool project",
+          "url": "http://locahost:blabla"
+        }
+      ],
+      "user_id": 1
+    }
+  ]
+}

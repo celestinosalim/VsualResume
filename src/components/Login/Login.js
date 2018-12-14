@@ -4,7 +4,7 @@ import "./Login.css";
 
 class Login extends Component {
   state = {
-    auth: {
+    credentials: {
       email: "",
       password: "",
       avatar: "",
@@ -16,7 +16,10 @@ class Login extends Component {
 
   handleChange = e => {
     this.setState({
-      auth: { ...this.state.auth, [e.target.name]: e.target.value }
+      credentials: {
+        ...this.state.credentials,
+        [e.target.name]: e.target.value
+      }
     });
   };
 
@@ -33,7 +36,7 @@ class Login extends Component {
               placeholder="Email..."
               name="email"
               type="email"
-              value={this.state.auth.email}
+              value={this.state.credentials.email}
               onChange={this.handleChange}
             />
             <input
@@ -41,7 +44,7 @@ class Login extends Component {
               placeholder="Password..."
               name="password"
               type="password"
-              value={this.state.auth.password}
+              value={this.state.credentials.password}
               onChange={this.handleChange}
             />
             <input type="submit" name="Submit" className="form-submit" />
@@ -58,7 +61,7 @@ class Login extends Component {
               placeholder="Username..."
               name="username"
               type="username"
-              value={this.state.auth.username}
+              value={this.state.credentials.username}
               onChange={this.handleChange}
             />
             <input
@@ -66,7 +69,7 @@ class Login extends Component {
               placeholder="Email..."
               name="register_username"
               type="email"
-              value={this.state.auth.register_username}
+              value={this.state.credentials.register_username}
               onChange={this.handleChange}
             />
             <input
@@ -74,7 +77,7 @@ class Login extends Component {
               placeholder="Password..."
               name="register_password"
               type="password"
-              value={this.state.auth.register_password}
+              value={this.state.credentials.register_password}
               onChange={this.handleChange}
             />
             <input
@@ -82,7 +85,7 @@ class Login extends Component {
               placeholder="Avatar..."
               name="avatar"
               type="avatar"
-              value={this.state.auth.avatar}
+              value={this.state.credentials.avatar}
               onChange={this.handleChange}
             />
             <input type="submit" name="Submit" className="form-submit" />
@@ -95,7 +98,7 @@ class Login extends Component {
 
 const mapStateToProps = state => {
   return {
-    token: state.auth
+    token: state.credentials
   };
 };
 

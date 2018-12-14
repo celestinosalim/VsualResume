@@ -4,13 +4,8 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import LoginReducer from "./store/reducers/LoginReducer";
-
-// const store = createStore(hobbitReducer)
-const store = createStore(LoginReducer, applyMiddleware(thunk));
+import store from "./store";
 
 ReactDOM.render(
   <Provider store={store}>

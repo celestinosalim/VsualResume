@@ -5,8 +5,11 @@ import Header from "../components/Homepage/Header/Header";
 import HowItWorks from "../components/Homepage/Section1/HowItWorks";
 import AboutUs from "../components/Homepage/Section2/AboutUs";
 import Pricing from "../components/Homepage/Section3/Pricing";
+import { withRouter } from "react-router-dom";
 
 const HomePageContainer = props => {
+  console.log("homecontainer", props);
+
   return (
     <Fragment>
       <div style={{ paddingBottom: "60px" }}>
@@ -36,8 +39,9 @@ const HomePageContainer = props => {
 
 const mapStateToProps = state => {
   return {
+    user: state.currentUser,
     resume: state.resume
   };
 };
 
-export default connect(mapStateToProps)(HomePageContainer);
+export default withRouter(connect(mapStateToProps)(HomePageContainer));

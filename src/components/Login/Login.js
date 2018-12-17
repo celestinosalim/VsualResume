@@ -23,9 +23,8 @@ class Login extends Component {
     e.preventDefault();
 
     if (this.props.authenticate(this.state)) {
-      // debugger;
-      // this.props.history.push("/user_profile");
-      window.alert("You're Logged In!");
+      this.props.history.push("/");
+      setTimeout(() => window.location.reload(), 100);
     } else {
       window.alert("Sorry, something went wrong. Please try logging in again.");
     }
@@ -34,16 +33,15 @@ class Login extends Component {
   handleSignUpSubmit = e => {
     e.preventDefault();
     if (this.props.signup(this.state)) {
-      //   this.props.history.push("/user_profile");
-      window.alert("Thank you for signing up.");
+      this.props.history.push("/");
+      setTimeout(() => window.location.reload(), 100);
+      // window.alert("Thank you for signing up.");
     } else {
       window.alert("We're having issues creating your account.");
     }
   };
 
   render() {
-    console.log(this.state);
-
     return (
       <div className="center">
         <div className="card">
@@ -69,54 +67,58 @@ class Login extends Component {
           </form>
         </div>
         {/*
-        STARTS SIGN UP FORM
+        SIGN UP FORM
+        //
+        //
+        //
         */}
-        <div className="center">
-          <div className="card">
-            <h1>Sign Up</h1>
-            <form onSubmit={this.handleSignUpSubmit}>
-              <input
-                className="form-item"
-                placeholder="Username..."
-                name="signup_username"
-                type="text"
-                value={this.state.signup_username}
-                onChange={this.handleChange}
-              />
-              <input
-                className="form-item"
-                placeholder="Email..."
-                name="signup_email"
-                type="email"
-                value={this.state.signup_email}
-                onChange={this.handleChange}
-              />
-              <input
-                className="form-item"
-                placeholder="Password..."
-                name="signup_password"
-                type="password"
-                value={this.state.signup_password}
-                onChange={this.handleChange}
-              />
-              <input
-                className="form-item"
-                placeholder="Avatar..."
-                name="avatar"
-                type="avatar"
-                value={this.state.avatar}
-                onChange={this.handleChange}
-              />
-              <input type="submit" name="Submit" />
-            </form>
-          </div>
+
+        <div className="card">
+          <h1>Sign Up</h1>
+          <form onSubmit={this.handleSignUpSubmit}>
+            <input
+              className="form-item"
+              placeholder="Username..."
+              name="signup_username"
+              type="text"
+              value={this.state.signup_username}
+              onChange={this.handleChange}
+            />
+            <input
+              className="form-item"
+              placeholder="Email..."
+              name="signup_email"
+              type="email"
+              value={this.state.signup_email}
+              onChange={this.handleChange}
+            />
+            <input
+              className="form-item"
+              placeholder="Password..."
+              name="signup_password"
+              type="password"
+              value={this.state.signup_password}
+              onChange={this.handleChange}
+            />
+            <input
+              className="form-item"
+              placeholder="Avatar..."
+              name="avatar"
+              type="avatar"
+              value={this.state.avatar}
+              onChange={this.handleChange}
+            />
+            <input type="submit" name="Submit" className="form-submit" />
+          </form>
         </div>
       </div>
     );
   }
 }
 
-export default connect(
-  null,
-  { authenticate, signup }
-)(Login);
+export default withRouter(
+  connect(
+    null,
+    { authenticate, signup }
+  )(Login)
+);

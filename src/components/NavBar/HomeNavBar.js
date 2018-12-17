@@ -93,9 +93,15 @@ const HomeNavBar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" id="login" href="/login">
-              LOGIN
-            </a>
+            {localStorage.getItem("username") ? (
+              <a className="nav-link" id="logout" href="/logout">
+                LOG OUT
+              </a>
+            ) : (
+              <a className="nav-link" id="login" href="/login">
+                SIGN IN
+              </a>
+            )}
           </li>
         </ul>
         {/* {this.props.user && (

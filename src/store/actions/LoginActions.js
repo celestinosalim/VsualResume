@@ -82,16 +82,19 @@ export const authenticate = credentials => {
       })
     })
       .then(res => res.json())
-      .then(res => console.log(res))
       .then(response => {
         const token = response.jwt;
+        const username = response.user.username;
         localStorage.setItem("token", token);
+        localStorage.setItem("username", username);
         return getUser(credentials);
       })
+
       .then(user => {
         console.log(user);
         dispatch(authSuccess(user, localStorage.token));
       })
+
       .catch(errors => {
         dispatch(authFailure(errors));
         localStorage.clear();

@@ -25,11 +25,11 @@ const ProfileContainer = props => {
   );
 };
 
-// const mapStateToProps = state => {
-//   return {
-//     user: state.currentUser,
-//     resume: state.resume
-//   };
-// };
+const mapStateToProps = state => {
+  return {
+    user: state.currentUser,
+    resume: state.resume
+  };
+};
 
 export default withRouter(ProfileContainer);

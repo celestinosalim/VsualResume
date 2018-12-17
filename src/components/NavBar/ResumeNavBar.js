@@ -40,49 +40,33 @@ const ProfileNavBar = () => {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <a className="nav-link" id="" href="/resume">
-                CREATE RESUME
+              <a className="nav-link" id="" href="/resume/create-resume">
+                1. FILL UP FORM
               </a>
             ) : null}
           </li>
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <a className="nav-link" id="" href="/contact">
-                CONTACT US
+              <a className="nav-link" id="" href="/resume/review">
+                2. REVIEW RESUME
               </a>
             ) : null}
           </li>
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <a className="nav-link" id="" href="/something">
-                ANOTHER LINK THAT I NEED TO FIGURE OUT
+              <a className="nav-link" id="" href="/resume/live">
+                GO LIVE
               </a>
             ) : null}
           </li>
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <a className="nav-link" id="logout" href="/logout">
-                LOG OUT
+              <a className="nav-link" id="profile" href="/profile">
+                PROFILE
               </a>
-            ) : (
-              <a className="nav-link" id="login" href="/login">
-                SIGN IN
-              </a>
-            )}
+            ) : null}
           </li>
         </ul>
-        {/* {this.props.user && (
-          <a href="/profile">
-            <button className="btn btn-info">
-              Logged in as: {this.props.user.username}
-            </button>
-          </a>
-        )} */}
-        {/* {localStorage.getItem("jwt") ? (
-          <a href="/logout">
-            <button className="btn btn-danger">Log Out</button>
-          </a>
-        ) : null} */}
       </div>
     </nav>
   );

@@ -12,23 +12,23 @@ const HomePageContainer = props => {
 
   return (
     <Fragment>
-      <div style={{ paddingBottom: "60px" }}>
+      <div className="navbarviewport">
         <HomeNavBar />
       </div>
-      <div style={{ paddingBottom: "60px" }}>
+      <div>
         <Header />
       </div>
-      <div style={{ paddingBottom: "60px" }}>
+      <div>
         <section id="section-1">
           <HowItWorks />
         </section>
       </div>
-      <div style={{ paddingBottom: "60px" }}>
+      <div>
         <section id="section-2">
           <AboutUs />
         </section>
       </div>
-      <div style={{ paddingBottom: "60px" }}>
+      <div>
         <section id="section-3">
           <Pricing />
         </section>

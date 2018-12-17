@@ -19,7 +19,7 @@ const HomeNavBar = () => {
 
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light navbar-fixed-bottom"
+      className="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar"
       style={navStyle}
     >
       <Link
@@ -50,9 +50,8 @@ const HomeNavBar = () => {
       >
         <span className="navbar-toggler-icon" />
       </button>
-
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto">
           <li className="nav-item">
             <Link
               className="nav-link"

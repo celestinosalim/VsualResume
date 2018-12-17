@@ -14,7 +14,7 @@ const ProfileNavBar = () => {
 
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light navbar-fixed-bottom"
+      className="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar"
       style={navStyle}
     >
       <a className="navbar-brand" href="/">
@@ -41,17 +41,25 @@ const ProfileNavBar = () => {
           <li className="nav-item">
             {localStorage.getItem("username") ? (
               <a className="nav-link" id="" href="/resume/create-resume">
-                1. FILL UP FORM
+                CREATE RESUME
+              </a>
+            ) : null}
+          </li>
+          <li className="nav-item">
+            {localStorage.getItem("username") ? (
+              <a className="nav-link" id="" href="/resume/edit-resume">
+                EDIT RESUME
               </a>
             ) : null}
           </li>
           <li className="nav-item">
             {localStorage.getItem("username") ? (
               <a className="nav-link" id="" href="/resume/review">
-                2. REVIEW RESUME
+                REVIEW RESUME
               </a>
             ) : null}
           </li>
+
           <li className="nav-item">
             {localStorage.getItem("username") ? (
               <a className="nav-link" id="" href="/resume/live">

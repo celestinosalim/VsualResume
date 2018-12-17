@@ -14,7 +14,7 @@ const ProfileNavBar = () => {
 
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light navbar-fixed-bottom"
+      className="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar"
       style={navStyle}
     >
       <a className="navbar-brand" href="/">
@@ -71,18 +71,6 @@ const ProfileNavBar = () => {
             )}
           </li>
         </ul>
-        {/* {this.props.user && (
-          <a href="/profile">
-            <button className="btn btn-info">
-              Logged in as: {this.props.user.username}
-            </button>
-          </a>
-        )} */}
-        {/* {localStorage.getItem("jwt") ? (
-          <a href="/logout">
-            <button className="btn btn-danger">Log Out</button>
-          </a>
-        ) : null} */}
       </div>
     </nav>
   );

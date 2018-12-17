@@ -29,7 +29,9 @@ const RightColumn = props => {
                   <strong>My Resume</strong>
                 </h3>
 
-                <a className="btn btn-orange">Edit My Resume</a>
+                <a className="btn btn-orange" href="/resume/edit-resume">
+                  Edit My Resume
+                </a>
               </div>
             </div>
           </div>

@@ -15,7 +15,7 @@ const ResumeContainer = props => {
     <Fragment>
       <div>
         <ResumeNavBar />
-        <div style={{ paddingTop: "80px" }}>
+        <div style={{ paddingTop: "120px" }}>
           <Switch>
             <Route
               exact

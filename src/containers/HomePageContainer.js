@@ -12,7 +12,7 @@ const HomePageContainer = props => {
 
   return (
     <Fragment>
-      <div className="navbarviewport">
+      <div>
         <HomeNavBar />
       </div>
       <div>

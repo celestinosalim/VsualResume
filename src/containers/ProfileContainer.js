@@ -8,7 +8,7 @@ import RightColumn from "../components/Profile/RightColumn";
 const ProfileContainer = props => {
   return (
     <Fragment>
-      <div style={{ paddingBottom: "160px" }}>
+      <div style={{ paddingBottom: "120px" }}>
         <ProfileNavBar />
       </div>
       <div className="container">

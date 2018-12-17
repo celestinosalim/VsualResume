@@ -26,6 +26,7 @@ const HomeNavBar = () => {
         className="navbar-brand"
         activeClass="active"
         onClick={scrollToTop}
+        to="/"
         spy={true}
         smooth={true}
         offset={-70}
@@ -94,11 +95,6 @@ const HomeNavBar = () => {
           <li className="nav-item">
             <a className="nav-link" id="login" href="/login">
               LOGIN
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" id="signup" href="/signup">
-              SIGN UP
             </a>
           </li>
         </ul>

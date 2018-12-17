@@ -7,7 +7,6 @@ import AboutUs from "../components/Homepage/Section2/AboutUs";
 import Pricing from "../components/Homepage/Section3/Pricing";
 
 const HomePageContainer = props => {
-  console.log(props);
   return (
     <Fragment>
       <div style={{ paddingBottom: "60px" }}>

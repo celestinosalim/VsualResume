@@ -1,41 +1,49 @@
-import jwtDecode from "jwt-decode";
-// import login from "./LoginActions";
+import * as types from "../actions/ActionTypes";
 
-const initialState = (token => ({
+const initialState = {
+  isAuthenticated: false,
   isAuthenticating: false,
-  currentUser: token ? jwtDecode(token) : null,
-  errorMessage: null
-}))(localStorage.authToken);
+  currentUser: {},
+  token: null,
+  errors: []
+};
 
-const LoginReducer = (state = initialState, action) => {
-  // console.log(state, action);
+export default (state = initialState, action) => {
   switch (action.type) {
-    // case LOGIN_REQUEST:
-    //   return {
-    //     ...state,
-    //     isAuthenticating: true
-    //   };
-    // case LOGIN_FAILURE:
-    //   return {
-    //     ...state,
-    //     isAuthenticating: false,
-    //     errorMessage: action.errorMessage
-    //   };
-    // case LOGIN_SUCCESS:
-    //   return {
-    //     isAuthenticating: false,
-    //     currentUser: action.user,
-    //     errorMessage: null
-    //   };
-    // case LOGOUT:
-    //   return {
-    //     isAuthenticating: false,
-    //     currentUser: null,
-    //     errorMessage: null
-    //   };
+    case types.AUTHENTICATION_REQUEST:
+      return {
+        ...state,
+        isAuthenticating: true
+      };
+
+    case types.AUTHENTICATION_SUCCESS:
+      return {
+        ...state,
+        isAuthenticated: true,
+        isAuthenticating: false,
+        currentUser: action.user,
+        token: action.token
+      };
+
+    case types.AUTHENTICATION_FAILURE:
+      return {
+        isAuthenticated: false,
+        isAuthenticating: false,
+        currentUser: {},
+        token: null,
+        errors: action.errors || []
+      };
+
+    case types.LOGOUT:
+      return {
+        ...state,
+        isAuthenticated: false,
+        isAuthenticating: false,
+        currentUser: {},
+        token: null
+      };
+
     default:
       return state;
   }
 };
-
-export default LoginReducer;

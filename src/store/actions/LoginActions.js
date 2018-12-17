@@ -32,6 +32,7 @@ export const logout = () => {
 };
 
 export const signup = user => {
+  // debugger;
   const newUser = user;
   return dispatch => {
     return fetch(`${`http://localhost:3001/api`}/users`, {
@@ -53,9 +54,8 @@ export const signup = user => {
       .then(jresp => {
         dispatch(
           authenticate({
-            name: newUser.name,
-            email: newUser.email,
-            password: newUser.password
+            username: newUser.signup_username,
+            password: newUser.signup_password
           })
         );
       })
@@ -76,8 +76,8 @@ export const authenticate = credentials => {
       },
       body: JSON.stringify({
         user: {
-          username: credentials.credentials.username,
-          password: credentials.credentials.password
+          username: credentials.username,
+          password: credentials.password
         }
       })
     })
@@ -108,8 +108,8 @@ export const getUser = credentials => {
     }),
     body: JSON.stringify({
       user: {
-        username: credentials.credentials.username,
-        password: credentials.credentials.password
+        username: credentials.username,
+        password: credentials.password
       }
     })
   });

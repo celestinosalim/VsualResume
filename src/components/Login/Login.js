@@ -1,29 +1,22 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { authenticate } from "../../store/actions/LoginActions";
+import { authenticate, signup } from "../../store/actions/LoginActions";
 
 import "./Login.css";
 
 class Login extends Component {
   state = {
-    credentials: {
-      email: "",
-      password: "",
-      avatar: "",
-      username: "",
-      register_username: "",
-      register_password: ""
-    }
+    password: "",
+    avatar: "",
+    username: "",
+    signup_username: "",
+    signup_password: "",
+    signup_email: ""
   };
 
   handleChange = e => {
-    this.setState({
-      credentials: {
-        ...this.state.credentials,
-        [e.target.name]: e.target.value
-      }
-    });
+    this.setState({ ...this.state, [e.target.name]: e.target.value });
   };
 
   handleLoginSubmit = e => {
@@ -35,6 +28,16 @@ class Login extends Component {
       window.alert("You're Logged In!");
     } else {
       window.alert("Sorry, something went wrong. Please try logging in again.");
+    }
+  };
+
+  handleSignUpSubmit = e => {
+    e.preventDefault();
+    if (this.props.signup(this.state)) {
+      //   this.props.history.push("/user_profile");
+      window.alert("Thank you for signing up.");
+    } else {
+      window.alert("We're having issues creating your account.");
     }
   };
 
@@ -51,7 +54,7 @@ class Login extends Component {
               placeholder="Username..."
               name="username"
               type="username"
-              value={this.state.credentials.username}
+              value={this.state.username}
               onChange={this.handleChange}
             />
             <input
@@ -59,7 +62,7 @@ class Login extends Component {
               placeholder="Password..."
               name="password"
               type="password"
-              value={this.state.credentials.password}
+              value={this.state.password}
               onChange={this.handleChange}
             />
             <input type="submit" name="Submit" className="form-submit" />
@@ -68,44 +71,46 @@ class Login extends Component {
         {/*
         STARTS SIGN UP FORM
         */}
-        {/* <div className="card">
-          <h1>Sign Up</h1>
-          <form onSubmit={e => this.props.register(e, this.state)}>
-            <input
-              className="form-item"
-              placeholder="Username..."
-              name="username"
-              type="username"
-              value={this.state.credentials.username}
-              onChange={this.handleChange}
-            />
-            <input
-              className="form-item"
-              placeholder="Email..."
-              name="register_username"
-              type="email"
-              value={this.state.credentials.register_username}
-              onChange={this.handleChange}
-            />
-            <input
-              className="form-item"
-              placeholder="Password..."
-              name="register_password"
-              type="password"
-              value={this.state.credentials.register_password}
-              onChange={this.handleChange}
-            />
-            <input
-              className="form-item"
-              placeholder="Avatar..."
-              name="avatar"
-              type="avatar"
-              value={this.state.credentials.avatar}
-              onChange={this.handleChange}
-            />
-            <input type="submit" name="Submit" className="form-submit" />
-          </form>
-        </div> */}
+        <div className="center">
+          <div className="card">
+            <h1>Sign Up</h1>
+            <form onSubmit={this.handleSignUpSubmit}>
+              <input
+                className="form-item"
+                placeholder="Username..."
+                name="signup_username"
+                type="text"
+                value={this.state.signup_username}
+                onChange={this.handleChange}
+              />
+              <input
+                className="form-item"
+                placeholder="Email..."
+                name="signup_email"
+                type="email"
+                value={this.state.signup_email}
+                onChange={this.handleChange}
+              />
+              <input
+                className="form-item"
+                placeholder="Password..."
+                name="signup_password"
+                type="password"
+                value={this.state.signup_password}
+                onChange={this.handleChange}
+              />
+              <input
+                className="form-item"
+                placeholder="Avatar..."
+                name="avatar"
+                type="avatar"
+                value={this.state.avatar}
+                onChange={this.handleChange}
+              />
+              <input type="submit" name="Submit" />
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
@@ -113,5 +118,5 @@ class Login extends Component {
 
 export default connect(
   null,
-  { authenticate }
+  { authenticate, signup }
 )(Login);

@@ -10,7 +10,7 @@
 
 .navbar-brand {
   padding-left: 40px;
-  padding-right: 200px;
+  padding-right: 250px;
 }
 
 #login {
@@ -18,6 +18,10 @@
 }
 
 #logout {
+  padding-left: 0px;
+}
+
+#profile {
   padding-left: 250px;
 }
 

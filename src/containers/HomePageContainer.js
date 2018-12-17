@@ -8,7 +8,7 @@ import Pricing from "../components/Homepage/Section3/Pricing";
 import { withRouter } from "react-router-dom";
 
 const HomePageContainer = props => {
-  console.log("homecontainer", props);
+  // console.log("homecontainer", props);
 
   return (
     <Fragment>
@@ -37,11 +37,11 @@ const HomePageContainer = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    user: state.currentUser,
-    resume: state.resume
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     user: state.currentUser,
+//     resume: state.resume
+//   };
+// };
 
-export default withRouter(connect(mapStateToProps)(HomePageContainer));
+export default withRouter(HomePageContainer);

@@ -1,12 +1,7 @@
 import React from "react";
 import "./HomeNav.css";
-import { Link, animateScroll as scroll } from "react-scroll";
 
-const scrollToTop = () => {
-  scroll.scrollToTop();
-};
-
-const HomeNavBar = () => {
+const ProfileNavBar = () => {
   const navStyle = {
     backgroundColor: "#FFF",
     position: "fixed",
@@ -22,23 +17,13 @@ const HomeNavBar = () => {
       className="navbar navbar-expand-lg navbar-light navbar-fixed-bottom"
       style={navStyle}
     >
-      <Link
-        className="navbar-brand"
-        activeClass="active"
-        onClick={scrollToTop}
-        to="/"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-      >
+      <a className="navbar-brand" href="/">
         <img
           className="logoNav"
           src="https://cdn4.iconfinder.com/data/icons/system-ui-set/512/modern-latin-alphabet-letter-v-512.png"
           alt=""
         />
-      </Link>
-
+      </a>
       <button
         className="navbar-toggler"
         type="button"
@@ -54,48 +39,23 @@ const HomeNavBar = () => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <Link
-              className="nav-link"
-              activeClass="active"
-              to="section-1"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              HOW IT WORKS
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              className="nav-link"
-              activeClass="active"
-              to="section-2"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              ABOUT US
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              className="nav-link"
-              activeClass="active"
-              to="section-3"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              PRICING
-            </Link>
+            {localStorage.getItem("username") ? (
+              <a className="nav-link" id="" href="/create-resume">
+                CREATE RESUME
+              </a>
+            ) : null}
           </li>
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <a className="nav-link" id="profile" href="/profile">
-                PROFILE
+              <a className="nav-link" id="" href="/contact">
+                CONTACT US
+              </a>
+            ) : null}
+          </li>
+          <li className="nav-item">
+            {localStorage.getItem("username") ? (
+              <a className="nav-link" id="" href="/something">
+                ANOTHER LINK THAT I NEED TO FIGURE OUT
               </a>
             ) : null}
           </li>
@@ -128,4 +88,4 @@ const HomeNavBar = () => {
   );
 };
 
-export default HomeNavBar;
+export default ProfileNavBar;

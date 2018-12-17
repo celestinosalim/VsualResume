@@ -4,17 +4,21 @@
 }
 
 .navbar-nav > li {
-  margin-left: 30px;
+  margin-left: 10px;
   margin-right: 30px;
 }
 
 .navbar-brand {
-  padding-left: 20px;
-  padding-right: 300px;
+  padding-left: 40px;
+  padding-right: 200px;
 }
 
 #login {
-  padding-left: 380px;
+  padding-left: 250px;
+}
+
+#signup {
+  padding-left: 0px;
 }
 
 .logoNav {

@@ -8,7 +8,6 @@ import Pricing from "../components/Homepage/Section3/Pricing";
 
 const HomePageContainer = props => {
   console.log(props);
-
   return (
     <Fragment>
       <div style={{ paddingBottom: "60px" }}>
@@ -18,13 +17,19 @@ const HomePageContainer = props => {
         <Header />
       </div>
       <div style={{ paddingBottom: "60px" }}>
-        <HowItWorks />
+        <section id="section-1">
+          <HowItWorks />
+        </section>
       </div>
       <div style={{ paddingBottom: "60px" }}>
-        <AboutUs />
+        <section id="section-2">
+          <AboutUs />
+        </section>
       </div>
       <div style={{ paddingBottom: "60px" }}>
-        <Pricing />
+        <section id="section-3">
+          <Pricing />
+        </section>
       </div>
     </Fragment>
   );

@@ -1,5 +1,10 @@
 import React from "react";
 import "./HomeNav.css";
+import { Link, animateScroll as scroll } from "react-scroll";
+
+const scrollToTop = () => {
+  scroll.scrollToTop();
+};
 
 const HomeNavBar = () => {
   const navStyle = {
@@ -17,13 +22,22 @@ const HomeNavBar = () => {
       className="navbar navbar-expand-lg navbar-light navbar-fixed-bottom"
       style={navStyle}
     >
-      <a className="navbar-brand" href="/">
+      <Link
+        className="navbar-brand"
+        activeClass="active"
+        onClick={scrollToTop}
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+      >
         <img
           className="logoNav"
           src="https://cdn4.iconfinder.com/data/icons/system-ui-set/512/modern-latin-alphabet-letter-v-512.png"
           alt=""
         />
-      </a>
+      </Link>
+
       <button
         className="navbar-toggler"
         type="button"
@@ -39,23 +53,52 @@ const HomeNavBar = () => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a className="nav-link" href="/menu">
+            <Link
+              className="nav-link"
+              activeClass="active"
+              to="section-1"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
               HOW IT WORKS
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/contact">
+            <Link
+              className="nav-link"
+              activeClass="active"
+              to="section-2"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
               ABOUT US
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/contact">
+            <Link
+              className="nav-link"
+              activeClass="active"
+              to="section-3"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
               PRICING
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" id="login" href="/login">
               LOGIN
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" id="signup" href="/signup">
+              SIGN UP
             </a>
           </li>
         </ul>

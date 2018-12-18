@@ -1,5 +1,6 @@
 import React from "react";
 import "./HomeNav.css";
+import { Link } from "react-router-dom";
 
 const ProfileNavBar = () => {
   const navStyle = {
@@ -24,6 +25,7 @@ const ProfileNavBar = () => {
           alt=""
         />
       </a>
+
       <button
         className="navbar-toggler"
         type="button"
@@ -39,10 +41,15 @@ const ProfileNavBar = () => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
+            <Link className="nav-link" to="/">
+              HOME
+            </Link>
+          </li>
+          <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <a className="nav-link" id="" href="/resume">
+              <Link to="/resume" className="nav-link">
                 CREATE RESUME
-              </a>
+              </Link>
             ) : null}
           </li>
           <li className="nav-item">

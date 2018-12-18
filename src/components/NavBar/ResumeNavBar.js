@@ -1,5 +1,6 @@
 import React from "react";
 import "./HomeNav.css";
+import { Link } from "react-router-dom";
 
 const ProfileNavBar = () => {
   const navStyle = {
@@ -40,38 +41,38 @@ const ProfileNavBar = () => {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <a className="nav-link" id="" href="/resume/create-resume">
-                CREATE RESUME
-              </a>
+              <Link className="nav-link" to="/resume/create-resume">
+                CREATE RESUME HOME
+              </Link>
             ) : null}
           </li>
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <a className="nav-link" id="" href="/resume/edit-resume">
+              <Link className="nav-link" to="/resume/edit-resume">
                 EDIT RESUME
-              </a>
+              </Link>
             ) : null}
           </li>
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <a className="nav-link" id="" href="/resume/review">
+              <Link className="nav-link" id="" to="/resume/review">
                 REVIEW RESUME
-              </a>
+              </Link>
             ) : null}
           </li>
 
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <a className="nav-link" id="" href="/resume/live">
+              <Link to="/resume/live" className="nav-link" id="">
                 GO LIVE
-              </a>
+              </Link>
             ) : null}
           </li>
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <a className="nav-link" id="profile" href="/profile">
+              <Link className="nav-link" id="profile" to="/profile">
                 PROFILE
-              </a>
+              </Link>
             ) : null}
           </li>
         </ul>

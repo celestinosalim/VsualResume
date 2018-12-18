@@ -1,7 +1,7 @@
 import React from "react";
 import "./HomeNav.css";
 import { Link, animateScroll as scroll } from "react-scroll";
-
+import { Link as LinkFor } from "react-router-dom";
 const scrollToTop = () => {
   scroll.scrollToTop();
 };
@@ -51,7 +51,7 @@ const HomeNavBar = () => {
         <span className="navbar-toggler-icon" />
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <Link
               className="nav-link"
@@ -93,9 +93,9 @@ const HomeNavBar = () => {
           </li>
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <a className="nav-link" id="profile" href="/profile">
+              <LinkFor to="/profile" className="nav-link" id="profile">
                 PROFILE
-              </a>
+              </LinkFor>
             ) : null}
           </li>
           <li className="nav-item">

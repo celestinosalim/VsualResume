@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const RightColumn = props => {
   return (
@@ -29,9 +30,9 @@ const RightColumn = props => {
                   <strong>My Resume</strong>
                 </h3>
 
-                <a className="btn btn-orange" href="/resume/edit-resume">
+                <Link className="btn btn-orange" to="/resume/edit-resume">
                   Edit My Resume
-                </a>
+                </Link>
               </div>
             </div>
           </div>

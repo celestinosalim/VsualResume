@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 const EditForm = () => {
   return (
-    <Fragment>
+    <div className="page">
       <h1>Edit Form</h1>
       <p>
         "Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -111,7 +111,7 @@ const EditForm = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.";
       </p>
-    </Fragment>
+    </div>
   );
 };
 

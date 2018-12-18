@@ -11,7 +11,7 @@ const HomePageContainer = props => {
   // console.log("homecontainer", props);
 
   return (
-    <Fragment>
+    <div className="page">
       <div>
         <HomeNavBar />
       </div>
@@ -33,7 +33,7 @@ const HomePageContainer = props => {
           <Pricing />
         </section>
       </div>
-    </Fragment>
+    </div>
   );
 };
 

@@ -13,7 +13,9 @@ class Footer extends Component {
           textAlign: "center"
         }}
         stickyStyles={{
-          opacity: 0
+          backgroundColor: "rgba(212, 240, 160)",
+          padding: "2rem",
+          textAlign: "center"
         }}
       >
         <div>

@@ -6,6 +6,7 @@ import HowItWorks from "../components/Homepage/Section1/HowItWorks";
 import AboutUs from "../components/Homepage/Section2/AboutUs";
 import Pricing from "../components/Homepage/Section3/Pricing";
 import { withRouter } from "react-router-dom";
+import Footer from "../components/Footer/Footer";
 
 const HomePageContainer = props => {
   // console.log("homecontainer", props);
@@ -33,6 +34,7 @@ const HomePageContainer = props => {
           <Pricing />
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

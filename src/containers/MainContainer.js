@@ -30,9 +30,6 @@ const MainContainer = ({ location }) => {
           </TransitionGroup>
         )}
       />
-      <div style={{ paddingTop: "680px" }}>
-        <Footer />
-      </div>
     </MDBContainer>
   );
 };

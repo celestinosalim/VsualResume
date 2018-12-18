@@ -18,7 +18,7 @@ const ProfileNavBar = () => {
       className="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar"
       style={navStyle}
     >
-      <a className="navbar-brand" href="/">
+      <a className="navbar-brand-resume" href="/">
         <img
           className="logoNav"
           src="https://cdn4.iconfinder.com/data/icons/system-ui-set/512/modern-latin-alphabet-letter-v-512.png"
@@ -70,8 +70,15 @@ const ProfileNavBar = () => {
           </li>
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <Link className="nav-link" id="profile" to="/profile">
+              <Link className="nav-link" id="profileResume" to="/profile">
                 PROFILE
+              </Link>
+            ) : null}
+          </li>
+          <li className="nav-item">
+            {localStorage.getItem("username") ? (
+              <Link className="nav-link" id="resumeHome" to="/">
+                HOME
               </Link>
             ) : null}
           </li>

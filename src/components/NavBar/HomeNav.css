@@ -33,3 +33,16 @@
   height: 50px;
   width: 50px;
 }
+
+#profileResume {
+  padding-left: 100px;
+}
+
+#resumeHome {
+  padding-left: 100px;
+}
+
+.navbar-brand-resume {
+  padding-left: 40px;
+  padding-right: 40px;
+}

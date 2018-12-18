@@ -1,33 +1,45 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 const HowItWorks = () => {
   return (
-    <Fragment>
-      <h1>Three easy steps</h1>
-      <div className="row">
-        <div className="col-sm">
-          <h2>1.Input Your Information</h2>
-          <img
-            src="https://cdn4.iconfinder.com/data/icons/sales-reports/512/fill_form-512.png"
-            alt="form"
-          />
+    <div className="Sections">
+      <section className="text-center my-5">
+        <h2 className="h1-responsive font-weight-bold my-5">How It Works?</h2>
+
+        <p className="lead grey-text w-responsive mx-auto mb-5">
+          Three Easy Steps
+        </p>
+
+        <div className="row">
+          <div className="col-md-4">
+            <i className="fa fa-area-chart fa-3x red-text" />
+            <h5 className="font-weight-bold my-4">Analytics</h5>
+            <p className="grey-text mb-md-0 mb-5">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Reprehenderit maiores aperiam minima assumenda deleniti hic.
+            </p>
+          </div>
+
+          <div className="col-md-4">
+            <i className="fa fa-book fa-3x cyan-text" />
+            <h5 className="font-weight-bold my-4">Tutorials</h5>
+            <p className="grey-text mb-md-0 mb-5">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Reprehenderit maiores aperiam minima assumenda deleniti hic.
+            </p>
+          </div>
+
+          <div className="col-md-4">
+            <i className="fa fa-comments-o fa-3x orange-text" />
+            <h5 className="font-weight-bold my-4">Support</h5>
+            <p className="grey-text mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Reprehenderit maiores aperiam minima assumenda deleniti hic.
+            </p>
+          </div>
         </div>
-        <div className="col-sm">
-          <h2>2.Review It</h2>
-          <img
-            src="https://cdn2.iconfinder.com/data/icons/flaturici-set-8/512/search_document-512.png"
-            alt="preview"
-          />
-        </div>
-        <div className="col-sm">
-          <h2>3.Go Live</h2>
-          <img
-            src="https://cdn3.iconfinder.com/data/icons/network-and-communications-2-1/130/82-512.png"
-            alt="live"
-          />
-        </div>
-      </div>
-    </Fragment>
+      </section>
+    </div>
   );
 };
 

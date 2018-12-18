@@ -12,6 +12,13 @@
   min-height: 800px;
 }
 
+.Sections {
+  width: 100%;
+  position: relative;
+  min-height: 800px;
+  padding-top: 50px;
+}
+
 .Hero .content {
   position: relative;
   z-index: 4;

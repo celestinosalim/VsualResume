@@ -48,7 +48,7 @@ const ProfileNavBar = () => {
           <li className="nav-item">
             {localStorage.getItem("username") ? (
               <Link to="/resume" className="nav-link">
-                CREATE RESUME
+                MY RESUME
               </Link>
             ) : null}
           </li>

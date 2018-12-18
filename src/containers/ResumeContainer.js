@@ -4,7 +4,6 @@ import { Route, withRouter, Switch } from "react-router-dom";
 import ResumeNavBar from "../components/NavBar/ResumeNavBar";
 import ResumeHome from "../components/Resume/ResumeHome";
 import CreateForm from "../components/Resume/CreateForm";
-import EditForm from "../components/Resume/EditForm";
 import Preview from "../components/Resume/Preview";
 import Live from "../components/Resume/Live";
 import "../style/ResumeContainer.css";
@@ -36,10 +35,6 @@ const ResumeContainer = (props, { location }) => {
                     <Route
                       path={`${props.match.path}/create-resume`}
                       render={() => <CreateForm />}
-                    />
-                    <Route
-                      path={`${props.match.path}/edit-resume`}
-                      render={() => <EditForm />}
                     />
                     <Route
                       path={`${props.match.path}/review`}

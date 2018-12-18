@@ -48,13 +48,6 @@ const ProfileNavBar = () => {
           </li>
           <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <Link className="nav-link" to="/resume/edit-resume">
-                EDIT RESUME
-              </Link>
-            ) : null}
-          </li>
-          <li className="nav-item">
-            {localStorage.getItem("username") ? (
               <Link className="nav-link" id="" to="/resume/review">
                 REVIEW RESUME
               </Link>

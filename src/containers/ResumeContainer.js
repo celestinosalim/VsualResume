@@ -3,15 +3,14 @@ import { connect } from "react-redux";
 import { Route, withRouter, Switch } from "react-router-dom";
 import ResumeNavBar from "../components/NavBar/ResumeNavBar";
 import ResumeHome from "../components/Resume/ResumeHome";
-import CreateForm from "../components/Resume/CreateForm";
 import Preview from "../components/Resume/Preview";
-import Live from "../components/Resume/Live";
+// import Live from "../components/Resume/Live";
 import "../style/ResumeContainer.css";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Footer from "../components/Footer/Footer";
 
 const ResumeContainer = (props, { location }) => {
-  console.log("resumecontainer", props);
+  // console.log("resumecontainer", props);
 
   return (
     <Fragment>
@@ -33,16 +32,8 @@ const ResumeContainer = (props, { location }) => {
                       render={() => <ResumeHome />}
                     />
                     <Route
-                      path={`${props.match.path}/create-resume`}
-                      render={() => <CreateForm />}
-                    />
-                    <Route
                       path={`${props.match.path}/review`}
                       render={() => <Preview />}
-                    />
-                    <Route
-                      path={`${props.match.path}/live`}
-                      render={() => <Live />}
                     />
                   </Switch>
                 </CSSTransition>

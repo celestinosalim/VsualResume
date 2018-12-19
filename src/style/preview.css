@@ -1,0 +1,66 @@
+#Profile {
+  padding-top: 5rem;
+  text-align: center;
+  color: black;
+  background-color: rgb(150, 149, 102);
+}
+
+#Experience {
+  padding-top: 2rem;
+  text-align: center;
+  color: black;
+  background-color: cadetblue;
+}
+
+#image {
+  border: double 4px transparent;
+  border-radius: 80px;
+  background-image: linear-gradient(white, white),
+    radial-gradient(circle at top left, rgb(150, 149, 102));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  padding-bottom: 1rem;
+}
+
+#exp {
+  text-align: center;
+  color: black;
+}
+
+#abilities {
+  text-align: center;
+  color: black;
+  background-color: rgb(161, 209, 155);
+}
+
+#languages {
+  text-align: center;
+  color: black;
+  background-color: rgb(77, 97, 153);
+}
+
+#tools {
+  text-align: center;
+  color: black;
+  background-color: rgb(245, 146, 129);
+}
+
+#Display {
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#projects {
+  text-align: center;
+  color: black;
+  background-color: rgb(210, 245, 129);
+}
+
+#contact {
+  /* min-height: 100vh; */
+  text-align: center;
+  color: black;
+  background-color: rgb(248, 198, 227);
+}

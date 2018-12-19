@@ -39,13 +39,13 @@ const ProfileNavBar = () => {
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
+          {/* <li className="nav-item">
             {localStorage.getItem("username") ? (
               <Link className="nav-link" to="/resume/create-resume">
                 FILL THE FORM
               </Link>
             ) : null}
-          </li>
+          </li> */}
           <li className="nav-item">
             {localStorage.getItem("username") ? (
               <Link className="nav-link" id="" to="/resume/review">
@@ -54,13 +54,13 @@ const ProfileNavBar = () => {
             ) : null}
           </li>
 
-          <li className="nav-item">
+          {/* <li className="nav-item">
             {localStorage.getItem("username") ? (
-              <Link to="/resume/live" className="nav-link" id="">
+              <Link to="/live" className="nav-link" id="">
                 GO LIVE
               </Link>
             ) : null}
-          </li>
+          </li> */}
           <li className="nav-item">
             {localStorage.getItem("username") ? (
               <Link className="nav-link" id="profileResume" to="/profile">

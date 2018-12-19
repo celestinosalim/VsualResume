@@ -31,7 +31,7 @@ const RightColumn = props => {
                 </h3>
 
                 <Link className="btn btn-orange" to="/resume/review">
-                  Edit My Resume
+                  My Resume
                 </Link>
               </div>
             </div>

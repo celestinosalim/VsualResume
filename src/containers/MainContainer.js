@@ -11,6 +11,7 @@ import { Route, withRouter, Switch } from "react-router-dom";
 import ProfileContainer from "./ProfileContainer";
 import ResumeContainer from "./ResumeContainer";
 import "../style/MainContainer.css";
+import Live from "../components/Resume/Live";
 
 const MainContainer = ({ location }) => {
   return (
@@ -25,6 +26,7 @@ const MainContainer = ({ location }) => {
                 <Route path="/login" render={() => <Login />} />
                 <Route path="/logout" render={() => <Logout />} />
                 <Route path="/resume" render={() => <ResumeContainer />} />
+                <Route path="/live" render={() => <Live />} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>

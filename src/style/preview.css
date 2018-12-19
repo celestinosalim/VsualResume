@@ -64,3 +64,10 @@
   color: black;
   background-color: rgb(248, 198, 227);
 }
+
+input[type="date"]:required:invalid::-webkit-datetime-edit {
+  color: transparent;
+}
+input[type="date"]:focus::-webkit-datetime-edit {
+  color: black !important;
+}

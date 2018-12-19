@@ -5,7 +5,8 @@ class ProjectsForm extends Component {
   state = {
     name: "",
     url: "",
-    description: ""
+    description: "",
+    image: ""
   };
 
   changeHandler = event => {
@@ -88,6 +89,29 @@ class ProjectsForm extends Component {
                         id="defaultFormRegisterNameEx3"
                         className="form-control"
                         placeholder="Small description about your project"
+                        required
+                      />
+                      <div className="valid-feedback">Looks good!</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-4 mb-3">
+                  <div>
+                    <div>
+                      <label
+                        htmlFor="defaultFormRegisterNameEx4"
+                        className="grey-text"
+                      >
+                        <h5>Project Image</h5>
+                      </label>
+                      <input
+                        value={this.state.image}
+                        name="image"
+                        onChange={this.changeHandler}
+                        type="text"
+                        id="defaultFormRegisterNameEx4"
+                        className="form-control"
+                        placeholder="Image For your Project Card"
                         required
                       />
                       <div className="valid-feedback">Looks good!</div>

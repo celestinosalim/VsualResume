@@ -4,10 +4,8 @@ import { Route, withRouter, Switch } from "react-router-dom";
 import ResumeNavBar from "../components/NavBar/ResumeNavBar";
 import ResumeHome from "../components/Resume/ResumeHome";
 import Preview from "../components/Resume/Preview";
-// import Live from "../components/Resume/Live";
 import "../style/ResumeContainer.css";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import Footer from "../components/Footer/Footer";
 
 const ResumeContainer = (props, { location }) => {
   // console.log("resumecontainer", props);

@@ -3,14 +3,110 @@ import { MDBInput, Container, Row, Col } from "mdbreact";
 
 class ProjectsForm extends Component {
   state = {
-    name: "",
-    url: "",
-    description: "",
-    image: ""
+    projects: [
+      {
+        name: "",
+        url: "",
+        description: "",
+        image: ""
+      }
+    ]
   };
 
-  changeHandler = event => {
-    this.setState({ ...this.state, [event.target.name]: event.target.value });
+  handleClick = e => {
+    e.preventDefault();
+
+    this.setState({
+      projects: [
+        ...this.state.projects,
+        {
+          name: "",
+          url: "",
+          description: "",
+          image: ""
+        }
+      ]
+    });
+  };
+
+  handleDynamicInputsChange = (e, idx) => {
+    const newProjects = this.state.projects.map((projects, projectsIdx) => {
+      if (idx !== projectsIdx) {
+        return projects;
+      }
+      return { ...projects, [e.target.name]: e.target.value };
+    });
+    this.setState({ experience: newProjects });
+  };
+
+  projectsToAdd = () => {
+    let { projects } = this.state;
+    let { name, url, description, image } = this.state.projects;
+
+    return projects.map((projects, idx) => {
+      return (
+        <div key={idx}>
+          <Row>
+            <div className="col-md-4 mb-3">
+              <MDBInput
+                label="Project Name"
+                value={name}
+                name="name"
+                onChange={e => this.handleDynamicInputsChange(e, idx)}
+                type="text"
+                required
+              />
+              <div className="valid-feedback">Looks good!</div>
+            </div>
+
+            <div className="col-md-4 mb-3">
+              <MDBInput
+                label="Project URL"
+                value={url}
+                name="url"
+                onChange={e => this.handleDynamicInputsChange(e, idx)}
+                type="url"
+                required
+              />
+
+              <div className="valid-feedback">Looks good!</div>
+            </div>
+
+            <div className="col-md-4 mb-3">
+              <MDBInput
+                label="Project Image"
+                value={image}
+                onChange={e => this.handleDynamicInputsChange(e, idx)}
+                type="text"
+                name="image"
+                required
+              />
+              <div className="invalid-feedback">
+                Please provide a valid Degree.
+              </div>
+              <div className="valid-feedback">Looks good!</div>
+            </div>
+
+            <div className="col-md-4 mb-3">
+              <MDBInput
+                type="textarea"
+                rows="3"
+                label="Description"
+                value={description}
+                onChange={e => this.handleDynamicInputsChange(e, idx)}
+                name="description"
+                required
+              />
+              <div className="invalid-feedback">
+                Please provide a valid description.
+              </div>
+              <div className="valid-feedback">Looks good!</div>
+            </div>
+          </Row>
+          <button className="btn btn-danger">Delete Field</button>
+        </div>
+      );
+    });
   };
 
   render() {
@@ -25,102 +121,17 @@ class ProjectsForm extends Component {
               //   onSubmit={this.submitHandler}
               noValidate
             >
-              <Row>
-                <div className="col-md-4 mb-3">
-                  <div>
-                    <div>
-                      <label
-                        htmlFor="defaultFormRegisterNameEx"
-                        className="grey-text"
-                      >
-                        <h5>Project Name</h5>
-                      </label>
-                      <input
-                        value={this.state.name}
-                        name="name"
-                        onChange={this.changeHandler}
-                        type="text"
-                        id="defaultFormRegisterNameEx"
-                        className="form-control"
-                        placeholder="My Awesome Project"
-                        required
-                      />
-                      <div className="valid-feedback">Looks good!</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4 mb-3">
-                  <div>
-                    <div>
-                      <label
-                        htmlFor="defaultFormRegisterNameEx2"
-                        className="grey-text"
-                      >
-                        <h5>Project Url</h5>
-                      </label>
-                      <input
-                        value={this.state.url}
-                        name="url"
-                        onChange={this.changeHandler}
-                        type="text"
-                        id="defaultFormRegisterNameEx2"
-                        className="form-control"
-                        placeholder="a link to your project"
-                        required
-                      />
-                      <div className="valid-feedback">Looks good!</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4 mb-3">
-                  <div>
-                    <div>
-                      <label
-                        htmlFor="defaultFormRegisterNameEx3"
-                        className="grey-text"
-                      >
-                        <h5>Project Description</h5>
-                      </label>
-                      <input
-                        value={this.state.description}
-                        name="description"
-                        onChange={this.changeHandler}
-                        type="text"
-                        id="defaultFormRegisterNameEx3"
-                        className="form-control"
-                        placeholder="Small description about your project"
-                        required
-                      />
-                      <div className="valid-feedback">Looks good!</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-4 mb-3">
-                  <div>
-                    <div>
-                      <label
-                        htmlFor="defaultFormRegisterNameEx4"
-                        className="grey-text"
-                      >
-                        <h5>Project Image</h5>
-                      </label>
-                      <input
-                        value={this.state.image}
-                        name="image"
-                        onChange={this.changeHandler}
-                        type="text"
-                        id="defaultFormRegisterNameEx4"
-                        className="form-control"
-                        placeholder="Image For your Project Card"
-                        required
-                      />
-                      <div className="valid-feedback">Looks good!</div>
-                    </div>
-                  </div>
-                </div>
-              </Row>
-              <button className="btn btn-info">Add Project</button>
               <div className="col-md-4 mb-3" />
+              {this.state.projects.length < 5 && (
+                <button
+                  className="btn btn-info"
+                  onClick={e => this.handleClick(e)}
+                >
+                  Add New Projects
+                </button>
+              )}
+
+              {this.projectsToAdd()}
             </form>
           </Col>
         </Row>

@@ -3,16 +3,151 @@ import { MDBInput, MDBDatePicker, Container, Row, Col } from "mdbreact";
 
 class ExperienceForm extends Component {
   state = {
-    start_date: "",
-    end_date: "",
-    location: "",
-    role: "",
-    company: "",
-    description: ""
+    experience: [
+      {
+        start_date: "",
+        end_date: "",
+        location: "",
+        role: "",
+        company: "",
+        description: ""
+      }
+    ]
   };
 
-  changeHandler = event => {
-    this.setState({ ...this.state, [event.target.name]: event.target.value });
+  handleClick = e => {
+    e.preventDefault();
+
+    this.setState({
+      experience: [
+        ...this.state.experience,
+        {
+          start_date: "",
+          end_date: "",
+          location: "",
+          degree: "",
+          university: "",
+          description: ""
+        }
+      ]
+    });
+  };
+
+  handleDynamicInputsChange = (e, idx) => {
+    const newExperience = this.state.experience.map(
+      (experience, experienceIdx) => {
+        if (idx !== experienceIdx) {
+          return experience;
+        }
+        return { ...experience, [e.target.name]: e.target.value };
+      }
+    );
+    this.setState({ experience: newExperience });
+  };
+
+  experienceToAdd = () => {
+    let { experience } = this.state;
+    let {
+      start_date,
+      end_date,
+      location,
+      role,
+      company,
+      description
+    } = this.state.experience;
+
+    return experience.map((experience, idx) => {
+      return (
+        <div key={idx}>
+          <Row>
+            <div className="col-md-4 mb-3">
+              <MDBInput
+                label="Start Date"
+                value={start_date}
+                name="start_date"
+                onChange={e => this.handleDynamicInputsChange(e, idx)}
+                type="Date"
+                required
+              />
+              <div className="valid-feedback">Looks good!</div>
+            </div>
+
+            <div className="col-md-4 mb-3">
+              <MDBInput
+                label="End Date"
+                value={end_date}
+                name="end_date"
+                onChange={e => this.handleDynamicInputsChange(e, idx)}
+                type="Date"
+                required
+              />
+
+              <div className="valid-feedback">Looks good!</div>
+            </div>
+
+            <div className="col-md-4 mb-3">
+              <MDBInput
+                label="Enter Institution"
+                value={company}
+                name="company"
+                onChange={e => this.handleDynamicInputsChange(e, idx)}
+                type="text"
+                required
+              />
+              <div className="valid-feedback">Looks good!</div>
+            </div>
+          </Row>
+          <Row>
+            <div className="col-md-4 mb-3">
+              <MDBInput
+                label="Enter Location"
+                value={location}
+                onChange={e => this.handleDynamicInputsChange(e, idx)}
+                type="text"
+                name="location"
+                required
+              />
+              <div className="invalid-feedback">
+                Please provide a valid Location.
+              </div>
+              <div className="valid-feedback">Looks good!</div>
+            </div>
+
+            <div className="col-md-4 mb-3">
+              <MDBInput
+                type="textarea"
+                rows="5"
+                label="Description"
+                value={description}
+                onChange={e => this.handleDynamicInputsChange(e, idx)}
+                name="description"
+                required
+              />
+              <div className="invalid-feedback">
+                Please provide a valid description.
+              </div>
+              <div className="valid-feedback">Looks good!</div>
+            </div>
+            <div className="col-md-4 mb-3">
+              <MDBInput
+                label="Role"
+                value={role}
+                onChange={e => this.handleDynamicInputsChange(e, idx)}
+                type="text"
+                name="role"
+                required
+              />
+              <div className="invalid-feedback">
+                Please provide a valid Degree.
+              </div>
+              <div className="valid-feedback">Looks good!</div>
+            </div>
+          </Row>
+          <button className="btn btn-danger">Delete Field</button>
+          <br />
+        </div>
+      );
+    });
   };
 
   render() {
@@ -27,134 +162,17 @@ class ExperienceForm extends Component {
               //   onSubmit={this.submitHandler}
               noValidate
             >
-              <Row>
-                <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterNameEx"
-                    className="grey-text"
-                  >
-                    Start Date
-                  </label>
-                  <input
-                    value={this.state.start_date}
-                    name="start_date"
-                    onChange={this.changeHandler}
-                    type="Date"
-                    id="defaultFormRegisterNameEx"
-                    className="form-control"
-                    required
-                  />
-                  <div className="valid-feedback">Looks good!</div>
-                </div>
-                <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterNameEx"
-                    className="grey-text"
-                  >
-                    End Date
-                  </label>
-                  <input
-                    value={this.state.end_date}
-                    name="end_date"
-                    onChange={this.changeHandler}
-                    type="Date"
-                    id="defaultFormRegisterNameEx"
-                    className="form-control"
-                    required
-                  />
-                  <div className="valid-feedback">Looks good!</div>
-                </div>
-
-                <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterEmailEx2"
-                    className="grey-text"
-                  >
-                    Company
-                  </label>
-                  <input
-                    value={this.state.company}
-                    name="company"
-                    onChange={this.changeHandler}
-                    type="text"
-                    id="defaultFormRegisterEmailEx2"
-                    className="form-control"
-                    placeholder="Enter Company"
-                    required
-                  />
-                  <div className="valid-feedback">Looks good!</div>
-                </div>
-              </Row>
-              <Row>
-                <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    Location
-                  </label>
-                  <input
-                    value={this.state.location}
-                    onChange={this.changeHandler}
-                    type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    className="form-control"
-                    name="location"
-                    placeholder="Location"
-                    required
-                  />
-                  <div className="invalid-feedback">
-                    Please provide a valid Location.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </div>
-
-                <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    Description
-                  </label>
-                  <textarea
-                    className="form-control"
-                    id="exampleFormControlTextarea1"
-                    rows="5"
-                    value={this.state.description}
-                    onChange={this.changeHandler}
-                    name="description"
-                    placeholder="Role details"
-                    required
-                  />
-                  <div className="invalid-feedback">
-                    Please provide a valid description.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </div>
-                <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    Role
-                  </label>
-                  <input
-                    value={this.state.role}
-                    onChange={this.changeHandler}
-                    type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    className="form-control"
-                    name="role"
-                    placeholder="E.g. Software Engineer"
-                    required
-                  />
-                  <div className="invalid-feedback">
-                    Please provide a valid Role.
-                  </div>
-                  <div className="valid-feedback">Looks good!</div>
-                </div>
-              </Row>
               <div className="col-md-4 mb-3" />
+              {this.state.experience.length < 5 && (
+                <button
+                  className="btn btn-info"
+                  onClick={e => this.handleClick(e)}
+                >
+                  Add New Experience
+                </button>
+              )}
+
+              {this.experienceToAdd()}
             </form>
           </Col>
         </Row>

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { MDBInput, MDBDatePicker, Container, Row, Col } from "mdbreact";
-// import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 
 class EducationForm extends Component {
   state = {
@@ -131,6 +130,8 @@ class EducationForm extends Component {
               <div className="valid-feedback">Looks good!</div>
             </div>
           </Row>
+          <button className="btn btn-danger">Delete Field</button>
+          <br />
         </div>
       );
     });
@@ -148,6 +149,7 @@ class EducationForm extends Component {
 
   render() {
     console.log(this.state);
+    // console.log("educcation length", this.state.education.length);
 
     return (
       <Container className="mt-5">
@@ -161,12 +163,15 @@ class EducationForm extends Component {
               noValidate
             >
               <div className="col-md-4 mb-3" />
-              <button
-                className="btn btn-info"
-                onClick={e => this.handleClick(e)}
-              >
-                Add New Education
-              </button>
+              {this.state.education.length < 5 && (
+                <button
+                  className="btn btn-info"
+                  onClick={e => this.handleClick(e)}
+                >
+                  Add New Education
+                </button>
+              )}
+
               {this.educationToAdd()}
             </form>
           </Col>

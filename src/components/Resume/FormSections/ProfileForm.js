@@ -37,59 +37,35 @@ class ProfileForm extends Component {
             >
               <Row>
                 <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterNameEx"
-                    className="grey-text"
-                  >
-                    Full name
-                  </label>
-                  <input
+                  <MDBInput
+                    label="Full Name"
                     value={this.state.name}
                     name="name"
                     onChange={this.changeHandler}
                     type="text"
-                    id="defaultFormRegisterNameEx"
-                    className="form-control"
-                    placeholder="Full name"
                     required
                   />
                   <div className="valid-feedback">Looks good!</div>
                 </div>
 
                 <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterEmailEx2"
-                    className="grey-text"
-                  >
-                    Full Address
-                  </label>
-                  <input
+                  <MDBInput
+                    label="Full Address"
                     value={this.state.location}
                     name="location"
                     onChange={this.changeHandler}
                     type="text"
-                    id="defaultFormRegisterEmailEx2"
-                    className="form-control"
-                    placeholder="Enter Address"
                     required
                   />
                   <div className="valid-feedback">Looks good!</div>
                 </div>
                 <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterConfirmEx3"
-                    className="grey-text"
-                  >
-                    Number
-                  </label>
-                  <input
+                  <MDBInput
+                    label="Number"
                     value={this.state.number}
                     onChange={this.changeHandler}
                     type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    className="form-control"
                     name="number"
-                    placeholder="Number"
                     required
                   />
                   <div className="invalid-feedback">Please try again.</div>
@@ -98,20 +74,12 @@ class ProfileForm extends Component {
               </Row>
               <Row>
                 <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    Profile Picture
-                  </label>
-                  <input
+                  <MDBInput
+                    label="Profile Picture"
                     value={this.state.profile_picture}
                     onChange={this.changeHandler}
                     type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    className="form-control"
                     name="profile_picture"
-                    placeholder="Profile Picture"
                     required
                   />
                   <div className="invalid-feedback">Please try again.</div>
@@ -119,58 +87,34 @@ class ProfileForm extends Component {
                 </div>
 
                 <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterNameEx"
-                    className="grey-text"
-                  >
-                    Age
-                  </label>
-                  <input
+                  <MDBInput
+                    label="Age"
                     value={this.state.age}
                     name="age"
                     onChange={this.changeHandler}
                     type="text"
-                    id="defaultFormRegisterNameEx"
-                    className="form-control"
-                    placeholder="Age"
                     required
                   />
                   <div className="valid-feedback">Looks good!</div>
                 </div>
 
                 <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterConfirmEx3"
-                    className="grey-text"
-                  >
-                    Email
-                  </label>
-                  <input
+                  <MDBInput
+                    label="Email"
                     value={this.state.email}
                     onChange={this.changeHandler}
                     type="email"
-                    id="defaultFormRegisterConfirmEx3"
-                    className="form-control is-valid?"
                     name="email"
-                    placeholder="Your Email address"
                   />
                 </div>
 
                 <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    Headline
-                  </label>
-                  <input
+                  <MDBInput
+                    label="Headline"
                     value={this.state.headline}
                     onChange={this.changeHandler}
                     type="text"
-                    id="defaultFormRegisterPasswordEx4"
-                    className="form-control"
                     name="headline"
-                    placeholder="Headline"
                     required
                   />
                   <div className="invalid-feedback">
@@ -180,20 +124,13 @@ class ProfileForm extends Component {
                 </div>
 
                 <div className="col-md-4 mb-3">
-                  <label
-                    htmlFor="defaultFormRegisterPasswordEx4"
-                    className="grey-text"
-                  >
-                    About Me
-                  </label>
-                  <textarea
-                    className="form-control"
-                    id="exampleFormControlTextarea1"
+                  <MDBInput
+                    type="textarea"
+                    label="About Me"
                     rows="5"
                     value={this.state.about_me}
                     onChange={this.changeHandler}
                     name="about_me"
-                    placeholder="Description About Yourself"
                     required
                   />
                   <div className="invalid-feedback">

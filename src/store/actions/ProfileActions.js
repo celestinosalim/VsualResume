@@ -43,7 +43,7 @@ export const updateResumeProfile = resume => {
 
       .then(resume => {
         dispatch(setSelectedResume(resume));
-        dispatch(resetProfileForm());
+        // dispatch(resetProfileForm());
       })
       .catch(error => console.log(error));
   };

@@ -5,15 +5,15 @@ import { connect } from "react-redux";
 
 class ProfileForm extends Component {
   state = {
-    name: "",
-    age: "",
-    location: "",
-    number: "",
-    profile_picture: "",
-    headline: "",
-    about_me: "",
-    background_image: "",
-    email: ""
+    name: this.props.profile.name,
+    age: this.props.profile.age,
+    location: this.props.profile.location,
+    number: this.props.profile.number,
+    profile_picture: this.props.profile.profile_picture,
+    headline: this.props.profile.headline,
+    about_me: this.props.profile.about_me,
+    background_image: this.props.profile.background_image,
+    email: this.props.profile.email
   };
 
   changeHandler = event => {
@@ -24,21 +24,23 @@ class ProfileForm extends Component {
   //   this.props.getUserResume();
   // }
 
-  componentDidUpdate(prevState, prevProps) {
-    // if (prevProps !== this.props.resume) {
-    //   this.setState({
-    //     name: this.props.name,
-    //     age: this.props.age,
-    //     location: this.props.location,
-    //     number: this.props.number,
-    //     profile_picture: this.props.profile_picture,
-    //     headline: this.props.headline,
-    //     about_me: this.props.about_me,
-    //     background_image: this.props.background_image,
-    //     email: this.props.email
-    //   });
-    // }
-  }
+  // componentDidUpdate(prevState, prevProps) {
+  //   // console.log(this.props.profile, "profile");
+  //   // console.log(prevProps, "prev");
+  //   if (prevProps.name !== this.props.profile) {
+  //     this.setState({
+  //       name: this.props.profile.name,
+  //       age: this.props.profile.age,
+  //       location: this.props.profile.location,
+  //       number: this.props.profile.number,
+  //       profile_picture: this.props.profile.profile_picture,
+  //       headline: this.props.profile.headline,
+  //       about_me: this.props.profile.about_me,
+  //       background_image: this.props.profile.background_image,
+  //       email: this.props.profile.email
+  //     });
+  //   }
+  // }
 
   componentDidMount() {
     //   console.log(this.props.resume);
@@ -57,7 +59,7 @@ class ProfileForm extends Component {
 
   render() {
     // console.log(this.state);
-    console.log(this.props.resume);
+    // console.log(this.props);
 
     return (
       <Container className="mt-5">
@@ -193,7 +195,8 @@ class ProfileForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    resume: state.resume
+    profile: state.resume.resume.profile
+    // id: state.resume.resume.id
   };
 };
 

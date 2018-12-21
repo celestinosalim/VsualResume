@@ -10,7 +10,7 @@ import {
 
 import ProfileForm from "../FormSections/ProfileForm";
 import { connect } from "react-redux";
-import { updateResume } from "../../../store/actions/ProfileActions";
+import { updateResumeProfile } from "../../../store/actions/ProfileActions";
 
 class ProfileModal extends React.Component {
   constructor(props) {
@@ -32,9 +32,8 @@ class ProfileModal extends React.Component {
       modal: !this.state.modal
     });
 
-    this.props.updateResume(obj.id, obj);
+    this.props.updateResumeProfile(obj);
     console.log("this is props from savechanges", obj);
-    console.log("this is the event", e.target);
   };
 
   render() {
@@ -63,5 +62,5 @@ class ProfileModal extends React.Component {
 
 export default connect(
   null,
-  { updateResume }
+  { updateResumeProfile }
 )(ProfileModal);

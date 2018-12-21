@@ -15,37 +15,36 @@ const setSelectedResume = resume => {
 };
 
 // Async Actions
-export const updateResume = (resumeId, resume) => {
+export const updateResumeProfile = resume => {
+  const resumeId = localStorage.getItem("resumeId");
   return dispatch => {
-    return (
-      fetch(`http://localhost:3001/api/resumes/${1}`, {
-        method: "PATCH",
-        headers: {
-          Authorization: `Bearer ${localStorage.token}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          resume: {
-            profile_attributes: {
-              name: resume.name,
-              age: resume.age,
-              location: resume.location,
-              number: resume.number,
-              profile_picture: resume.profile_picture,
-              headline: resume.headline,
-              about_me: resume.about_me,
-              background_image: resume.background_image
-            }
+    return fetch(`http://localhost:3001/api/resumes/${resumeId}`, {
+      method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${localStorage.token}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        resume: {
+          profile_attributes: {
+            name: resume.name,
+            age: resume.age,
+            location: resume.location,
+            number: resume.number,
+            profile_picture: resume.profile_picture,
+            headline: resume.headline,
+            about_me: resume.about_me,
+            background_image: resume.background_image
           }
-        })
+        }
       })
-        .then(response => response.json())
-        .then(console.log)
-        //   .then(resume => {
-        //     dispatch(setSelectedResume(resume));
-        //     dispatch(resetProfileForm());
-        //   })
-        .catch(error => console.log(error))
-    );
+    })
+      .then(response => response.json())
+
+      .then(resume => {
+        dispatch(setSelectedResume(resume));
+        dispatch(resetProfileForm());
+      })
+      .catch(error => console.log(error));
   };
 };

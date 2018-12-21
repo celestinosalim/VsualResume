@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Button, MDBInput, Container, Row, Col } from "mdbreact";
+import { getResume } from "../../../store/actions/ResumeActions";
+import { connect } from "react-redux";
 
 class ProfileForm extends Component {
   state = {
@@ -18,19 +20,44 @@ class ProfileForm extends Component {
     this.setState({ ...this.state, [event.target.name]: event.target.value });
   };
 
-  // componentDidUpdate (prevState, prevProps) {
-  //   if (prevProps.id !== this.props.id) {
-  //     this.setState({
-  //       id: this.props.id,
-  //       name: this.props.name,
-  //       title: this.props.title,
-  //       key_skill: this.props.key_skill
-  //     })
-  //   }
+  // componentDidMount() {
+  //   this.props.getUserResume();
   // }
 
+  componentDidUpdate(prevState, prevProps) {
+    // if (prevProps !== this.props.resume) {
+    //   this.setState({
+    //     name: this.props.name,
+    //     age: this.props.age,
+    //     location: this.props.location,
+    //     number: this.props.number,
+    //     profile_picture: this.props.profile_picture,
+    //     headline: this.props.headline,
+    //     about_me: this.props.about_me,
+    //     background_image: this.props.background_image,
+    //     email: this.props.email
+    //   });
+    // }
+  }
+
+  componentDidMount() {
+    //   console.log(this.props.resume);
+    //   this.setState({
+    //     name: this.props.resume.name,
+    //     age: this.props.resume.age,
+    //     location: this.props.resume.location,
+    //     number: this.props.resume.number,
+    //     profile_picture: this.props.resume.profile_picture,
+    //     headline: this.props.resume.headline,
+    //     about_me: this.props.resume.about_me,
+    //     background_image: this.props.resume.background_image,
+    //     email: this.props.resume.email
+    // });
+  }
+
   render() {
-    console.log(this.state);
+    // console.log(this.state);
+    console.log(this.props.resume);
 
     return (
       <Container className="mt-5">
@@ -164,4 +191,13 @@ class ProfileForm extends Component {
   }
 }
 
-export default ProfileForm;
+const mapStateToProps = state => {
+  return {
+    resume: state.resume
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { getResume }
+)(ProfileForm);

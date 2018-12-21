@@ -85,9 +85,11 @@ export const authenticate = credentials => {
       .then(res => res.json())
       .then(response => {
         const token = response.jwt;
-        const username = response.user.username;
+        const username = response.username;
+        const resume = response.resume.id;
         localStorage.setItem("token", token);
         localStorage.setItem("username", username);
+        localStorage.setItem("resumeId", resume);
         return getUser(credentials);
       })
 

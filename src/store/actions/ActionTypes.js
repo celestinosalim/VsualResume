@@ -7,3 +7,5 @@ export const LOGOUT = "LOGOUT";
 export const RESET_FORM = "RESET_FORM";
 
 export const UPDATE_PROFILE = "UPDATE_PROFILE";
+
+export const REQUEST_RESUME = "REQUEST_RESUME";

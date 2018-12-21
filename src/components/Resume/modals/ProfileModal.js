@@ -9,6 +9,8 @@ import {
 } from "mdbreact";
 
 import ProfileForm from "../FormSections/ProfileForm";
+import { connect } from "react-redux";
+import { updateResume } from "../../../store/actions/ProfileActions";
 
 class ProfileModal extends React.Component {
   constructor(props) {
@@ -25,11 +27,12 @@ class ProfileModal extends React.Component {
   };
 
   saveChangesSubmit = (e, obj) => {
-    e.preventDefault();
+    // e.preventDefault();
     this.setState({
       modal: !this.state.modal
     });
 
+    this.props.updateResume(obj.id, obj);
     console.log("this is props from savechanges", obj);
     console.log("this is the event", e.target);
   };
@@ -58,4 +61,7 @@ class ProfileModal extends React.Component {
   }
 }
 
-export default ProfileModal;
+export default connect(
+  null,
+  { updateResume }
+)(ProfileModal);

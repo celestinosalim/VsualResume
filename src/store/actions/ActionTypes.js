@@ -5,3 +5,5 @@ export const AUTHENTICATION_FAILURE = "AUTHENTICATION_FAILURE";
 export const LOGOUT = "LOGOUT";
 
 export const RESET_FORM = "RESET_FORM";
+
+export const UPDATE_PROFILE = "UPDATE_PROFILE";

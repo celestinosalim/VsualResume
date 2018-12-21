@@ -18,8 +18,19 @@ class ProfileForm extends Component {
     this.setState({ ...this.state, [event.target.name]: event.target.value });
   };
 
+  // componentDidUpdate (prevState, prevProps) {
+  //   if (prevProps.id !== this.props.id) {
+  //     this.setState({
+  //       id: this.props.id,
+  //       name: this.props.name,
+  //       title: this.props.title,
+  //       key_skill: this.props.key_skill
+  //     })
+  //   }
+  // }
+
   render() {
-    // console.log(this.state);
+    console.log(this.state);
 
     return (
       <Container className="mt-5">

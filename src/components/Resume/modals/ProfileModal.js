@@ -24,6 +24,16 @@ class ProfileModal extends React.Component {
     });
   };
 
+  saveChangesSubmit = (e, obj) => {
+    e.preventDefault();
+    this.setState({
+      modal: !this.state.modal
+    });
+
+    console.log("this is props from savechanges", obj);
+    console.log("this is the event", e.target);
+  };
+
   render() {
     return (
       <Container>
@@ -31,13 +41,16 @@ class ProfileModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} size="fluid">
           <ModalHeader toggle={this.toggle}>Edit Profile</ModalHeader>
           <ModalBody>
-            <ProfileForm />
+            <ProfileForm
+              toggle={this.toggle}
+              id="myForm"
+              saveChangesSubmit={this.saveChangesSubmit}
+            />
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggle}>
               Close
             </Button>{" "}
-            <Button color="primary">Save changes</Button>
           </ModalFooter>
         </Modal>
       </Container>

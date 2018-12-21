@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MDBInput, Container, Row, Col } from "mdbreact";
+import { Button, MDBInput, Container, Row, Col } from "mdbreact";
 
 class ProfileForm extends Component {
   state = {
@@ -14,16 +14,13 @@ class ProfileForm extends Component {
     email: ""
   };
 
-  //   submitHandler = event => {
-  //     event.preventDefault();
-  //     event.target.className += " was-validated";
-  //   };
-
   changeHandler = event => {
     this.setState({ ...this.state, [event.target.name]: event.target.value });
   };
 
   render() {
+    // console.log(this.state);
+
     return (
       <Container className="mt-5">
         <Row className="mt-6">
@@ -32,7 +29,7 @@ class ProfileForm extends Component {
             <hr />
             <form
               className="needs-validation"
-              //   onSubmit={this.submitHandler}
+              // onSubmit={e => this.submitHandler(e, this.state)}
               noValidate
             >
               <Row>
@@ -143,6 +140,14 @@ class ProfileForm extends Component {
             </form>
           </Col>
         </Row>
+        <Button
+          color="primary"
+          form="myForm"
+          key="submit"
+          onClick={e => this.props.saveChangesSubmit(e, this.state)}
+        >
+          Save changes
+        </Button>
       </Container>
     );
   }

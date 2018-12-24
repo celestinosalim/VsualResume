@@ -6,6 +6,7 @@
     "jwt-decode": "^2.2.0",
     "mdbreact": "^4.8.5-patch.1",
     "react": "^16.6.3",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",

@@ -5,15 +5,15 @@ import { connect } from "react-redux";
 
 class ProfileForm extends Component {
   state = {
-    name: this.props.profile.name,
-    age: this.props.profile.age,
-    location: this.props.profile.location,
-    number: this.props.profile.number,
-    profile_picture: this.props.profile.profile_picture,
-    headline: this.props.profile.headline,
-    about_me: this.props.profile.about_me,
-    background_image: this.props.profile.background_image,
-    email: this.props.profile.email
+    name: "",
+    age: "",
+    location: "",
+    number: "",
+    profile_picture: "",
+    headline: "",
+    about_me: "",
+    background_image: "",
+    email: ""
   };
 
   changeHandler = event => {

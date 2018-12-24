@@ -19,7 +19,7 @@ const MainContainer = ({ location }) => {
       <Route
         render={({ location }) => (
           <TransitionGroup>
-            <CSSTransition timeout={3000} classNames="fade" key={location.key}>
+            <CSSTransition timeout={450} classNames="fade" key={location.key}>
               <Switch location={location}>
                 <Route exact path="/" render={() => <HomePageContainer />} />
                 <Route path="/profile" render={() => <ProfileContainer />} />

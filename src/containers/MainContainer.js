@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 import { MDBContainer } from "mdbreact";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
@@ -13,27 +13,46 @@ import ResumeContainer from "./ResumeContainer";
 import "../style/MainContainer.css";
 import Live from "../components/Resume/Live";
 
-const MainContainer = ({ location }) => {
-  return (
-    <MDBContainer fluid>
-      <Route
-        render={({ location }) => (
-          <TransitionGroup>
-            <CSSTransition timeout={3000} classNames="fade" key={location.key}>
-              <Switch location={location}>
-                <Route exact path="/" render={() => <HomePageContainer />} />
-                <Route path="/profile" render={() => <ProfileContainer />} />
-                <Route path="/login" render={() => <Login />} />
-                <Route path="/logout" render={() => <Logout />} />
-                <Route path="/resume" render={() => <ResumeContainer />} />
-                <Route path="/live" render={() => <Live />} />
-              </Switch>
-            </CSSTransition>
-          </TransitionGroup>
-        )}
-      />
-    </MDBContainer>
-  );
-};
+import { connect } from "react-redux";
+import { requestResume } from "../store/actions/ResumeActions";
 
-export default withRouter(MainContainer);
+class MainContainer extends Component {
+  componentDidMount() {
+    console.log(this.props);
+    this.props.requestResume();
+  }
+
+  render() {
+    return (
+      <MDBContainer fluid>
+        <Route
+          render={({ location }) => (
+            <TransitionGroup>
+              <CSSTransition
+                timeout={3000}
+                classNames="fade"
+                key={location.key}
+              >
+                <Switch location={location}>
+                  <Route exact path="/" render={() => <HomePageContainer />} />
+                  <Route path="/profile" render={() => <ProfileContainer />} />
+                  <Route path="/login" render={() => <Login />} />
+                  <Route path="/logout" render={() => <Logout />} />
+                  <Route path="/resume" render={() => <ResumeContainer />} />
+                  <Route path="/live" render={() => <Live />} />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          )}
+        />
+      </MDBContainer>
+    );
+  }
+}
+
+export default withRouter(
+  connect(
+    null,
+    { requestResume }
+  )(MainContainer)
+);

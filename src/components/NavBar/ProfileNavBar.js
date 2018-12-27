@@ -46,28 +46,32 @@ const ProfileNavBar = () => {
             </Link>
           </li>
           {/* <li className="nav-item">
-            {localStorage.getItem("token") ? (
+           {localStorage.getItem("token") &&
+            localStorage.getItem("token") !== "undefined" ? (
               <Link to="/resume" className="nav-link">
                 MY RESUME
               </Link>
             ) : null}
           </li> */}
           <li className="nav-item">
-            {localStorage.getItem("token") ? (
+            {localStorage.getItem("token") &&
+            localStorage.getItem("token") !== "undefined" ? (
               <a className="nav-link" id="" href="/contact">
                 CONTACT US
               </a>
             ) : null}
           </li>
           <li className="nav-item">
-            {localStorage.getItem("token") ? (
+            {localStorage.getItem("token") &&
+            localStorage.getItem("token") !== "undefined" ? (
               <a className="nav-link" id="" href="/something">
                 ANOTHER LINK THAT I NEED TO FIGURE OUT
               </a>
             ) : null}
           </li>
           <li className="nav-item">
-            {localStorage.getItem("token") ? (
+            {localStorage.getItem("token") &&
+            localStorage.getItem("token") !== "undefined" ? (
               <a className="nav-link" id="logout" href="/logout">
                 LOG OUT
               </a>

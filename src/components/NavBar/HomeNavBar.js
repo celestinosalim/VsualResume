@@ -92,14 +92,16 @@ const HomeNavBar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            {localStorage.getItem("token") ? (
+            {localStorage.getItem("token") &&
+            localStorage.getItem("token") !== "undefined" ? (
               <LinkFor to="/profile" className="nav-link" id="profile">
                 PROFILE
               </LinkFor>
             ) : null}
           </li>
           <li className="nav-item">
-            {localStorage.getItem("token") ? (
+            {localStorage.getItem("token") &&
+            localStorage.getItem("token") !== "undefined" ? (
               <a className="nav-link" id="logout" href="/logout">
                 LOG OUT
               </a>

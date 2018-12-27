@@ -12,7 +12,6 @@ import ProfileContainer from "./ProfileContainer";
 import ResumeContainer from "./ResumeContainer";
 import "../style/MainContainer.css";
 import Live from "../components/Resume/Live";
-
 import { connect } from "react-redux";
 import { requestResume } from "../store/actions/ResumeActions";
 
@@ -49,9 +48,14 @@ class MainContainer extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  console.log(state);
+  return { state: state };
+};
+
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     { requestResume }
   )(MainContainer)
 );

@@ -47,7 +47,8 @@ const ProfileNavBar = () => {
             ) : null}
           </li> */}
           <li className="nav-item">
-            {localStorage.getItem("token") ? (
+            {localStorage.getItem("token") &&
+            localStorage.getItem("token") !== "undefined" ? (
               <Link className="nav-link" id="" to="/resume/review">
                 REVIEW RESUME
               </Link>
@@ -55,21 +56,24 @@ const ProfileNavBar = () => {
           </li>
 
           {/* <li className="nav-item">
-            {localStorage.getItem("token") ? (
+            {localStorage.getItem("token") &&
+            localStorage.getItem("token") !== "undefined" ? (
               <Link to="/live" className="nav-link" id="">
                 GO LIVE
               </Link>
             ) : null}
           </li> */}
           <li className="nav-item">
-            {localStorage.getItem("token") ? (
+            {localStorage.getItem("token") &&
+            localStorage.getItem("token") !== "undefined" ? (
               <Link className="nav-link" id="profileResume" to="/profile">
                 PROFILE
               </Link>
             ) : null}
           </li>
           <li className="nav-item">
-            {localStorage.getItem("token") ? (
+            {localStorage.getItem("token") &&
+            localStorage.getItem("token") !== "undefined" ? (
               <Link className="nav-link" id="resumeHome" to="/">
                 HOME
               </Link>

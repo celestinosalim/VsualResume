@@ -24,7 +24,7 @@ class Login extends Component {
 
     if (this.props.authenticate(this.state)) {
       this.props.history.push("/");
-      // setTimeout(() => window.location.reload(), 100);
+      setTimeout(() => window.location.reload(), 100);
     } else {
       window.alert("Sorry, something went wrong. Please try logging in again.");
     }
@@ -34,7 +34,7 @@ class Login extends Component {
     e.preventDefault();
     if (this.props.signup(this.state)) {
       this.props.history.push("/");
-      // setTimeout(() => window.location.reload(), 100);
+      setTimeout(() => window.location.reload(), 100);
       // window.alert("Thank you for signing up.");
     } else {
       window.alert("We're having issues creating your account.");

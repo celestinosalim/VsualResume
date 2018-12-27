@@ -18,7 +18,6 @@ import { requestResume } from "../store/actions/ResumeActions";
 
 class MainContainer extends Component {
   componentDidMount() {
-    console.log(this.props);
     this.props.requestResume();
   }
 

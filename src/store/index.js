@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 import LoginReducer from "./reducers/LoginReducer";
 import ProfileReducer from "./reducers/ProfileReducer";
 import ResumeReducer from "./reducers/ResumeReducer";
+import EducationReducer from "./reducers/EducationReducer";
 
 const rootReducer = combineReducers({
   login: LoginReducer,
   profile: ProfileReducer,
-  resume: ResumeReducer
+  resume: ResumeReducer,
+  education: EducationReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

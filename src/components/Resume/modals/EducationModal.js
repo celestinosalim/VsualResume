@@ -9,6 +9,8 @@ import {
 } from "mdbreact";
 
 import EducationForm from "../FormSections/EducationForm";
+import { connect } from "react-redux";
+import { updateResumeEducation } from "../../../store/actions/EducationActions";
 
 class EducationModal extends Component {
   state = { modal: false };
@@ -40,4 +42,7 @@ class EducationModal extends Component {
   }
 }
 
-export default EducationModal;
+export default connect(
+  null,
+  { updateResumeEducation }
+)(EducationModal);

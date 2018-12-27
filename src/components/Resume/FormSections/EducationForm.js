@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { MDBInput, Container, Row, Col } from "mdbreact";
+import { requestEducation } from "../../../store/actions/ResumeActions";
+import { connect } from "react-redux";
 
 class EducationForm extends Component {
   state = {
@@ -14,6 +16,10 @@ class EducationForm extends Component {
       }
     ]
   };
+
+  componentDidMount() {
+    this.props.requestEducation();
+  }
 
   handleClick = e => {
     e.preventDefault();
@@ -148,7 +154,9 @@ class EducationForm extends Component {
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
+    console.log(this.props);
+
     // console.log("educcation length", this.state.education.length);
 
     return (
@@ -181,4 +189,13 @@ class EducationForm extends Component {
   }
 }
 
-export default EducationForm;
+const mapStateToProps = state => {
+  return {
+    education: state.resume
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { requestEducation }
+)(EducationForm);

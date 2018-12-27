@@ -1,5 +1,4 @@
-import React, { Fragment } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import HomeNavBar from "../components/NavBar/HomeNavBar";
 import Header from "../components/Homepage/Header/Header";
 import HowItWorks from "../components/Homepage/Section1/HowItWorks";

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "../../style/preview.css";
 import ProfileModal from "./modals/ProfileModal";
 import EducationModal from "./modals/EducationModal";

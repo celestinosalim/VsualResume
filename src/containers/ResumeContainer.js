@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { connect } from "react-redux";
+
 import { Route, withRouter, Switch } from "react-router-dom";
 import ResumeNavBar from "../components/NavBar/ResumeNavBar";
 import ResumeHome from "../components/Resume/ResumeHome";
@@ -8,8 +8,6 @@ import "../style/ResumeContainer.css";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const ResumeContainer = (props, { location }) => {
-  // console.log("resumecontainer", props);
-
   return (
     <Fragment>
       <div>
@@ -43,12 +41,5 @@ const ResumeContainer = (props, { location }) => {
     </Fragment>
   );
 };
-
-// const mapStateToProps = state => {
-//   return {
-//     user: state.currentUser,
-//     resume: state.resume
-//   };
-// };
 
 export default withRouter(ResumeContainer);

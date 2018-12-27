@@ -1,23 +1,54 @@
 import React, { Component } from "react";
-import { MDBInput, Container, Row, Col } from "mdbreact";
+import { MDBInput, Container, Row, Col, Button } from "mdbreact";
+import { requestProfile } from "../../../store/actions/ResumeActions";
+import { connect } from "react-redux";
 
 class ProfileForm extends Component {
   state = {
+    id: "",
     name: "",
-    age: "",
+    age: 0,
     location: "",
     number: "",
     profile_picture: "",
     headline: "",
     about_me: "",
     background_image: "",
-    email: ""
+    profile_email: ""
   };
 
-  //   submitHandler = event => {
-  //     event.preventDefault();
-  //     event.target.className += " was-validated";
-  //   };
+  componentDidUpdate(prevState, prevProps) {
+    if (prevProps.id !== this.props.profile.id) {
+      let {
+        name,
+        age,
+        location,
+        number,
+        profile_picture,
+        headline,
+        about_me,
+        background_image,
+        profile_email,
+        id
+      } = this.props.profile;
+      this.setState({
+        id: id,
+        name: name,
+        age: age,
+        location: location,
+        number: number,
+        profile_picture: profile_picture,
+        headline: headline,
+        about_me: about_me,
+        background_image: background_image,
+        profile_email: profile_email
+      });
+    }
+  }
+
+  componentDidMount() {
+    this.props.requestProfile();
+  }
 
   changeHandler = event => {
     this.setState({ ...this.state, [event.target.name]: event.target.value });
@@ -30,11 +61,7 @@ class ProfileForm extends Component {
           <Col md="">
             <h1>Profile</h1>
             <hr />
-            <form
-              className="needs-validation"
-              //   onSubmit={this.submitHandler}
-              noValidate
-            >
+            <form className="needs-validation" noValidate>
               <Row>
                 <div className="col-md-4 mb-3">
                   <MDBInput
@@ -89,7 +116,7 @@ class ProfileForm extends Component {
                 <div className="col-md-4 mb-3">
                   <MDBInput
                     label="Age"
-                    value={this.state.age}
+                    value={`${this.state.age}`}
                     name="age"
                     onChange={this.changeHandler}
                     type="text"
@@ -100,11 +127,11 @@ class ProfileForm extends Component {
 
                 <div className="col-md-4 mb-3">
                   <MDBInput
-                    label="Email"
-                    value={this.state.email}
+                    label="Contact Email"
+                    value={this.state.profile_email}
                     onChange={this.changeHandler}
                     type="email"
-                    name="email"
+                    name="profile_email"
                   />
                 </div>
 
@@ -138,14 +165,46 @@ class ProfileForm extends Component {
                   </div>
                   <div className="valid-feedback">Looks good!</div>
                 </div>
+
+                <div className="col-md-4 mb-3">
+                  <MDBInput
+                    label="Background Image"
+                    value={this.state.background_image}
+                    onChange={this.changeHandler}
+                    type="text"
+                    name="background_image"
+                    required
+                  />
+                  <div className="invalid-feedback">
+                    Please provide a valid Headline.
+                  </div>
+                  <div className="valid-feedback">Looks good!</div>
+                </div>
               </Row>
               <div className="col-md-4 mb-3" />
             </form>
           </Col>
         </Row>
+        <Button
+          color="primary"
+          form="myForm"
+          key="submit"
+          onClick={e => this.props.saveChangesSubmit(e, this.state)}
+        >
+          Save changes
+        </Button>
       </Container>
     );
   }
 }
 
-export default ProfileForm;
+const mapStateToProps = state => {
+  return {
+    profile: state.resume
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { requestProfile }
+)(ProfileForm);

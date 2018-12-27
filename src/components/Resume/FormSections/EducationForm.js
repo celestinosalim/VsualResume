@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MDBInput, MDBDatePicker, Container, Row, Col } from "mdbreact";
+import { MDBInput, Container, Row, Col } from "mdbreact";
 
 class EducationForm extends Component {
   state = {

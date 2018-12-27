@@ -9,6 +9,8 @@ import {
 } from "mdbreact";
 
 import ProfileForm from "../FormSections/ProfileForm";
+import { connect } from "react-redux";
+import { updateResumeProfile } from "../../../store/actions/ProfileActions";
 
 class ProfileModal extends React.Component {
   constructor(props) {
@@ -24,6 +26,15 @@ class ProfileModal extends React.Component {
     });
   };
 
+  saveChangesSubmit = (e, obj) => {
+    // e.preventDefault();
+    this.setState({
+      modal: !this.state.modal
+    });
+
+    this.props.updateResumeProfile(obj);
+  };
+
   render() {
     return (
       <Container>
@@ -31,13 +42,15 @@ class ProfileModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} size="fluid">
           <ModalHeader toggle={this.toggle}>Edit Profile</ModalHeader>
           <ModalBody>
-            <ProfileForm />
+            <ProfileForm
+              id="myForm"
+              saveChangesSubmit={this.saveChangesSubmit}
+            />
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggle}>
               Close
             </Button>{" "}
-            <Button color="primary">Save changes</Button>
           </ModalFooter>
         </Modal>
       </Container>
@@ -45,4 +58,7 @@ class ProfileModal extends React.Component {
   }
 }
 
-export default ProfileModal;
+export default connect(
+  null,
+  { updateResumeProfile }
+)(ProfileModal);

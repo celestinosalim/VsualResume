@@ -92,14 +92,14 @@ const HomeNavBar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            {localStorage.getItem("username") ? (
+            {localStorage.getItem("token") ? (
               <LinkFor to="/profile" className="nav-link" id="profile">
                 PROFILE
               </LinkFor>
             ) : null}
           </li>
           <li className="nav-item">
-            {localStorage.getItem("username") ? (
+            {localStorage.getItem("token") ? (
               <a className="nav-link" id="logout" href="/logout">
                 LOG OUT
               </a>
@@ -113,7 +113,7 @@ const HomeNavBar = () => {
         {/* {this.props.user && (
           <a href="/profile">
             <button className="btn btn-info">
-              Logged in as: {this.props.user.username}
+              Logged in as: {this.props.user.token}
             </button>
           </a>
         )} */}

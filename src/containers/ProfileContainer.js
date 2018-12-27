@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { connect } from "react-redux";
+import React from "react";
+
 import { withRouter } from "react-router-dom";
 import ProfileNavBar from "../components/NavBar/ProfileNavBar";
 import LeftColumn from "../components/Profile/LeftColumn";
@@ -27,13 +27,6 @@ const ProfileContainer = props => {
       </div>
     </div>
   );
-};
-
-const mapStateToProps = state => {
-  return {
-    user: state.currentUser,
-    resume: state.resume
-  };
 };
 
 export default withRouter(ProfileContainer);

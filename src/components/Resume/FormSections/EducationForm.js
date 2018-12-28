@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { MDBInput, Container, Row, Col } from "mdbreact";
-import { requestEducation } from "../../../store/actions/ResumeActions";
 import { connect } from "react-redux";
 
 class EducationForm extends Component {
@@ -195,7 +194,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { requestEducation }
-)(EducationForm);
+export default connect(mapStateToProps)(EducationForm);

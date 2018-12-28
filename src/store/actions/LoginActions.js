@@ -47,14 +47,14 @@ export const signup = user => {
       })
     })
       .then(response => response.json())
-      .then(jresp => {
+      .then(res =>
         dispatch(
           authenticate({
             username: newUser.signup_username,
             password: newUser.signup_password
           })
-        );
-      })
+        )
+      )
       .catch(errors => {
         dispatch(authFailure(errors));
       });

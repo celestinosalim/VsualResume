@@ -5,6 +5,7 @@ export const AUTHENTICATION_FAILURE = "AUTHENTICATION_FAILURE";
 export const LOGOUT = "LOGOUT";
 
 export const RESUME_ID = "RESUME_ID";
+export const RESET_FORM = "RESET_FORM";
 
 export const REQUEST_RESUME = "REQUEST_RESUME";
 export const REQUEST_PROFILE = "REQUEST_PROFILE";

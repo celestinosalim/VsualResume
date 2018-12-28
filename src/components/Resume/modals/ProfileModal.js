@@ -27,12 +27,13 @@ class ProfileModal extends React.Component {
   };
 
   saveChangesSubmit = (e, obj) => {
-    // e.preventDefault();
     this.setState({
       modal: !this.state.modal
     });
+    let resumeId = this.props.resume.id;
 
-    this.props.updateResumeProfile(obj);
+    this.props.updateResumeProfile(resumeId, obj);
+    setTimeout(() => window.location.reload(), 42);
   };
 
   render() {
@@ -48,7 +49,7 @@ class ProfileModal extends React.Component {
             />
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={this.toggle}>
+            <Button color="danger" onClick={this.toggle}>
               Close
             </Button>{" "}
           </ModalFooter>
@@ -58,7 +59,14 @@ class ProfileModal extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  let resume = state.resume.resume;
+  return {
+    resume
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   { updateResumeProfile }
 )(ProfileModal);

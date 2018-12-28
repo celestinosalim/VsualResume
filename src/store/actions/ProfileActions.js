@@ -2,7 +2,7 @@ import * as types from "./ActionTypes";
 import { requestResume } from "./ResumeActions";
 
 // Action Creators - FORM
-const setSelectedResume = resume => {
+const setProfile = resume => {
   return {
     type: types.UPDATE_PROFILE,
     resume
@@ -10,41 +10,48 @@ const setSelectedResume = resume => {
 };
 
 // Async Actions
-export const updateResumeProfile = resume => {
+export const updateResumeProfile = (resumeId, profile) => {
+  let {
+    name,
+    age,
+    location,
+    number,
+    profile_picture,
+    headline,
+    about_me,
+    background_image,
+    profile_email
+  } = profile;
+
   return dispatch => {
-    dispatch(requestResume(resume))
-      .then(res => {
-        return fetch(
-          `http://localhost:3001/api/resumes/${res.resume.resume.id}`,
-          {
-            method: "PATCH",
-            headers: {
-              Authorization: `Bearer ${localStorage.token}`,
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              resume: {
-                profile_attributes: {
-                  name: resume.name,
-                  age: resume.age,
-                  location: resume.location,
-                  number: resume.number,
-                  profile_picture: resume.profile_picture,
-                  headline: resume.headline,
-                  about_me: resume.about_me,
-                  background_image: resume.background_image,
-                  profile_email: resume.profile_email
-                }
-              }
-            })
+    return fetch(`http://localhost:3001/api/resumes/${resumeId}`, {
+      method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${localStorage.token}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        resume: {
+          profile_attributes: {
+            name: name,
+            age: age,
+            location: location,
+            number: number,
+            profile_picture: profile_picture,
+            headline: headline,
+            about_me: about_me,
+            background_image: background_image,
+            profile_email: profile_email
           }
-        );
+        }
       })
+    })
       .then(response => response.json())
 
       .then(resume => {
-        dispatch(setSelectedResume(resume));
+        dispatch(setProfile(resume));
       })
+      .then(dispatch(requestResume()))
       .catch(error => console.log(error));
   };
 };

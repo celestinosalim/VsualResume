@@ -9,6 +9,8 @@ import {
 } from "mdbreact";
 
 import ExperienceForm from "../FormSections/ExperienceForm";
+import { connect } from "react-redux";
+import { updateResumeExperience } from "../../../store/actions/ExperienceActions";
 
 class ExperienceModal extends Component {
   state = { modal: false };
@@ -19,6 +21,16 @@ class ExperienceModal extends Component {
     });
   };
 
+  saveExperienceChangesSubmit = (e, obj) => {
+    this.setState({
+      modal: !this.state.modal
+    });
+    let resumeId = this.props.resume.id;
+
+    this.props.updateResumeExperience(resumeId, obj);
+    setTimeout(() => window.location.reload(), 42);
+  };
+
   render() {
     return (
       <Container>
@@ -26,13 +38,14 @@ class ExperienceModal extends Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} size="fluid">
           <ModalHeader toggle={this.toggle}>Edit Experience</ModalHeader>
           <ModalBody>
-            <ExperienceForm />
+            <ExperienceForm
+              saveExperienceChangesSubmit={this.saveExperienceChangesSubmit}
+            />
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={this.toggle}>
+            <Button color="danger" onClick={this.toggle}>
               Close
             </Button>{" "}
-            <Button color="primary">Save changes</Button>
           </ModalFooter>
         </Modal>
       </Container>
@@ -40,4 +53,14 @@ class ExperienceModal extends Component {
   }
 }
 
-export default ExperienceModal;
+const mapStateToProps = state => {
+  let resume = state.resume.resume;
+  return {
+    resume
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { updateResumeExperience }
+)(ExperienceModal);

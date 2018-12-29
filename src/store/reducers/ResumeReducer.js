@@ -13,6 +13,9 @@ export default (state = initialState, action) => {
     case types.UPDATE_EDUCATION:
       return { ...state, ...action.education };
 
+    case types.UPDATE_EXPERIENCE:
+      return { ...state, ...action.experience };
+
     default:
       return state;
   }

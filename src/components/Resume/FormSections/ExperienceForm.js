@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { MDBInput, Container, Row, Col } from "mdbreact";
+import { Container, Row, Col, Button } from "mdbreact";
+import { connect } from "react-redux";
 
 class ExperienceForm extends Component {
   state = {
@@ -15,6 +16,13 @@ class ExperienceForm extends Component {
     ]
   };
 
+  handleDeleteField = (e, idx) => {
+    e.preventDefault();
+    this.setState({
+      experience: this.state.experience.filter((s, _idx) => _idx !== idx)
+    });
+  };
+
   handleClick = e => {
     e.preventDefault();
 
@@ -25,8 +33,8 @@ class ExperienceForm extends Component {
           start_date: "",
           end_date: "",
           location: "",
-          degree: "",
-          university: "",
+          role: "",
+          company: "",
           description: ""
         }
       ]
@@ -61,46 +69,52 @@ class ExperienceForm extends Component {
         <div key={idx}>
           <Row>
             <div className="col-md-4 mb-3">
-              <MDBInput
-                label="Start Date"
+              <label htmlFor="start_date">Start Date</label>
+              <input
+                className="form-control"
                 value={start_date}
                 name="start_date"
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="Date"
                 required
               />
+              <div className="invalid-feedback">Cannot be empty!</div>
               <div className="valid-feedback">Looks good!</div>
             </div>
 
             <div className="col-md-4 mb-3">
-              <MDBInput
-                label="End Date"
+              <label htmlFor="end_date">End Date</label>
+              <input
+                className="form-control"
                 value={end_date}
                 name="end_date"
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="Date"
                 required
               />
-
+              <div className="invalid-feedback">Cannot be empty!</div>
               <div className="valid-feedback">Looks good!</div>
             </div>
 
             <div className="col-md-4 mb-3">
-              <MDBInput
-                label="Enter Institution"
+              <label htmlFor="company">Institution</label>
+              <input
+                className="form-control"
                 value={company}
                 name="company"
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="text"
                 required
               />
+              <div className="invalid-feedback">Cannot be empty!</div>
               <div className="valid-feedback">Looks good!</div>
             </div>
           </Row>
           <Row>
             <div className="col-md-4 mb-3">
-              <MDBInput
-                label="Enter Location"
+              <label htmlFor="location">Location</label>
+              <input
+                className="form-control"
                 value={location}
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="text"
@@ -114,10 +128,10 @@ class ExperienceForm extends Component {
             </div>
 
             <div className="col-md-4 mb-3">
-              <MDBInput
-                type="textarea"
+              <label htmlFor="description">Description</label>
+              <textarea
+                className="form-control"
                 rows="5"
-                label="Description"
                 value={description}
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 name="description"
@@ -129,8 +143,9 @@ class ExperienceForm extends Component {
               <div className="valid-feedback">Looks good!</div>
             </div>
             <div className="col-md-4 mb-3">
-              <MDBInput
-                label="Role"
+              <label htmlFor="role">Role</label>
+              <input
+                className="form-control"
                 value={role}
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="text"
@@ -138,16 +153,29 @@ class ExperienceForm extends Component {
                 required
               />
               <div className="invalid-feedback">
-                Please provide a valid Degree.
+                Please provide a valid Role.
               </div>
               <div className="valid-feedback">Looks good!</div>
             </div>
           </Row>
-          <button className="btn btn-danger">Delete Field</button>
+
           <br />
+          <div>
+            <button
+              onClick={e => this.handleDeleteField(e, idx)}
+              className="btn btn-danger"
+            >
+              Delete Field
+            </button>
+          </div>
         </div>
       );
     });
+  };
+
+  handleSubmit = (e, obj) => {
+    e.preventDefault();
+    this.props.saveExperienceChangesSubmit(e, obj);
   };
 
   render() {
@@ -159,7 +187,7 @@ class ExperienceForm extends Component {
             <hr />
             <form
               className="needs-validation"
-              //   onSubmit={this.submitHandler}
+              onSubmit={e => this.handleSubmit(e, this.state)}
               noValidate
             >
               <div className="col-md-4 mb-3" />
@@ -173,6 +201,9 @@ class ExperienceForm extends Component {
               )}
 
               {this.experienceToAdd()}
+              <Button color="primary" type="submit">
+                Save Changes
+              </Button>
             </form>
           </Col>
         </Row>
@@ -181,4 +212,12 @@ class ExperienceForm extends Component {
   }
 }
 
-export default ExperienceForm;
+const mapStateToProps = state => {
+  let { experiences } = state.resume.resume;
+
+  return {
+    experience: experiences
+  };
+};
+
+export default connect(mapStateToProps)(ExperienceForm);

@@ -1,13 +1,13 @@
 import * as types from "./ActionTypes";
 
-const setEducation = resume => {
+const setExperience = resume => {
   return {
-    type: types.UPDATE_EDUCATION,
+    type: types.UPDATE_EXPERIENCE,
     resume
   };
 };
 
-export const updateResumeEducation = (resumeId, obj) => {
+export const updateResumeExperience = (resumeId, obj) => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/resumes/${resumeId}`, {
       method: "PATCH",
@@ -17,14 +17,14 @@ export const updateResumeEducation = (resumeId, obj) => {
       },
       body: JSON.stringify({
         resume: {
-          educations_attributes: obj.education
+          experiences_attributes: obj.experience
         }
       })
     })
       .then(response => response.json())
 
       .then(resume => {
-        dispatch(setEducation(resume));
+        dispatch(setExperience(resume));
       })
 
       .catch(error => console.log(error));

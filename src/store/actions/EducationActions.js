@@ -1,5 +1,5 @@
 import * as types from "./ActionTypes";
-import { requestResume } from "./ResumeActions";
+// import { requestResume } from "./ResumeActions";
 
 // Action Creators - FORM
 const setEducation = resume => {
@@ -10,26 +10,28 @@ const setEducation = resume => {
 };
 
 // Async Actions
-export const updateResumeEducation = (resumeId, education) => {
+export const updateResumeEducation = (resumeId, obj) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/resumes/${resumeId}`, {
-      method: "PATCH",
-      headers: {
-        Authorization: `Bearer ${localStorage.token}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        resume: {
-          educations_attributes: education.education
-        }
+    return (
+      fetch(`http://localhost:3001/api/resumes/${resumeId}`, {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${localStorage.token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          resume: {
+            educations_attributes: obj.education
+          }
+        })
       })
-    })
-      .then(response => response.json())
+        .then(response => response.json())
 
-      .then(resume => {
-        dispatch(setEducation(resume));
-      })
-      .then(dispatch(requestResume()))
-      .catch(error => console.log(error));
+        .then(resume => {
+          dispatch(setEducation(resume));
+        })
+        //   .then(dispatch(requestResume()))
+        .catch(error => console.log(error))
+    );
   };
 };

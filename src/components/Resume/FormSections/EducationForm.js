@@ -16,6 +16,13 @@ class EducationForm extends Component {
     ]
   };
 
+  handleDeleteField = (e, idx) => {
+    e.preventDefault();
+    this.setState({
+      education: this.state.education.filter((s, _idx) => _idx !== idx)
+    });
+  };
+
   handleClick = e => {
     e.preventDefault();
     this.setState({
@@ -138,8 +145,16 @@ class EducationForm extends Component {
               <div className="valid-feedback">Looks good!</div>
             </div>
           </Row>
-          <button className="btn btn-danger">Delete Field</button>
+
           <br />
+          <div>
+            <button
+              onClick={e => this.handleDeleteField(e, idx)}
+              className="btn btn-danger"
+            >
+              Delete Field
+            </button>
+          </div>
         </div>
       );
     });

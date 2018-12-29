@@ -10,6 +10,9 @@ export default (state = initialState, action) => {
     case types.UPDATE_PROFILE:
       return { ...state, ...action.profile };
 
+    case types.UPDATE_EDUCATION:
+      return { ...state, ...action.education };
+
     default:
       return state;
   }

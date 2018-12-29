@@ -16,6 +16,9 @@ export default (state = initialState, action) => {
     case types.UPDATE_EXPERIENCE:
       return { ...state, ...action.experience };
 
+    case types.UPDATE_PROJECTS:
+      return { ...state, ...action.projects };
+
     default:
       return state;
   }

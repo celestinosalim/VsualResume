@@ -14,25 +14,18 @@ class SkillsForm extends Component {
           <Col md="">
             <h1>Tools & Skills</h1>
             <hr />
-            <form
-              className="needs-validation"
-              //   onSubmit={this.submitHandler}
-              noValidate
-            >
-              <Row>
-                <div className="col-md-4 mb-3">
-                  <ToolsForm />
-                </div>
-                <div className="col-md-4 mb-3">
-                  <InterpersonalsForm />
-                </div>
-                <div className="col-md-4 mb-3">
-                  <OthersForm />
-                </div>
-              </Row>
-
-              <div className="col-md-4 mb-3" />
-            </form>
+            <Row>
+              <div className="col-md-4 mb-3">
+                <ToolsForm />
+              </div>
+              <div className="col-md-4 mb-3">
+                <InterpersonalsForm />
+              </div>
+              <div className="col-md-4 mb-3">
+                <OthersForm />
+              </div>
+            </Row>
+            <div className="col-md-4 mb-3" />
           </Col>
         </Row>
       </Container>

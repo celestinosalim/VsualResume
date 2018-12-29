@@ -9,6 +9,8 @@ import {
 } from "mdbreact";
 
 import ProjectsForm from "../FormSections/ProjectsForm";
+import { connect } from "react-redux";
+import { updateResumeProjects } from "../../../store/actions/ProjectsActions";
 
 class ProjectsModal extends Component {
   state = { modal: false };
@@ -19,6 +21,17 @@ class ProjectsModal extends Component {
     });
   };
 
+  saveProjectsChangesSubmit = (e, obj) => {
+    this.setState({
+      modal: !this.state.modal
+    });
+    let resumeId = this.props.resume.id;
+    console.log(obj);
+    // debugger;
+    this.props.updateResumeProjects(resumeId, obj);
+    setTimeout(() => window.location.reload(), 42);
+  };
+
   render() {
     return (
       <Container>
@@ -26,13 +39,14 @@ class ProjectsModal extends Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} size="fluid">
           <ModalHeader toggle={this.toggle}>Edit Projects</ModalHeader>
           <ModalBody>
-            <ProjectsForm />
+            <ProjectsForm
+              saveProjectsChangesSubmit={this.saveProjectsChangesSubmit}
+            />
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={this.toggle}>
+            <Button color="danger" onClick={this.toggle}>
               Close
             </Button>{" "}
-            <Button color="primary">Save changes</Button>
           </ModalFooter>
         </Modal>
       </Container>
@@ -40,4 +54,14 @@ class ProjectsModal extends Component {
   }
 }
 
-export default ProjectsModal;
+const mapStateToProps = state => {
+  let resume = state.resume.resume;
+  return {
+    resume
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { updateResumeProjects }
+)(ProjectsModal);

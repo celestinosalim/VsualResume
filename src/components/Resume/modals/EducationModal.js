@@ -10,6 +10,7 @@ import {
 
 import EducationForm from "../FormSections/EducationForm";
 import { connect } from "react-redux";
+import { updateResumeEducation } from "../../../store/actions/EducationActions";
 
 class EducationModal extends Component {
   state = { modal: false };
@@ -20,6 +21,16 @@ class EducationModal extends Component {
     });
   };
 
+  saveEducationChangesSubmit = (e, obj) => {
+    this.setState({
+      modal: !this.state.modal
+    });
+    let resumeId = this.props.resume.id;
+
+    this.props.updateResumeEducation(resumeId, obj);
+    setTimeout(() => window.location.reload(), 42);
+  };
+
   render() {
     return (
       <Container>
@@ -27,7 +38,9 @@ class EducationModal extends Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} size="fluid">
           <ModalHeader toggle={this.toggle}>Edit Education</ModalHeader>
           <ModalBody>
-            <EducationForm />
+            <EducationForm
+              saveEducationChangesSubmit={this.saveEducationChangesSubmit}
+            />
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggle}>
@@ -41,4 +54,14 @@ class EducationModal extends Component {
   }
 }
 
-export default connect(null)(EducationModal);
+const mapStateToProps = state => {
+  let resume = state.resume.resume;
+  return {
+    resume
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { updateResumeEducation }
+)(EducationModal);

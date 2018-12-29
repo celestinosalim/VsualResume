@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MDBInput, Container, Row, Col } from "mdbreact";
+import { Container, Row, Col, Button } from "mdbreact";
 import { connect } from "react-redux";
 
 class EducationForm extends Component {
@@ -15,10 +15,6 @@ class EducationForm extends Component {
       }
     ]
   };
-
-  componentDidMount() {
-    this.props.requestEducation();
-  }
 
   handleClick = e => {
     e.preventDefault();
@@ -53,46 +49,52 @@ class EducationForm extends Component {
         <div key={idx}>
           <Row>
             <div className="col-md-4 mb-3">
-              <MDBInput
-                label="Start Date"
+              <label htmlFor="start_date">Start Date</label>
+              <input
+                className="form-control"
                 value={start_date}
                 name="start_date"
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="Date"
                 required
               />
+              <div className="invalid-feedback">Cannot be empty!</div>
               <div className="valid-feedback">Looks good!</div>
             </div>
 
             <div className="col-md-4 mb-3">
-              <MDBInput
-                label="End Date"
+              <label htmlFor="end_date">End Date</label>
+              <input
+                className="form-control"
                 value={end_date}
                 name="end_date"
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="Date"
                 required
               />
-
+              <div className="invalid-feedback">Cannot be empty!</div>
               <div className="valid-feedback">Looks good!</div>
             </div>
 
             <div className="col-md-4 mb-3">
-              <MDBInput
-                label="Enter Institution"
+              <label htmlFor="university">Institution</label>
+              <input
+                className="form-control"
                 value={university}
                 name="university"
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="text"
                 required
               />
+              <div className="invalid-feedback">Cannot be empty!</div>
               <div className="valid-feedback">Looks good!</div>
             </div>
           </Row>
           <Row>
             <div className="col-md-4 mb-3">
-              <MDBInput
-                label="Enter Location"
+              <label htmlFor="location">Location</label>
+              <input
+                className="form-control"
                 value={location}
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="text"
@@ -106,10 +108,10 @@ class EducationForm extends Component {
             </div>
 
             <div className="col-md-4 mb-3">
-              <MDBInput
-                type="textarea"
+              <label htmlFor="description">Description</label>
+              <textarea
+                className="form-control"
                 rows="5"
-                label="Description"
                 value={description}
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 name="description"
@@ -121,8 +123,9 @@ class EducationForm extends Component {
               <div className="valid-feedback">Looks good!</div>
             </div>
             <div className="col-md-4 mb-3">
-              <MDBInput
-                label="Degree"
+              <label htmlFor="degree">Degree</label>
+              <input
+                className="form-control"
                 value={degree}
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="text"
@@ -152,12 +155,12 @@ class EducationForm extends Component {
     this.setState({ education: newEducation });
   };
 
+  handleSubmit = (e, obj) => {
+    e.preventDefault();
+    this.props.saveEducationChangesSubmit(e, obj);
+  };
+
   render() {
-    // console.log(this.state);
-    console.log(this.props);
-
-    // console.log("educcation length", this.state.education.length);
-
     return (
       <Container className="mt-5">
         <Row className="mt-6">
@@ -166,7 +169,7 @@ class EducationForm extends Component {
             <hr />
             <form
               className="needs-validation"
-              //   onSubmit={this.submitHandler}
+              onSubmit={e => this.handleSubmit(e, this.state)}
               noValidate
             >
               <div className="col-md-4 mb-3" />
@@ -180,6 +183,9 @@ class EducationForm extends Component {
               )}
 
               {this.educationToAdd()}
+              <Button color="primary" type="submit">
+                Save Changes
+              </Button>
             </form>
           </Col>
         </Row>
@@ -189,8 +195,10 @@ class EducationForm extends Component {
 }
 
 const mapStateToProps = state => {
+  let { educations } = state.resume.resume;
+
   return {
-    education: state.resume
+    education: educations
   };
 };
 

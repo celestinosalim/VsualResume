@@ -237,8 +237,8 @@ class ProfileForm extends Component {
                 </div>
               </Row>
               <div className="col-md-4 mb-3" />
-              <Button color="success" type="submit">
-                Update
+              <Button color="primary" type="submit">
+                Save Changes
               </Button>
             </form>
           </Col>

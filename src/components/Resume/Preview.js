@@ -5,6 +5,7 @@ import EducationModal from "./modals/EducationModal";
 import ExperienceModal from "./modals/ExperienceModal";
 import SkillsModal from "./modals/SkillsModal";
 import ProjectsModal from "./modals/ProjectsModal";
+import SocialMediaModal from "./modals/SocialMediaModal";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 
@@ -96,6 +97,9 @@ const Preview = () => {
         <div id="contact">
           <h1>Contact Info</h1>
           <p>footer with the information of the user.</p>
+          <div style={{ textAlign: "right", paddingLeft: "400px" }}>
+            <SocialMediaModal />
+          </div>
         </div>
       </div>
       <div

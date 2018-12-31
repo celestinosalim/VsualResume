@@ -1,15 +1,13 @@
 import * as types from "./ActionTypes";
 
-const setSkills = resume => {
+const setSocialMedia = resume => {
   return {
-    type: types.UPDATE_SKILLS,
+    type: types.UPDATE_SOCIALMEDIA,
     resume
   };
 };
 
-export const updateResumeSkills = (resumeId, obj) => {
-  console.log(obj);
-
+export const updateResumeMedia = (resumeId, obj) => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/resumes/${resumeId}`, {
       method: "PATCH",
@@ -19,20 +17,14 @@ export const updateResumeSkills = (resumeId, obj) => {
       },
       body: JSON.stringify({
         resume: {
-          skills_attributes: [
-            {
-              tools_attributes: obj.tools,
-              others_attributes: obj.others,
-              interpersonals_attributes: obj.interpersonals
-            }
-          ]
+          social_medium_attributes: obj.social_medium
         }
       })
     })
       .then(response => response.json())
 
       .then(resume => {
-        dispatch(setSkills(resume));
+        dispatch(setSocialMedia(resume));
       })
 
       .catch(error => console.log(error));

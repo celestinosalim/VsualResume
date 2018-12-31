@@ -18,6 +18,11 @@ export default (state = initialState, action) => {
 
     case types.UPDATE_PROJECTS:
       return { ...state, ...action.projects };
+    case types.UPDATE_SKILLS:
+      return { ...state, ...action.skills };
+
+    case types.UPDATE_SOCIALMEDIA:
+      return { ...state, ...action.social_medium };
 
     default:
       return state;

@@ -35,6 +35,8 @@ class SkillsForm extends Component {
     let resumeId = this.props.resume.id;
 
     this.props.updateResumeSkills(resumeId, this.state);
+    this.props.toggle();
+    setTimeout(() => window.location.reload(), 300);
   };
 
   render() {

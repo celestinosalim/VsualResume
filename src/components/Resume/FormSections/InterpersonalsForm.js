@@ -111,7 +111,7 @@ class InterpersonalsForm extends Component {
           {this.interpersonalsToAdd()}
           <div>
             <Button color="success" type="submit">
-              Update Other Skills
+              Update Interpersonal Skills
             </Button>
           </div>
         </form>

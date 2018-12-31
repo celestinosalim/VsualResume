@@ -26,13 +26,15 @@ class SkillsModal extends Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} size="fluid">
           <ModalHeader toggle={this.toggle}>Edit Skills</ModalHeader>
           <ModalBody>
-            <SkillsForm />
+            <SkillsForm
+              saveSkillsHandleClick={this.saveSkillsHandleClick}
+              toggle={this.toggle}
+            />
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggle}>
               Close
             </Button>{" "}
-            <Button color="primary">Save changes</Button>
           </ModalFooter>
         </Modal>
       </Container>

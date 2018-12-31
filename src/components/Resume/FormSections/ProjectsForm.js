@@ -130,7 +130,10 @@ class ProjectsForm extends Component {
 
   handleSubmit = (e, obj) => {
     e.preventDefault();
-    this.props.saveProjectsChangesSubmit(e, obj);
+    e.target.className += " was-validated";
+    if (e.target.checkValidity() === true) {
+      this.props.saveProjectsChangesSubmit(e, obj);
+    }
   };
 
   render() {

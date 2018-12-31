@@ -105,6 +105,9 @@ class ExperienceForm extends Component {
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="text"
                 required
+                pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                minLength="5"
+                maxLength="35"
               />
               <div className="invalid-feedback">Cannot be empty!</div>
               <div className="valid-feedback">Looks good!</div>
@@ -120,6 +123,9 @@ class ExperienceForm extends Component {
                 type="text"
                 name="location"
                 required
+                pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                minLength="5"
+                maxLength="35"
               />
               <div className="invalid-feedback">
                 Please provide a valid Location.
@@ -136,6 +142,9 @@ class ExperienceForm extends Component {
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 name="description"
                 required
+                pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                minLength="15"
+                maxLength="150"
               />
               <div className="invalid-feedback">
                 Please provide a valid description.
@@ -151,6 +160,9 @@ class ExperienceForm extends Component {
                 type="text"
                 name="role"
                 required
+                pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                minLength="5"
+                maxLength="35"
               />
               <div className="invalid-feedback">
                 Please provide a valid Role.
@@ -175,7 +187,10 @@ class ExperienceForm extends Component {
 
   handleSubmit = (e, obj) => {
     e.preventDefault();
-    this.props.saveExperienceChangesSubmit(e, obj);
+    e.target.className += " was-validated";
+    if (e.target.checkValidity() === true) {
+      this.props.saveExperienceChangesSubmit(e, obj);
+    }
   };
 
   render() {

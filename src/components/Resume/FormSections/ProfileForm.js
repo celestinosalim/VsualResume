@@ -60,29 +60,8 @@ class ProfileForm extends Component {
   handleSubmit = (e, obj) => {
     e.preventDefault();
     e.target.className += " was-validated";
-    let {
-      name,
-      age,
-      location,
-      number,
-      profile_picture,
-      headline,
-      about_me,
-      background_image,
-      profile_email
-    } = e.target;
 
-    if (
-      name.validity.valid &&
-      age.validity.valid &&
-      location.validity.valid &&
-      number.validity.valid &&
-      profile_picture.validity.valid &&
-      headline.validity.valid &&
-      about_me.validity.valid &&
-      background_image.validity.valid &&
-      profile_email.validity.valid
-    ) {
+    if (e.target.checkValidity() === true) {
       this.props.saveChangesSubmit(e, obj);
     }
   };
@@ -111,6 +90,9 @@ class ProfileForm extends Component {
                     className="form-control"
                     type="text"
                     required
+                    pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                    minLength="5"
+                    maxLength="50"
                   />
                   <div className="valid-feedback">Looks good!</div>
                   <div className="invalid-feedback">Cannot be empty!</div>
@@ -125,6 +107,9 @@ class ProfileForm extends Component {
                     onChange={this.changeHandler}
                     type="text"
                     required
+                    pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                    minLength="5"
+                    maxLength="50"
                   />
                   <div className="valid-feedback">Looks good!</div>
                   <div className="invalid-feedback">Cannot be empty!</div>
@@ -135,12 +120,15 @@ class ProfileForm extends Component {
                     className="form-control"
                     value={this.state.number}
                     onChange={this.changeHandler}
-                    type="text"
+                    type="tel"
                     name="number"
                     required
+                    pattern="^\d{3}-\d{3}-\d{4}$"
                   />
                   <div className="valid-feedback">Looks good!</div>
-                  <div className="invalid-feedback">Cannot be empty!</div>
+                  <div className="invalid-feedback">
+                    Cannot be empty, format: 000-000-0000
+                  </div>
                 </div>
               </Row>
               <Row>
@@ -180,12 +168,15 @@ class ProfileForm extends Component {
                     className="form-control"
                     value={this.state.profile_email}
                     onChange={this.changeHandler}
-                    type="text"
+                    type="email"
                     name="profile_email"
                     required
+                    pattern="^\S+@\S+$"
                   />
                   <div className="valid-feedback">Looks good!</div>
-                  <div className="invalid-feedback">Cannot be empty!</div>
+                  <div className="invalid-feedback">
+                    Please enter a valid email! example@gmail.com
+                  </div>
                 </div>
 
                 <div className="col-md-4 mb-3">
@@ -196,6 +187,9 @@ class ProfileForm extends Component {
                     onChange={this.changeHandler}
                     type="text"
                     name="headline"
+                    pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                    minLength="5"
+                    maxLength="50"
                     required
                   />
                   <div className="invalid-feedback">
@@ -213,6 +207,9 @@ class ProfileForm extends Component {
                     onChange={this.changeHandler}
                     name="about_me"
                     required
+                    pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                    minLength="15"
+                    maxLength="300"
                   />
                   <div className="invalid-feedback">
                     Please provide a valid description about yourself.

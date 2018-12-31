@@ -92,8 +92,13 @@ class EducationForm extends Component {
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="text"
                 required
+                pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                minLength="5"
+                maxLength="35"
               />
-              <div className="invalid-feedback">Cannot be empty!</div>
+              <div className="invalid-feedback">
+                Cannot be empty, Insert a valid Institution!!
+              </div>
               <div className="valid-feedback">Looks good!</div>
             </div>
           </Row>
@@ -107,6 +112,9 @@ class EducationForm extends Component {
                 type="text"
                 name="location"
                 required
+                pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                minLength="5"
+                maxLength="35"
               />
               <div className="invalid-feedback">
                 Please provide a valid Location.
@@ -123,9 +131,12 @@ class EducationForm extends Component {
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 name="description"
                 required
+                pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                minLength="15"
+                maxLength="150"
               />
               <div className="invalid-feedback">
-                Please provide a valid description.
+                Please provide a valid description, At least 15 letters.
               </div>
               <div className="valid-feedback">Looks good!</div>
             </div>
@@ -137,6 +148,9 @@ class EducationForm extends Component {
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="text"
                 name="degree"
+                pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                minLength="5"
+                maxLength="35"
                 required
               />
               <div className="invalid-feedback">
@@ -172,7 +186,11 @@ class EducationForm extends Component {
 
   handleSubmit = (e, obj) => {
     e.preventDefault();
-    this.props.saveEducationChangesSubmit(e, obj);
+    e.target.className += " was-validated";
+    // let lol = e.target.className.includes("was-validated");
+    if (e.target.checkValidity() === true) {
+      this.props.saveEducationChangesSubmit(e, obj);
+    }
   };
 
   render() {

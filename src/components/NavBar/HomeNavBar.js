@@ -2,6 +2,8 @@ import React from "react";
 import "./HomeNav.css";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { Link as LinkFor } from "react-router-dom";
+import logo from "../../images/logo.png";
+
 const scrollToTop = () => {
   scroll.scrollToTop();
 };
@@ -13,7 +15,6 @@ const HomeNavBar = () => {
     top: 0,
     width: "100%",
     zIndex: "500",
-    color: "black",
     fontWeight: "bold"
   };
 
@@ -32,11 +33,7 @@ const HomeNavBar = () => {
         offset={-70}
         duration={500}
       >
-        <img
-          className="logoNav"
-          src="https://cdn4.iconfinder.com/data/icons/system-ui-set/512/modern-latin-alphabet-letter-v-512.png"
-          alt=""
-        />
+        <img className="logoNav" src={logo} alt="logo" />
       </Link>
 
       <button
@@ -61,6 +58,7 @@ const HomeNavBar = () => {
               smooth={true}
               offset={-70}
               duration={500}
+              id="howitworks"
             >
               HOW IT WORKS
             </Link>
@@ -74,6 +72,7 @@ const HomeNavBar = () => {
               smooth={true}
               offset={-70}
               duration={500}
+              id="aboutus"
             >
               ABOUT US
             </Link>
@@ -87,6 +86,7 @@ const HomeNavBar = () => {
               smooth={true}
               offset={-70}
               duration={500}
+              id="pricing"
             >
               PRICING
             </Link>
@@ -112,18 +112,6 @@ const HomeNavBar = () => {
             )}
           </li>
         </ul>
-        {/* {this.props.user && (
-          <a href="/profile">
-            <button className="btn btn-info">
-              Logged in as: {this.props.user.token}
-            </button>
-          </a>
-        )} */}
-        {/* {localStorage.getItem("jwt") ? (
-          <a href="/logout">
-            <button className="btn btn-danger">Log Out</button>
-          </a>
-        ) : null} */}
       </div>
     </nav>
   );

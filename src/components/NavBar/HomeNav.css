@@ -9,29 +9,13 @@
 }
 
 .navbar-brand {
-  padding-left: 40px;
+  padding-left: 100px;
   padding-right: 250px;
 }
 
-#login {
-  padding-left: 250px;
-}
-
-#logout {
-  padding-left: 0px;
-}
-
-#profile {
-  padding-left: 250px;
-}
-
-#signup {
-  padding-left: 0px;
-}
-
 .logoNav {
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
 }
 
 #profileResume {
@@ -45,4 +29,90 @@
 .navbar-brand-resume {
   padding-left: 40px;
   padding-right: 250px;
+}
+
+#howitworks {
+  color: #cd5360;
+}
+
+#howitworks:hover {
+  color: #286da8;
+  background-image: url("https://cdn1.iconfinder.com/data/icons/security-interface/30/settings-512.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 15%;
+  border-bottom: 0;
+  padding-bottom: 1em;
+  text-decoration: none;
+}
+
+#aboutus {
+  color: #cd5360;
+}
+
+#aboutus:hover {
+  color: #286da8;
+  background-image: url("https://static.thenounproject.com/png/7223-200.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: 0.7em;
+  text-decoration: none;
+}
+
+#pricing {
+  color: #cd5360;
+}
+
+#pricing:hover {
+  color: #286da8;
+  background-image: url("https://cdn0.iconfinder.com/data/icons/social-messaging-productivity-4/128/dollar-sign-512.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: 0.8em;
+  text-decoration: none;
+}
+
+#login {
+  padding-left: 250px;
+  color: #438496;
+}
+
+#logout {
+  padding-left: 150px;
+  color: #cd5360;
+}
+
+#logout:hover {
+  color: #286da8;
+  background-image: url("https://cdn1.iconfinder.com/data/icons/interface-elements-ii-1/512/Logout-512.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: 0.8em;
+  text-decoration: none;
+}
+
+#profile {
+  color: #cd5360;
+}
+
+#profile:hover {
+  color: #286da8;
+  background-image: url("https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: 0.8em;
+  text-decoration: none;
+}
+
+#signup {
+  padding-left: 0px;
+  color: #438496;
 }

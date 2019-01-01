@@ -1,43 +1,91 @@
 import React from "react";
-
+import { MDBIcon, MDBContainer, MDBRow, MDBCol } from "mdbreact";
 const HowItWorks = () => {
   return (
     <div className="Sections">
       <section className="text-center my-5">
-        <h2 className="h1-responsive font-weight-bold my-5">How It Works?</h2>
+        <MDBIcon className="red-text pr-3" icon="cog" spin size="5x" fixed />
+        <h2
+          className="h1-responsive font-weight-bold my-5"
+          style={{ color: "#438496" }}
+        >
+          How It Works?
+        </h2>
+        <hr />
 
-        <p className="lead grey-text w-responsive mx-auto mb-5">
+        <p
+          className="lead font-weight-bold w-responsive mx-auto mb-5"
+          style={{ color: "#286da8" }}
+        >
           Three Easy Steps
         </p>
 
         <div className="row">
           <div className="col-md-4">
-            <i className="fa fa-area-chart fa-3x red-text" />
-            <h5 className="font-weight-bold my-4">Analytics</h5>
-            <p className="grey-text mb-md-0 mb-5">
+            <MDBIcon
+              icon=" fa-file-text-o"
+              className="red-text pr-3"
+              size="5x"
+              fixed
+            />
+            <h5 className="font-weight-bold my-4" style={{ color: "#438496" }}>
+              1. Fill Up A Form
+            </h5>
+            <p
+              className="font-weight-bold mb-md-0 mb-5"
+              style={{ color: "#286da8" }}
+            >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Reprehenderit maiores aperiam minima assumenda deleniti hic.
             </p>
           </div>
 
           <div className="col-md-4">
-            <i className="fa fa-book fa-3x cyan-text" />
-            <h5 className="font-weight-bold my-4">Tutorials</h5>
-            <p className="grey-text mb-md-0 mb-5">
+            <MDBIcon
+              icon=" fa-hand-pointer-o"
+              className="red-text pr-3"
+              size="5x"
+              fixed
+            />
+            <h5 className="font-weight-bold my-4" style={{ color: "#438496" }}>
+              2. Choose Template
+            </h5>
+            <p
+              className="font-weight-bold mb-md-0 mb-5"
+              style={{ color: "#286da8" }}
+            >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Reprehenderit maiores aperiam minima assumenda deleniti hic.
             </p>
           </div>
 
           <div className="col-md-4">
-            <i className="fa fa-comments-o fa-3x orange-text" />
-            <h5 className="font-weight-bold my-4">Support</h5>
-            <p className="grey-text mb-0">
+            <MDBIcon icon="upload" className="red-text pr-3" size="5x" fixed />
+            <h5 className="font-weight-bold my-4" style={{ color: "#438496" }}>
+              3. Go Live
+            </h5>
+            <p
+              className="font-weight-bold mb-md-0 mb-5"
+              style={{ color: "#286da8" }}
+            >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Reprehenderit maiores aperiam minima assumenda deleniti hic.
             </p>
           </div>
         </div>
+        <div>
+          <hr />
+        </div>
+        <br />
+        <MDBRow>
+          <div className="col-md-4" />
+          <div className="col-md-4" style={{ textAlign: "center" }}>
+            <MDBIcon icon="quote-left" size="3x" pull="left" />
+            <h3>If you can dream it, you can do it....</h3>
+            <MDBIcon icon="quote-right" size="3x" pull="right" />
+            <h3>(Walt Disney)</h3>
+          </div>
+        </MDBRow>
       </section>
     </div>
   );

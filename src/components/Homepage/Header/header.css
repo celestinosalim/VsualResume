@@ -9,23 +9,27 @@
   width: 100%;
   position: relative;
   background-size: cover;
-  min-height: 800px;
+  min-height: 850px;
 }
 
 .Sections {
   width: 100%;
   position: relative;
-  min-height: 800px;
+  min-height: 730px;
   padding-top: 50px;
+}
+
+#pricingsection {
+  min-height: 600px;
 }
 
 .Hero .content {
   position: relative;
   z-index: 4;
   width: 500px;
-  left: 10vw;
-  top: 10vw;
-  color: rgb(241, 237, 237);
+  left: 5vw;
+  top: 7vw;
+  color: #faf1f2;
 }
 .Hero .content .logo {
   max-width: 250px;
@@ -48,14 +52,14 @@
   margin-right: 10px;
 }
 .Hero .overlay {
-  /* FF3.6-15 */
+  /* FF3.6-15
   background: -webkit-linear-gradient(
     top,
     #221f1f 0%,
     rgba(34, 31, 31, 0) 100%
-  );
+  ); */
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #221f1f 0%, rgba(34, 31, 31, 0) 100%);
+  /* background: linear-gradient(to bottom, #221f1f 0%, rgba(34, 31, 31, 0) 100%); */
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
   /* IE6-9 */

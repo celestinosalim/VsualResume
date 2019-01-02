@@ -2,109 +2,40 @@
 //------------------------------------------------------------------------------------------
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-// MODALS
-//------------------------------------------------------------------------------------------
-
-import ProfileModal from "./modals/ProfileModal";
-import EducationModal from "./modals/EducationModal";
-import ExperienceModal from "./modals/ExperienceModal";
-import SkillsModal from "./modals/SkillsModal";
-import ProjectsModal from "./modals/ProjectsModal";
 import SocialMediaModal from "./modals/SocialMediaModal";
 
 // TEMPLATE
 //------------------------------------------------------------------------------------------
+
+import Header from "./PreviewSections/Header";
 import Footer from "../Footer/Footer";
+import ProfileSection from "./PreviewSections/ProfileSection";
+import EducationSection from "./PreviewSections/EducationSection";
+import ExperienceSection from "./PreviewSections/ExperienceSection";
+import SkillSection from "./PreviewSections/SkillSection";
+import ProjectSection from "./PreviewSections/ProjectSection";
+
 // STYLE
 //------------------------------------------------------------------------------------------
 import "../../style/preview.css";
 
-const Preview = () => {
+const Preview = props => {
   return (
-    <div className="page">
+    <div className="page" style={{ paddingRight: "2em", paddingLeft: "2em" }}>
+      {props.resume && <Header resume={props.resume} />}
       <div id="Display">
-        <div id="Profile">
-          <h1>Profile</h1>
+        {props.resume && <ProfileSection resume={props.resume} />}
 
-          <hr />
-          <div className="row">
-            <div className="col-md-4">
-              <h1>About Me:</h1>
-              <p>blabla</p>
-            </div>
-            <div className="col-md-4 text-center">
-              <img
-                id="image"
-                src="https://avatars1.githubusercontent.com/u/36177119?s=460&v=4"
-                alt="Celestino Salim"
-                width="246"
-                height="246"
-              />
-            </div>
-            <div className="col-md-4">
-              <h1>Details:</h1>
-              <p>Name:</p>
-              <p>Age:</p>
-              <p>Location:</p>
-            </div>
-          </div>
-          <div style={{ textAlign: "right", paddingLeft: "380px" }}>
-            <ProfileModal />
-          </div>
-        </div>
-        <div id="Experience">
-          <div>
-            <h1>Education:</h1>
-            <hr />
-          </div>
-          <div className="row">
-            <div className="col-md-4">
-              <p>here is gonna be the dates</p>
-            </div>
+        {props.resume && <EducationSection resume={props.resume} />}
 
-            <div className="col-md-8">Hello</div>
-          </div>
-          <div style={{ textAlign: "right", paddingLeft: "400px" }}>
-            <EducationModal />
-          </div>
-          <div>
-            <h1>Experiences:</h1>
-            <hr />
-          </div>
-          <div className="row">
-            <div className="col-md-4">
-              <p>here is gonna be the dates</p>
-            </div>
+        {props.resume && <ExperienceSection resume={props.resume} />}
 
-            <div className="col-md-8">hello</div>
-          </div>
-          <div style={{ textAlign: "right", paddingLeft: "400px" }}>
-            <ExperienceModal />
-          </div>
-        </div>
+        {props.resume && <SkillSection resume={props.resume} />}
 
-        <div id="abilities">
-          <h1>Skills</h1>
-          <h2>Programming Languages and any other skill</h2>
-          <h2>Javascript</h2>
-          <h2>React</h2>
-          <h2>Ruby</h2>
-          <h2>Programming Languages List</h2>
-          <div style={{ textAlign: "right", paddingLeft: "400px" }}>
-            <SkillsModal />
-          </div>
-        </div>
+        {props.resume && <ProjectSection resume={props.resume} />}
 
-        <div id="projects">
-          <h1>Projects</h1>
-          <p>
-            image with hover with a link to the working website of the project
-          </p>
-          <div style={{ textAlign: "right", paddingLeft: "400px" }}>
-            <ProjectsModal />
-          </div>
-        </div>
         <div id="contact">
           <h1>Contact Info</h1>
           <p>footer with the information of the user.</p>
@@ -138,4 +69,8 @@ const Preview = () => {
   );
 };
 
-export default Preview;
+const mapStateToProps = state => {
+  return { resume: state.resume.resume };
+};
+
+export default connect(mapStateToProps)(Preview);

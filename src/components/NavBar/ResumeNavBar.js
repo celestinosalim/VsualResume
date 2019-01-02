@@ -1,8 +1,9 @@
 import React from "react";
 import "./HomeNav.css";
 import { Link } from "react-router-dom";
+import logo from "../../images/logo.png";
 
-const ProfileNavBar = () => {
+const ResumeNavBar = () => {
   const navStyle = {
     backgroundColor: "#FFF",
     position: "fixed",
@@ -19,11 +20,7 @@ const ProfileNavBar = () => {
       style={navStyle}
     >
       <a className="navbar-brand-resume" href="/">
-        <img
-          className="logoNav"
-          src="https://cdn4.iconfinder.com/data/icons/system-ui-set/512/modern-latin-alphabet-letter-v-512.png"
-          alt=""
-        />
+        <img className="logoNav" src={logo} alt="logo" />
       </a>
       <button
         className="navbar-toggler"
@@ -58,7 +55,7 @@ const ProfileNavBar = () => {
           <li className="nav-item">
             {localStorage.getItem("token") &&
             localStorage.getItem("token") !== "undefined" ? (
-              <Link className="nav-link" id="howitworks" to="/profile">
+              <Link className="nav-link" id="profile" to="/profile">
                 PROFILE
               </Link>
             ) : null}
@@ -85,4 +82,4 @@ const ProfileNavBar = () => {
   );
 };
 
-export default ProfileNavBar;
+export default ResumeNavBar;

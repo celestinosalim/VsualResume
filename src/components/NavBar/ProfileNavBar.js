@@ -1,6 +1,7 @@
 import React from "react";
 import "./HomeNav.css";
 import { Link } from "react-router-dom";
+import logo from "../../images/logo.png";
 
 const ProfileNavBar = () => {
   const navStyle = {
@@ -19,11 +20,7 @@ const ProfileNavBar = () => {
       style={navStyle}
     >
       <a className="navbar-brand" href="/">
-        <img
-          className="logoNav"
-          src="https://cdn4.iconfinder.com/data/icons/system-ui-set/512/modern-latin-alphabet-letter-v-512.png"
-          alt=""
-        />
+        <img className="logoNav" src={logo} alt="logo" />
       </a>
 
       <button

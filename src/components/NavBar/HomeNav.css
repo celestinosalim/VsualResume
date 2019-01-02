@@ -18,14 +18,6 @@
   width: 70px;
 }
 
-#profileResume {
-  padding-left: 100px;
-}
-
-#resumeHome {
-  padding-left: 100px;
-}
-
 .navbar-brand-resume {
   padding-left: 40px;
   padding-right: 250px;
@@ -46,18 +38,48 @@
   text-decoration: none;
 }
 
+#home {
+  color: #cd5360;
+}
+
+#home:hover {
+  color: #286da8;
+  background-image: url("https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/red_repicthousebase_1484336386-1.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 15%;
+  border-bottom: 0;
+  padding-bottom: 1em;
+  text-decoration: none;
+}
+
 #aboutus {
   color: #cd5360;
 }
 
 #aboutus:hover {
   color: #286da8;
-  background-image: url("https://static.thenounproject.com/png/7223-200.png");
+  background-image: url("https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/red_repicthousebase_1484336386-1.png");
   background-position: bottom;
   background-repeat: repeat-x;
   background-size: 20%;
   border-bottom: 0;
   padding-bottom: 0.7em;
+  text-decoration: none;
+}
+
+#contactus {
+  color: #cd5360;
+}
+
+#contactus:hover {
+  color: #286da8;
+  background-image: url("https://static.thenounproject.com/png/7223-200.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: 0.9em;
   text-decoration: none;
 }
 
@@ -73,6 +95,36 @@
   background-size: 20%;
   border-bottom: 0;
   padding-bottom: 0.8em;
+  text-decoration: none;
+}
+
+#myVSR {
+  color: #cd5360;
+}
+
+#myVSR:hover {
+  color: #286da8;
+  background-image: url("https://cdn4.iconfinder.com/data/icons/111-seo-services-pack/128/new_seo2-07-512.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: 0.8em;
+  text-decoration: none;
+}
+
+#resumereview {
+  color: #cd5360;
+}
+
+#resumereview:hover {
+  color: #286da8;
+  background-image: url("https://cdn4.iconfinder.com/data/icons/111-seo-services-pack/128/new_seo2-07-512.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: 1.2em;
   text-decoration: none;
 }
 

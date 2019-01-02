@@ -1,11 +1,15 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { CardImage } from "mdbreact";
 
 const RightColumn = props => {
   return (
     <Fragment>
       <div>
-        <div className="card testimonial-card">
+        <div
+          className="card testimonial-card"
+          style={{ backgroundColor: "#fff" }}
+        >
           <div className="card-up indigo lighten-1" />
 
           <div className="card-body">
@@ -13,25 +17,27 @@ const RightColumn = props => {
             <hr />
 
             <p>Change Password:</p>
+            <input />
             <p>Change Profile Picture:</p>
+            <input />
             <p>Change Email:</p>
+            <input />
           </div>
 
-          <div
-            className="card card-image"
-            style={{
-              backgroundImage:
-                "url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)"
-            }}
-          >
-            <div className="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div>
+          <div>
+            <div className="text-white text-center d-flex align-items-center  py-5 px-4">
+              <div className="text-center align-items-center py-5 px-4">
+                <CardImage
+                  className="img-fluid"
+                  src="https://appleoneblogdotcom.files.wordpress.com/2017/02/shutterstock_217401814.jpg"
+                  waves
+                />
                 <h3 className="card-title pt-2">
-                  <strong>My Resume</strong>
+                  <strong style={{ color: "#CD5360" }}>My Visual Resume</strong>
                 </h3>
 
-                <Link className="btn btn-orange" to="/resume/review">
-                  My Resume
+                <Link className="btn btn-outline-info" to="/resume/review">
+                  MY VSR
                 </Link>
               </div>
             </div>

@@ -41,22 +41,15 @@ const ProfileNavBar = () => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/" id="home">
               HOME
             </Link>
           </li>
-          {/* <li className="nav-item">
-           {localStorage.getItem("token") &&
-            localStorage.getItem("token") !== "undefined" ? (
-              <Link to="/resume" className="nav-link">
-                MY RESUME
-              </Link>
-            ) : null}
-          </li> */}
+
           <li className="nav-item">
             {localStorage.getItem("token") &&
             localStorage.getItem("token") !== "undefined" ? (
-              <a className="nav-link" id="" href="/contact">
+              <a className="nav-link" id="contactus" href="/contact">
                 CONTACT US
               </a>
             ) : null}
@@ -64,8 +57,8 @@ const ProfileNavBar = () => {
           <li className="nav-item">
             {localStorage.getItem("token") &&
             localStorage.getItem("token") !== "undefined" ? (
-              <a className="nav-link" id="" href="/something">
-                ANOTHER LINK THAT I NEED TO FIGURE OUT
+              <a className="nav-link" id="myVSR" href="/resume/review">
+                MY VSR
               </a>
             ) : null}
           </li>

@@ -1,123 +1,99 @@
 import React from "react";
+import {
+  Animation,
+  MDBRow,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBIcon,
+  MDBBtn
+} from "mdbreact";
+
+import team from "../../../images/alex.JPG";
 
 const AboutUs = () => {
   return (
     <div className="Sections">
-      <section className="my-5">
-        <h2 className="h1-responsive font-weight-bold text-center my-5">
-          About Us
-        </h2>
+      <MDBCard
+        className="my-5 px-1 pb-5 text-center"
+        style={{ backgroundColor: "#fff" }}
+      >
+        <Animation type="flipInY" infinite>
+          <MDBIcon
+            className="red-text pr-3"
+            icon=" fa-user-secret"
+            size="5x"
+            fixed
+          />
+        </Animation>
+        <MDBCardBody>
+          <h2 className="h1-responsive font-weight-bold my-5">
+            Why VsualResume?
+          </h2>
+          <p className="grey-text w-responsive mx-auto mb-5">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
+            error amet numquam iure provident voluptate esse quasi, veritatis
+            totam voluptas nostrum quisquam eum porro a pariatur veniam.
+          </p>
+          <MDBRow>
+            <MDBCol md="4" className="mb-md-0 mb-5">
+              <h4 className="font-weight-bold dark-grey-text my-4">
+                lrem ipsum
+              </h4>
+              <h6 className="text-uppercase grey-text mb-3">Photographer</h6>
+            </MDBCol>
 
-        <p className="lead grey-text text-center w-responsive mx-auto mb-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
-        </p>
+            <MDBCol md="4" className="mb-md-0 mb-5">
+              <img
+                tag="img"
+                src={team}
+                className="rounded z-depth-1-half img-fluid"
+                alt="Sample avatar"
+              />
+              <h4 className="font-weight-bold dark-grey-text my-4">
+                Celestino Salim
+              </h4>
+              <h6 className="text-uppercase grey-text mb-3">
+                Full Stack Developer
+              </h6>
+              <MDBBtn
+                tag="a"
+                floating
+                size="2x"
+                className="mx-1 mb-0 btn-email"
+                href={`mailto:celestino.salim@gmail.com`}
+              >
+                <MDBIcon icon="envelope" size="2x" />
+              </MDBBtn>
+              <MDBBtn
+                tag="a"
+                floating
+                size="2x"
+                className="mx-1 mb-0 btn-fb"
+                href="https://www.facebook.com/celestino.salim"
+              >
+                <MDBIcon icon="facebook" size="2x" />
+              </MDBBtn>
+              <MDBBtn
+                tag="a"
+                floating
+                size="2x"
+                className="mx-1 mb-0 btn-git"
+                href="https://github.com/celestinosalim"
+              >
+                <MDBIcon icon="github" size="2x" />
+              </MDBBtn>
+            </MDBCol>
 
-        <div className="row">
-          <div className="col-md-4">
-            <div className="row mb-3">
-              <div className="col-2">
-                <i className="fa fa-2x fa-flag-checkered deep-purple-text" />
-              </div>
-
-              <div className="col-10">
-                <h5 className="font-weight-bold mb-3">International</h5>
-                <p className="grey-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Reprehenderit maiores nam, aperiam minima assumenda deleniti
-                  hic.
-                </p>
-              </div>
-            </div>
-
-            <div className="row mb-3">
-              <div className="col-2">
-                <i className="fa fa-2x fa-flask deep-purple-text" />
-              </div>
-
-              <div className="col-10">
-                <h5 className="font-weight-bold mb-3">Experimental</h5>
-                <p className="grey-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Reprehenderit maiores nam, aperiam minima assumenda deleniti
-                  hic.
-                </p>
-              </div>
-            </div>
-
-            <div className="row mb-md-0 mb-3">
-              <div className="col-2">
-                <i className="fa fa-2x fa-glass deep-purple-text" />
-              </div>
-
-              <div className="col-10">
-                <h5 className="font-weight-bold mb-3">Relaxing</h5>
-                <p className="grey-text mb-md-0">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Reprehenderit maiores nam, aperiam minima assumenda deleniti
-                  hic.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-4 text-center">
-            <img
-              className="img-fluid"
-              src="https://mdbootstrap.com/img/Mockups/Transparent/Small/iphone-portfolio1.png"
-              alt="Sample2"
-            />
-          </div>
-
-          <div className="col-md-4">
-            <div className="row mb-3">
-              <div className="col-2">
-                <i className="fa fa-2x fa-heart deep-purple-text" />
-              </div>
-
-              <div className="col-10">
-                <h5 className="font-weight-bold mb-3">Beloved</h5>
-                <p className="grey-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Reprehenderit maiores nam, aperiam minima assumenda deleniti
-                  hic.
-                </p>
-              </div>
-            </div>
-
-            <div className="row mb-3">
-              <div className="col-2">
-                <i className="fa fa-2x fa-flash deep-purple-text" />
-              </div>
-
-              <div className="col-10">
-                <h5 className="font-weight-bold mb-3">Rapid</h5>
-                <p className="grey-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Reprehenderit maiores nam, aperiam minima assumenda deleniti
-                  hic.
-                </p>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col-2">
-                <i className="fa fa-2x fa-magic deep-purple-text" />
-              </div>
-
-              <div className="col-10">
-                <h5 className="font-weight-bold mb-3">Magical</h5>
-                <p className="grey-text mb-0">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Reprehenderit maiores nam, aperiam minima assumenda deleniti
-                  hic.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            <MDBCol md="4" className="mb-md-0 mb-5">
+              <h4 className="font-weight-bold dark-grey-text my-4">
+                lrem ipsum
+              </h4>
+              <h6 className="text-uppercase grey-text mb-3">Photographer</h6>
+            </MDBCol>
+          </MDBRow>
+        </MDBCardBody>
+      </MDBCard>
     </div>
   );
 };

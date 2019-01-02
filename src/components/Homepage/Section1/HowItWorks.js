@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBIcon, MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { MDBIcon, MDBRow } from "mdbreact";
 const HowItWorks = () => {
   return (
     <div className="Sections">

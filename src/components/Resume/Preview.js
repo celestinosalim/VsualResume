@@ -1,13 +1,24 @@
+// REACT
+//------------------------------------------------------------------------------------------
 import React from "react";
-import "../../style/preview.css";
+import { Link } from "react-router-dom";
+
+// MODALS
+//------------------------------------------------------------------------------------------
+
 import ProfileModal from "./modals/ProfileModal";
 import EducationModal from "./modals/EducationModal";
 import ExperienceModal from "./modals/ExperienceModal";
 import SkillsModal from "./modals/SkillsModal";
 import ProjectsModal from "./modals/ProjectsModal";
 import SocialMediaModal from "./modals/SocialMediaModal";
+
+// TEMPLATE
+//------------------------------------------------------------------------------------------
 import Footer from "../Footer/Footer";
-import { Link } from "react-router-dom";
+// STYLE
+//------------------------------------------------------------------------------------------
+import "../../style/preview.css";
 
 const Preview = () => {
   return (

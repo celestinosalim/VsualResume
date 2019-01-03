@@ -8,7 +8,8 @@ import "./Login.css";
 class Login extends Component {
   state = {
     password: "",
-    avatar: "",
+    avatar:
+      "https://avatoon.net/wp-content/uploads/2018/06/avatar_portfolio_01.png",
     username: "",
     signup_username: "",
     signup_password: "",

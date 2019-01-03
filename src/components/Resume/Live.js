@@ -21,6 +21,7 @@ import "../../style/preview.css";
 const Live = props => {
   return (
     <div>
+      {window.scrollTo(0, 50)}
       {props.resume && <Header resume={props.resume} />}
       <div id="Display">
         <section id="profilelive">

@@ -62,12 +62,12 @@ class SocialMediaForm extends Component {
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="text"
                 required
-                pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                // pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
                 minLength="5"
                 maxLength="100"
               />
               <div className="invalid-feedback">
-                Cannot be empty! You must Have at least one Tool.
+                Cannot be empty! You must Have at least one Social Media.
               </div>
               <div className="valid-feedback">Looks good!</div>
             </Container>

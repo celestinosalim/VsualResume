@@ -1,6 +1,7 @@
 import React from "react";
 import ProfileModal from "../modals/ProfileModal";
 import { MDBCard, MDBCardBody } from "mdbreact";
+import { withRouter } from "react-router-dom";
 
 const ProfileSection = props => {
   let { profile } = props.resume;
@@ -74,11 +75,13 @@ const ProfileSection = props => {
         </div>
       </div>
       <hr />
-      <div style={{ textAlign: "right", paddingLeft: "380px" }}>
-        <ProfileModal />
-      </div>
+      {props.location.pathname !== "/live" && (
+        <div style={{ textAlign: "right", paddingLeft: "380px" }}>
+          <ProfileModal />
+        </div>
+      )}
     </div>
   );
 };
 
-export default ProfileSection;
+export default withRouter(ProfileSection);

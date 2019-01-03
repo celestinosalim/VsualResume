@@ -44,7 +44,7 @@ class ProjectsForm extends Component {
       }
       return { ...projects, [e.target.name]: e.target.value };
     });
-    this.setState({ experience: newProjects });
+    this.setState({ projects: newProjects });
   };
 
   projectsToAdd = () => {

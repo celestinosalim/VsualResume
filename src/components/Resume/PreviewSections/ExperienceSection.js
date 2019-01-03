@@ -1,6 +1,7 @@
 import React from "react";
 import ExperienceModal from "../modals/ExperienceModal";
 import { MDBCard, MDBCardBody, MDBIcon } from "mdbreact";
+import { withRouter } from "react-router-dom";
 
 const ExperienceSection = props => {
   let { experiences } = props.resume;
@@ -60,12 +61,13 @@ const ExperienceSection = props => {
           </div>
         </div>
       ))}
-
-      <div style={{ textAlign: "right", paddingLeft: "380px" }}>
-        <ExperienceModal />
-      </div>
+      {props.location.pathname !== "/live" && (
+        <div style={{ textAlign: "right", paddingLeft: "380px" }}>
+          <ExperienceModal />
+        </div>
+      )}
     </div>
   );
 };
 
-export default ExperienceSection;
+export default withRouter(ExperienceSection);

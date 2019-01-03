@@ -6,9 +6,10 @@
 }
 
 .previewHeaderImage {
-  min-height: 800px;
+  min-height: 1000px;
   position: relative;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .previewHeaderImage .overlay {

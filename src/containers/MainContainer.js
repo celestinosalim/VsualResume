@@ -22,7 +22,7 @@ class MainContainer extends Component {
 
   render() {
     return (
-      <MDBContainer fluid>
+      <div>
         <Route
           render={({ location }) => (
             <TransitionGroup>
@@ -43,7 +43,7 @@ class MainContainer extends Component {
             </TransitionGroup>
           )}
         />
-      </MDBContainer>
+      </div>
     );
   }
 }

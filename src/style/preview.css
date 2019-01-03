@@ -1,33 +1,49 @@
+.SideHove {
+  opacity: 0.1;
+}
+
+.SideHove1 {
+  opacity: 1;
+}
+
+.SideHove:hover {
+  opacity: 1;
+}
+
+.SideHove1:hover {
+  opacity: 1;
+}
+
 #Profile {
   padding-top: 5rem;
   text-align: center;
   color: #cd5360;
   background-color: white;
   min-height: 800px;
+  padding-right: 20px;
 }
 
 #Education {
-  padding-top: 5rem;
   text-align: center;
   color: #cd5360;
   background-color: white;
-  min-height: 800px;
+  min-height: 600px;
+  padding-right: 20px;
 }
 
 #Experience {
-  padding-top: 5rem;
   text-align: center;
   color: #cd5360;
   background-color: white;
-  min-height: 800px;
+  min-height: 600px;
+  padding-right: 20px;
 }
 
 #Skills {
-  padding-top: 5rem;
   text-align: center;
   color: #cd5360;
   background-color: white;
-  min-height: 800px;
+  min-height: 600px;
 }
 
 #projects {
@@ -35,33 +51,23 @@
   text-align: center;
   color: #cd5360;
   background-color: white;
-  min-height: 800px;
-}
-
-#languages {
-  text-align: center;
-  color: black;
-  background-color: rgb(77, 97, 153);
-}
-
-#tools {
-  text-align: center;
-  color: black;
-  background-color: rgb(245, 146, 129);
-}
-
-#Display {
-  background-color: #282c34;
-  min-height: 100vh;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 600px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 #contact {
-  /* min-height: 100vh; */
+  padding-top: 5rem;
   text-align: center;
-  color: black;
-  background-color: rgb(248, 198, 227);
+  color: white;
+  background-color: #cd5360;
+  min-height: 600px;
+}
+
+#Display {
+  background-color: white;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 input[type="date"]:required:invalid::-webkit-datetime-edit {

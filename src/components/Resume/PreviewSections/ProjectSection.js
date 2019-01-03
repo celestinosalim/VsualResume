@@ -1,6 +1,7 @@
 import React from "react";
 import ProjectsModal from "../modals/ProjectsModal";
-import { MDBRow, MDBCol, MDBView, MDBMask, MDBIcon } from "mdbreact";
+import { MDBRow, MDBView, MDBMask, MDBIcon } from "mdbreact";
+import { withRouter } from "react-router-dom";
 
 const ProjectSection = props => {
   let { projects } = props.resume;
@@ -19,9 +20,9 @@ const ProjectSection = props => {
       </h1>
       <hr />
 
-      {projects.map((project, idx) => (
-        <MDBRow key={idx} style={{ paddingBottom: "10px" }}>
-          <MDBCol md="4">
+      <MDBRow>
+        {projects.map((project, idx) => (
+          <div key={idx} style={{ paddingBottom: "10px" }} className="col-lg-4">
             <MDBView hover>
               <img
                 src={project.image}
@@ -34,7 +35,8 @@ const ProjectSection = props => {
                 <p
                   style={{
                     paddingTop: "5px",
-                    paddingLeft: "15px",
+                    paddingLeft: "0px",
+                    paddingRight: "0px",
                     textAlign: "left",
                     fontSize: "50px",
                     fontWeight: "bolder",
@@ -58,14 +60,16 @@ const ProjectSection = props => {
                 </div>
               </MDBMask>
             </MDBView>
-          </MDBCol>
-        </MDBRow>
-      ))}
-      <div style={{ textAlign: "right", paddingLeft: "380px" }}>
-        <ProjectsModal />
-      </div>
+          </div>
+        ))}
+      </MDBRow>
+      {props.location.pathname !== "/live" && (
+        <div style={{ textAlign: "right", paddingLeft: "380px" }}>
+          <ProjectsModal />
+        </div>
+      )}
     </div>
   );
 };
 
-export default ProjectSection;
+export default withRouter(ProjectSection);

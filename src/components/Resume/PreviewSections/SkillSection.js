@@ -1,6 +1,7 @@
 import React from "react";
 import SkillsModal from "../modals/SkillsModal";
 import { MDBContainer, MDBCol, MDBRow } from "mdbreact";
+import { withRouter } from "react-router-dom";
 
 const SkillSection = props => {
   let { tools } = props.resume;
@@ -84,12 +85,13 @@ const SkillSection = props => {
           ))}
         </MDBRow>
       </MDBContainer>
-
-      <div style={{ textAlign: "right", paddingLeft: "380px" }}>
-        <SkillsModal />
-      </div>
+      {props.location.pathname !== "/live" && (
+        <div style={{ textAlign: "right", paddingLeft: "380px" }}>
+          <SkillsModal />
+        </div>
+      )}
     </div>
   );
 };
 
-export default SkillSection;
+export default withRouter(SkillSection);

@@ -1,6 +1,7 @@
 import React from "react";
 import EducationModal from "../modals/EducationModal";
 import { MDBCard, MDBCardBody, MDBIcon } from "mdbreact";
+import { withRouter } from "react-router-dom";
 
 const EducationSection = props => {
   let { educations } = props.resume;
@@ -60,12 +61,13 @@ const EducationSection = props => {
           </div>
         </div>
       ))}
-
-      <div style={{ textAlign: "right", paddingLeft: "380px" }}>
-        <EducationModal />
-      </div>
+      {props.location.pathname !== "/live" && (
+        <div style={{ textAlign: "right", paddingLeft: "380px" }}>
+          <EducationModal />
+        </div>
+      )}
     </div>
   );
 };
 
-export default EducationSection;
+export default withRouter(EducationSection);

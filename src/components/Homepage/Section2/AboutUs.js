@@ -34,7 +34,15 @@ const AboutUs = () => {
             done.
           </p>
           <MDBRow>
-            <MDBCol md="4" className="mb-md-0 mb-5" />
+            <MDBCol md="4" className="mb-md-0 mb-5">
+              <h6
+                className="text-uppercase grey-text mb-3"
+                style={{ paddingTop: "300px" }}
+              >
+                Easy content management system that gives you the tools to
+                create in 3 easy steps your own interactive resume.
+              </h6>
+            </MDBCol>
 
             <MDBCol md="4" className="mb-md-0 mb-5">
               <img
@@ -84,12 +92,11 @@ const AboutUs = () => {
                 style={{ paddingTop: "300px" }}
               >
                 Hi, My name is Celestino, I decided to create Visual Resume
-                before graduating from Flatiron School, i was struggling with
-                creating my personal website because it was so hard to choose a
-                template, and if i get bored of it another whole story. thats
-                why i create VSR, is an easy content managment system that gives
-                you the tools to create in 3 easy steps your own interactive
-                resume.
+                before graduating from Flatiron School. I was struggling with
+                creating my personal portfolio i wanted it to be perfect, but it
+                was so hard to decide on what to go for. Thats why i created
+                VSR, now i have access to unlimited templates by just filling a
+                form.
               </h6>
             </MDBCol>
           </MDBRow>

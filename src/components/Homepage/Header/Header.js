@@ -34,10 +34,9 @@ const Header = () => {
             </h1>
             <hr />
             <h2 style={{ fontWeight: "bolder" }}>
-              With VsualResume, you can design beautiful interactive resume
-              pages in just a few minutes. Create an amazing portfolio website,
-              that makes it easy for people to contact you, or see your
-              projects.
+              With VisualResume, you can create beautiful interactive resume
+              pages in just a few minutes. An amazing portfolio website, that
+              makes it easy for people to contact you, or see your projects.
             </h2>
           </div>
         </div>

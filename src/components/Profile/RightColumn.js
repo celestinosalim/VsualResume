@@ -11,19 +11,6 @@ const RightColumn = props => {
           style={{ backgroundColor: "#fff" }}
         >
           <div className="card-up indigo lighten-1" />
-
-          <div className="card-body">
-            <h4 className="card-title">SETTINGS</h4>
-            <hr />
-
-            <p>Change Password:</p>
-            <input />
-            <p>Change Profile Picture:</p>
-            <input />
-            <p>Change Email:</p>
-            <input />
-          </div>
-
           <div>
             <div className="text-white text-center d-flex align-items-center  py-5 px-4">
               <div className="text-center align-items-center py-5 px-4">

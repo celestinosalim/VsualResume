@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import StickyFooter from "react-sticky-footer";
+import { MDBBtn, MDBIcon } from "mdbreact";
 
 class Footer extends Component {
   state = {};
@@ -19,13 +20,38 @@ class Footer extends Component {
         }}
       >
         <div>
-          <i className="big facebook icon" />
-          <i className="big instagram icon" />
-          <i className="big twitter icon" />
-        </div>
+          <MDBBtn
+            tag="a"
+            floating
+            size="2x"
+            className="mx-1 mb-0 btn-git"
+            href="https://www.facebook.com/celestino.salim"
+          >
+            <MDBIcon icon="facebook" size="2x" />
+          </MDBBtn>
+          <MDBBtn
+            tag="a"
+            floating
+            size="2x"
+            className="mx-1 mb-0 btn-git"
+            href="https://instagram.com/alexsalim1"
+          >
+            <MDBIcon icon="instagram" size="2x" />
+          </MDBBtn>
 
+          <MDBBtn
+            tag="a"
+            floating
+            size="2x"
+            className="mx-1 mb-0 btn-git"
+            href="https://github.com/celestinosalim"
+          >
+            <MDBIcon icon="github" size="2x" />
+          </MDBBtn>
+        </div>
+        <hr />
         <div>
-          <h3>© 2018 Vsual Resume by: Celestino Salim</h3>
+          <h3>© 2019 Vsual Resume by: Celestino Salim</h3>
         </div>
       </StickyFooter>
     );

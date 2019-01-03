@@ -35,8 +35,7 @@ const HowItWorks = () => {
               className="font-weight-bold mb-md-0 mb-5"
               style={{ color: "#286da8" }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Reprehenderit maiores aperiam minima assumenda deleniti hic.
+              Input all the information that you want to show on your resume.
             </p>
           </div>
 
@@ -54,8 +53,7 @@ const HowItWorks = () => {
               className="font-weight-bold mb-md-0 mb-5"
               style={{ color: "#286da8" }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Reprehenderit maiores aperiam minima assumenda deleniti hic.
+              Pick a template that suits you.
             </p>
           </div>
 
@@ -68,8 +66,7 @@ const HowItWorks = () => {
               className="font-weight-bold mb-md-0 mb-5"
               style={{ color: "#286da8" }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Reprehenderit maiores aperiam minima assumenda deleniti hic.
+              Enjoy your personal Interactive Resume.
             </p>
           </div>
         </div>

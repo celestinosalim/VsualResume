@@ -64,6 +64,10 @@
   min-height: 600px;
 }
 
+#modalFooter {
+  color: #cd5360;
+}
+
 #Display {
   background-color: white;
   font-size: calc(10px + 2vmin);

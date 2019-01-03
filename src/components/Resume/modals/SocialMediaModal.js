@@ -33,7 +33,7 @@ class SocialMediaModal extends Component {
 
   render() {
     return (
-      <Container>
+      <Container id="modalFooter">
         <Button onClick={this.toggle}>Edit Social Media</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} size="fluid">
           <ModalHeader toggle={this.toggle}>Edit Social Media</ModalHeader>

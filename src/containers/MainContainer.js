@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import { MDBContainer } from "mdbreact";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import HomePageContainer from "./HomePageContainer";
@@ -21,8 +20,6 @@ class MainContainer extends Component {
   }
 
   render() {
-    console.log(this.props);
-
     return (
       <div>
         <Route

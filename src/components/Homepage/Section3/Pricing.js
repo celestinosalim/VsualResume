@@ -50,9 +50,15 @@ const Pricing = () => {
                 <p style={{ color: "#286da8" }}>
                   Get your portfolio up and running.
                 </p>
-                <MDBBtn outline rounded color="red">
-                  Buy now
-                </MDBBtn>
+                {localStorage.getItem("token") ? (
+                  <MDBBtn href="/resume/review" outline rounded color="red">
+                    MY VSR
+                  </MDBBtn>
+                ) : (
+                  <MDBBtn href="/login" outline rounded color="red">
+                    Buy now
+                  </MDBBtn>
+                )}
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -80,9 +86,15 @@ const Pricing = () => {
                 <p style={{ color: "#286da8" }}>
                   Level up with features that grow with you.
                 </p>
-                <MDBBtn outline rounded color="red">
-                  Buy now
-                </MDBBtn>
+                {localStorage.getItem("token") ? (
+                  <MDBBtn href="/resume/review" outline rounded color="red">
+                    MY VSR
+                  </MDBBtn>
+                ) : (
+                  <MDBBtn href="/login" outline rounded color="red">
+                    Buy now
+                  </MDBBtn>
+                )}
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -110,9 +122,15 @@ const Pricing = () => {
                 <p style={{ color: "#286da8" }}>
                   Add more power to your portfolio with advanced tools.
                 </p>
-                <MDBBtn outline rounded color="red">
-                  Buy now
-                </MDBBtn>
+                {localStorage.getItem("token") ? (
+                  <MDBBtn href="/resume/review" outline rounded color="red">
+                    MY VSR
+                  </MDBBtn>
+                ) : (
+                  <MDBBtn href="/login" outline rounded color="red">
+                    Buy now
+                  </MDBBtn>
+                )}
               </MDBCardBody>
             </MDBCard>
           </MDBCol>

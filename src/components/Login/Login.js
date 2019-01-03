@@ -34,7 +34,7 @@ class Login extends Component {
     e.preventDefault();
     if (this.props.signup(this.state)) {
       this.props.history.push("/");
-      // window.alert("Thank you for signing up.");
+      setTimeout(() => window.location.reload(), 1100);
     } else {
       window.alert("We're having issues creating your account.");
     }

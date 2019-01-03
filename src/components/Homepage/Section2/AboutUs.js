@@ -86,9 +86,7 @@ const AboutUs = () => {
             </MDBCol>
 
             <MDBCol md="4" className="mb-md-0 mb-5">
-              <h4 className="font-weight-bold dark-grey-text my-4">
-                lrem ipsum
-              </h4>
+              <h4 className="font-weight-bold dark-grey-text my-4" />
               <h6 className="text-uppercase grey-text mb-3">Photographer</h6>
             </MDBCol>
           </MDBRow>

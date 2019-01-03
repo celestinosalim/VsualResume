@@ -27,21 +27,14 @@ const AboutUs = () => {
           />
         </Animation>
         <MDBCardBody>
-          <h2 className="h1-responsive font-weight-bold my-5">
-            Why VsualResume?
-          </h2>
+          <h2 className="h1-responsive font-weight-bold my-5">About Us</h2>
           <p className="grey-text w-responsive mx-auto mb-5">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-            error amet numquam iure provident voluptate esse quasi, veritatis
-            totam voluptas nostrum quisquam eum porro a pariatur veniam.
+            Visual Resume is designed to make your life easy, ever wanted to
+            have your own portfolio website? we make it for you, 15 min and boom
+            done.
           </p>
           <MDBRow>
-            <MDBCol md="4" className="mb-md-0 mb-5">
-              <h4 className="font-weight-bold dark-grey-text my-4">
-                lrem ipsum
-              </h4>
-              <h6 className="text-uppercase grey-text mb-3">Photographer</h6>
-            </MDBCol>
+            <MDBCol md="4" className="mb-md-0 mb-5" />
 
             <MDBCol md="4" className="mb-md-0 mb-5">
               <img
@@ -86,8 +79,18 @@ const AboutUs = () => {
             </MDBCol>
 
             <MDBCol md="4" className="mb-md-0 mb-5">
-              <h4 className="font-weight-bold dark-grey-text my-4" />
-              <h6 className="text-uppercase grey-text mb-3">Photographer</h6>
+              <h6
+                className="text-uppercase grey-text mb-3"
+                style={{ paddingTop: "300px" }}
+              >
+                Hi, My name is Celestino, I decided to create Visual Resume
+                before graduating from Flatiron School, i was struggling with
+                creating my personal website because it was so hard to choose a
+                template, and if i get bored of it another whole story. thats
+                why i create VSR, is an easy content managment system that gives
+                you the tools to create in 3 easy steps your own interactive
+                resume.
+              </h6>
             </MDBCol>
           </MDBRow>
         </MDBCardBody>

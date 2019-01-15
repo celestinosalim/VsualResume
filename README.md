@@ -1,4 +1,4 @@
-# Project Title
+# VisualResume
 
 Easy content management system that gives you the tools to create in 3 easy steps your own interactive resume.
 

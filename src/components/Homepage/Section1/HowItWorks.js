@@ -29,7 +29,7 @@ const HowItWorks = () => {
               fixed
             />
             <h5 className="font-weight-bold my-4" style={{ color: "#438496" }}>
-              1. Fill Up A Form
+              1. Fill Out A Form
             </h5>
             <p
               className="font-weight-bold mb-md-0 mb-5"

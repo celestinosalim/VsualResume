@@ -9,7 +9,7 @@ class Login extends Component {
   state = {
     password: "",
     avatar:
-      "https://avatoon.net/wp-content/uploads/2018/06/avatar_portfolio_01.png",
+      "https://winstemplymouth.org/wp-content/uploads/2018/02/Female-Avatar-5-e1518176677210.png",
     username: "",
     signup_username: "",
     signup_password: "",

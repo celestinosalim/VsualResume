@@ -9,7 +9,7 @@ export const getResume = resume => {
 export const requestResume = resume => {
   return dispatch => {
     let token = "Bearer " + localStorage.getItem("token");
-    return fetch(`http://localhost:3001/api/userResume`, {
+    return fetch(`https://visualresume-api.herokuapp.com/api/userResume`, {
       method: "GET",
       headers: {
         Authorization: token

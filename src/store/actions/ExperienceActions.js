@@ -9,18 +9,21 @@ const setExperience = resume => {
 
 export const updateResumeExperience = (resumeId, obj) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/resumes/${resumeId}`, {
-      method: "PATCH",
-      headers: {
-        Authorization: `Bearer ${localStorage.token}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        resume: {
-          experiences_attributes: obj.experience
-        }
-      })
-    })
+    return fetch(
+      `https://visualresume-api.herokuapp.com/api/resumes/${resumeId}`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${localStorage.token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          resume: {
+            experiences_attributes: obj.experience
+          }
+        })
+      }
+    )
       .then(response => response.json())
 
       .then(resume => {

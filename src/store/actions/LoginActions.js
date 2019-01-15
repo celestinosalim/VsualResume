@@ -31,7 +31,7 @@ export const signup = user => {
   // debugger;
   const newUser = user;
   return dispatch => {
-    return fetch(`${`http://localhost:3001/api`}/users`, {
+    return fetch(`${`https://visualresume-api.herokuapp.com/api`}/users`, {
       method: "POST",
       headers: {
         Accept: "application/json",

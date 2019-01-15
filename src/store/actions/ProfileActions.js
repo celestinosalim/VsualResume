@@ -24,28 +24,31 @@ export const updateResumeProfile = (resumeId, profile) => {
   } = profile;
 
   return dispatch => {
-    return fetch(`http://localhost:3001/api/resumes/${resumeId}`, {
-      method: "PATCH",
-      headers: {
-        Authorization: `Bearer ${localStorage.token}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        resume: {
-          profile_attributes: {
-            name: name,
-            age: age,
-            location: location,
-            number: number,
-            profile_picture: profile_picture,
-            headline: headline,
-            about_me: about_me,
-            background_image: background_image,
-            profile_email: profile_email
+    return fetch(
+      `https://visualresume-api.herokuapp.com/api/resumes/${resumeId}`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${localStorage.token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          resume: {
+            profile_attributes: {
+              name: name,
+              age: age,
+              location: location,
+              number: number,
+              profile_picture: profile_picture,
+              headline: headline,
+              about_me: about_me,
+              background_image: background_image,
+              profile_email: profile_email
+            }
           }
-        }
-      })
-    })
+        })
+      }
+    )
       .then(response => response.json())
 
       .then(resume => {

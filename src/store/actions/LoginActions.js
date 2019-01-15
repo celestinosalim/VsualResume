@@ -65,7 +65,7 @@ export const authenticate = credentials => {
   // debugger;
   return dispatch => {
     dispatch(authRequest());
-    return fetch(`${`http://localhost:3001/api/`}login`, {
+    return fetch(`${`https://visualresume-api.herokuapp.com/api/`}login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -96,19 +96,22 @@ export const authenticate = credentials => {
 };
 
 export const getUser = credentials => {
-  const request = new Request(`${`http://localhost:3001/api/`}login`, {
-    method: "POST",
-    headers: new Headers({
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.token}`
-    }),
-    body: JSON.stringify({
-      user: {
-        username: credentials.username,
-        password: credentials.password
-      }
-    })
-  });
+  const request = new Request(
+    `${`https://visualresume-api.herokuapp.com/api/`}login`,
+    {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.token}`
+      }),
+      body: JSON.stringify({
+        user: {
+          username: credentials.username,
+          password: credentials.password
+        }
+      })
+    }
+  );
   return fetch(request)
     .then(response => response.json())
     .then(userJson => {

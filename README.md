@@ -4,7 +4,7 @@ Easy content management system that gives you the tools to create in 3 easy step
 
 ## Getting Started
 
-production site: https://visualresume.herokuapp.com/.
+production site: https://vsualresume.com/.
 
 To get started fork & clone down https://github.com/celestinosalim/VsualResume-api run bundle install then rails server -p 3001 to start the server.
 Once you have the backend running you can fork this repo, clone it down and run npm install to install all the packages used in this project & npm start to start the client.

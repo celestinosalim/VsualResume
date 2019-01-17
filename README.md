@@ -1,4 +1,4 @@
-# Project Title
+# VisualResume
 
 Easy content management system that gives you the tools to create in 3 easy steps your own interactive resume.
 
@@ -6,7 +6,7 @@ Easy content management system that gives you the tools to create in 3 easy step
 
 production site: https://visualresume.herokuapp.com/.
 
-To get started fork & clone down the https://github.com/celestinosalim/VsualResume-api run bundle install then rails server -p 3001 to start the server.
+To get started fork & clone down https://github.com/celestinosalim/VsualResume-api run bundle install then rails server -p 3001 to start the server.
 Once you have the backend running you can fork this repo, clone it down and run npm install to install all the packages used in this project & npm start to start the client.
 
 ### Prerequisites

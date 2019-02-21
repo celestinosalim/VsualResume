@@ -27,13 +27,3 @@ export const requestResume = resume => {
       .catch(error => console.log(error));
   };
 };
-
-export const requestLive = resume => {
-  return dispatch => {
-    return fetch(`http://localhost:3001/api/resumes${window.location.pathname}`)
-      .then(response => response.json())
-      .then(console.log)
-      .then(resume => dispatch(getResumetoUser(resume)))
-      .catch(error => console.log(error));
-  };
-};

@@ -64,7 +64,7 @@ const FooterSection = props => {
       <div style={{ paddingRight: "85%", position: "relative" }}>
         <img src={logo} alt="" width="150px" height="50%" />
       </div>
-      {props.location.pathname !== "/live" && (
+      {props.location.pathname === "/resume/review" && (
         <div style={{ textAlign: "right", paddingLeft: "400px" }}>
           <SocialMediaModal />
         </div>

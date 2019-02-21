@@ -1,12 +1,8 @@
-// REACT
-//------------------------------------------------------------------------------------------
 import React from "react";
-import { connect } from "react-redux";
-
 // TEMPLATE
 //------------------------------------------------------------------------------------------
 
-import Header from "./PreviewSections/Header";
+import HeaderLive from "./LiveSections/HeaderLive";
 import ProfileSection from "./PreviewSections/ProfileSection";
 import EducationSection from "./PreviewSections/EducationSection";
 import ExperienceSection from "./PreviewSections/ExperienceSection";
@@ -18,27 +14,11 @@ import SideNavPage from "./SideNavPage";
 //------------------------------------------------------------------------------------------
 import "../../style/preview.css";
 
-const Live = props => {
-  console.log(props);
+const Resume = props => {
   return (
     <div>
-      <div>
-        <h1
-          style={{
-            color: "red",
-            textAlign: "center",
-            paddingTop: "1000px",
-            backgroundColor: "black",
-            fontSize: "50px"
-          }}
-        >
-          asdasdasd
-          {props ? props.resume : null}
-        </h1>
-      </div>
-      {/* {window.scrollTo(0, 50)}
-
-      {props.resume && <Header resume={props.resume} />}
+      {window.scrollTo(0, 50)}
+      {props.resume && <HeaderLive resume={props.resume} />}
       <div id="Display">
         <section id="profilelive">
           {props.resume && <ProfileSection resume={props.resume} />}
@@ -58,14 +38,9 @@ const Live = props => {
         </section>
         {props.resume && <FooterSection resume={props.resume} />}
       </div>
-      <div /> */}
+      <div />
     </div>
   );
 };
 
-const mapStateToProps = state => {
-  console.log(state);
-  return { resume: state.resume.resume };
-};
-
-export default connect(mapStateToProps)(Live);
+export default Resume;

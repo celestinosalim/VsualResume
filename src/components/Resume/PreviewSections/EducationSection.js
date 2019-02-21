@@ -61,7 +61,7 @@ const EducationSection = props => {
           </div>
         </div>
       ))}
-      {props.location.pathname !== "/live" && (
+      {props.location.pathname === "/resume/review" && (
         <div style={{ textAlign: "right", paddingLeft: "380px" }}>
           <EducationModal />
         </div>

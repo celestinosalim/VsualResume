@@ -14,17 +14,24 @@ import Live from "../components/Resume/Live";
 import Resume from "../components/Resume/Resume";
 import { connect } from "react-redux";
 import { requestResume } from "../store/actions/ResumeActions";
-import { requestLive } from "../store/actions/ResumeActions";
 
 class MainContainer extends Component {
+  state = {
+    resume: null
+  };
   componentDidMount() {
-    this.props.requestLive();
-
     this.props.requestResume();
+    fetch(`http://localhost:3001/api/resumes${window.location.pathname}`)
+      .then(response => response.json())
+      .then(resume =>
+        this.setState({
+          resume
+        })
+      );
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div>
         <Route
@@ -42,10 +49,12 @@ class MainContainer extends Component {
                   <Route path="/logout" render={() => <Logout />} />
                   <Route path="/resume" render={() => <ResumeContainer />} />
                   <Route path="/live" render={() => <Live />} />
-                  <Route
-                    path={`${location.pathname}`}
-                    render={() => <Resume />}
-                  />
+                  {this.state.resume !== null && (
+                    <Route
+                      path={`${location.pathname}`}
+                      render={() => <Resume resume={this.state.resume} />}
+                    />
+                  )}
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
@@ -63,6 +72,6 @@ const mapStateToProps = state => {
 export default withRouter(
   connect(
     mapStateToProps,
-    { requestLive, requestResume }
+    { requestResume }
   )(MainContainer)
 );

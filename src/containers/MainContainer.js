@@ -31,7 +31,8 @@ class MainContainer extends Component {
         this.setState({
           resume
         })
-      );
+      )
+      .catch(err => console.log(err));
   }
 
   render() {

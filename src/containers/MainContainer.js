@@ -21,7 +21,11 @@ class MainContainer extends Component {
   };
   componentDidMount() {
     this.props.requestResume();
-    fetch(`http://localhost:3001/api/resumes${window.location.pathname}`)
+    fetch(
+      `https://my-resume-v2-api.herokuapp.com/api/resumes${
+        window.location.pathname
+      }`
+    )
       .then(response => response.json())
       .then(resume =>
         this.setState({

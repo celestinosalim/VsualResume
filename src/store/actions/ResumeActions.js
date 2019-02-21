@@ -6,6 +6,13 @@ export const getResume = resume => {
     resume //resume object
   };
 };
+
+export const getResumetoUser = resume => {
+  return {
+    type: types.REQUEST_RESUME_USER,
+    resume //resume object
+  };
+};
 export const requestResume = resume => {
   return dispatch => {
     let token = "Bearer " + localStorage.getItem("token");
@@ -17,6 +24,16 @@ export const requestResume = resume => {
     })
       .then(response => response.json())
       .then(resume => dispatch(getResume(resume)))
+      .catch(error => console.log(error));
+  };
+};
+
+export const requestLive = resume => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/resumes${window.location.pathname}`)
+      .then(response => response.json())
+      .then(console.log)
+      .then(resume => dispatch(getResumetoUser(resume)))
       .catch(error => console.log(error));
   };
 };

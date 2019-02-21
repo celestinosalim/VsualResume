@@ -8,6 +8,7 @@ export const RESUME_ID = "RESUME_ID";
 export const RESET_FORM = "RESET_FORM";
 
 export const REQUEST_RESUME = "REQUEST_RESUME";
+export const REQUEST_RESUME_USER = "REQUEST_RESUME_USER";
 export const REQUEST_USER = "REQUEST_USER";
 
 export const UPDATE_PROFILE = "UPDATE_PROFILE";

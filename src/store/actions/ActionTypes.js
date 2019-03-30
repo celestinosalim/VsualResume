@@ -1,6 +1,6 @@
 //BASE_URL
 
-export const BASE_URL = "https://visualresume-api.herokuapp.com/api";
+export const BASE_URL = "https://visualresume-api.herokuapp.com/";
 
 //Authentication Types
 export const AUTHENTICATION_REQUEST = "AUTHENTICATION_REQUEST";

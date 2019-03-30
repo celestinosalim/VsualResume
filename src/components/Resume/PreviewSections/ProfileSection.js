@@ -75,7 +75,7 @@ const ProfileSection = props => {
         </div>
       </div>
       <hr />
-      {props.location.pathname !== "/live" && (
+      {props.location.pathname === "/resume/review" && (
         <div style={{ textAlign: "right", paddingLeft: "380px" }}>
           <ProfileModal />
         </div>

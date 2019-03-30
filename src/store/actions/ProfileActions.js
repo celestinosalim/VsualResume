@@ -24,7 +24,7 @@ export const updateResumeProfile = (resumeId, profile) => {
   } = profile;
 
   return dispatch => {
-    return fetch(`http://localhost:3001/api/resumes/${resumeId}`, {
+    return fetch(`${types.BASE_URL}/api/resumes/${resumeId}`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${localStorage.token}`,

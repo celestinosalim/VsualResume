@@ -9,7 +9,7 @@ const setExperience = resume => {
 
 export const updateResumeExperience = (resumeId, obj) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/resumes/${resumeId}`, {
+    return fetch(`${types.BASE_URL}/resumes/${resumeId}`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${localStorage.token}`,

@@ -31,7 +31,7 @@ export const signup = user => {
   // debugger;
   const newUser = user;
   return dispatch => {
-    return fetch(`${`http://localhost:3001/api`}/users`, {
+    return fetch(`${`${types.BASE_URL}/api`}/users`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -65,7 +65,7 @@ export const authenticate = credentials => {
   // debugger;
   return dispatch => {
     dispatch(authRequest());
-    return fetch(`${`http://localhost:3001/api/`}login`, {
+    return fetch(`${`${types.BASE_URL}/api/`}login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -96,7 +96,7 @@ export const authenticate = credentials => {
 };
 
 export const getUser = credentials => {
-  const request = new Request(`${`http://localhost:3001/api/`}login`, {
+  const request = new Request(`${`${types.BASE_URL}/api/`}login`, {
     method: "POST",
     headers: new Headers({
       "Content-Type": "application/json",

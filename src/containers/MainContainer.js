@@ -11,15 +11,29 @@ import ProfileContainer from "./ProfileContainer";
 import ResumeContainer from "./ResumeContainer";
 import "../style/MainContainer.css";
 import Live from "../components/Resume/Live";
+import Resume from "../components/Resume/Resume";
 import { connect } from "react-redux";
 import { requestResume } from "../store/actions/ResumeActions";
+import { BASE_URL } from "../store/actions/ActionTypes";
 
 class MainContainer extends Component {
+  state = {
+    resume: null
+  };
   componentDidMount() {
     this.props.requestResume();
+    fetch(`${BASE_URL}/api/resumes${window.location.pathname}`)
+      .then(response => response.json())
+      .then(resume =>
+        this.setState({
+          resume
+        })
+      )
+      .catch(err => console.log(err));
   }
 
   render() {
+    // console.log(this.props);
     return (
       <div>
         <Route
@@ -37,6 +51,12 @@ class MainContainer extends Component {
                   <Route path="/logout" render={() => <Logout />} />
                   <Route path="/resume" render={() => <ResumeContainer />} />
                   <Route path="/live" render={() => <Live />} />
+                  {this.state.resume !== null && (
+                    <Route
+                      path={`${location.pathname}`}
+                      render={() => <Resume resume={this.state.resume} />}
+                    />
+                  )}
                 </Switch>
               </CSSTransition>
             </TransitionGroup>

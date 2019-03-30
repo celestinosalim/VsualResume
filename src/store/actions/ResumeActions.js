@@ -6,10 +6,17 @@ export const getResume = resume => {
     resume //resume object
   };
 };
+
+export const getResumetoUser = resume => {
+  return {
+    type: types.REQUEST_RESUME_USER,
+    resume //resume object
+  };
+};
 export const requestResume = resume => {
   return dispatch => {
     let token = "Bearer " + localStorage.getItem("token");
-    return fetch(`http://localhost:3001/api/userResume`, {
+    return fetch(`${types.BASE_URL}/api/userResume`, {
       method: "GET",
       headers: {
         Authorization: token

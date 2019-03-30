@@ -14,6 +14,7 @@ import Live from "../components/Resume/Live";
 import Resume from "../components/Resume/Resume";
 import { connect } from "react-redux";
 import { requestResume } from "../store/actions/ResumeActions";
+import { BASE_URL } from "../store/actions/ActionTypes";
 
 class MainContainer extends Component {
   state = {
@@ -21,11 +22,7 @@ class MainContainer extends Component {
   };
   componentDidMount() {
     this.props.requestResume();
-    fetch(
-      `https://my-resume-v2-api.herokuapp.com/api/resumes${
-        window.location.pathname
-      }`
-    )
+    fetch(`${BASE_URL}/api/resumes${window.location.pathname}`)
       .then(response => response.json())
       .then(resume =>
         this.setState({

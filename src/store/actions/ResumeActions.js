@@ -16,7 +16,7 @@ export const getResumetoUser = resume => {
 export const requestResume = resume => {
   return dispatch => {
     let token = "Bearer " + localStorage.getItem("token");
-    return fetch(`https://my-resume-v2-api.herokuapp.com/api/userResume`, {
+    return fetch(`${types.BASE_URL}/api/userResume`, {
       method: "GET",
       headers: {
         Authorization: token

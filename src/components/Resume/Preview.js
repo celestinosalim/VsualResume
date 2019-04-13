@@ -1,6 +1,6 @@
 // REACT
 //------------------------------------------------------------------------------------------
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -19,46 +19,68 @@ import FooterSection from "./PreviewSections/FooterSection";
 // STYLE
 //------------------------------------------------------------------------------------------
 import "../../style/preview.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
-const Preview = props => {
-  return (
-    <div className="page" style={{ paddingRight: "2em", paddingLeft: "2em" }}>
-      {props.resume && <Header resume={props.resume} />}
-      <div id="Display">
-        {props.resume && <ProfileSection resume={props.resume} />}
+class Preview extends Component {
+  state = {};
 
-        {props.resume && <EducationSection resume={props.resume} />}
-
-        {props.resume && <ExperienceSection resume={props.resume} />}
-
-        {props.resume && <SkillSection resume={props.resume} />}
-
-        {props.resume && <ProjectSection resume={props.resume} />}
-
-        {props.resume && <FooterSection resume={props.resume} />}
-      </div>
-      <div
-        style={{
-          backgroundColor: "black"
-        }}
-      >
-        <div className="text-white text-center  align-items-center rgba-black-strong py-5 px-4">
+  render() {
+    let props = this.props;
+    return (
+      <div className="page" style={{ paddingRight: "2em", paddingLeft: "2em" }}>
+        <Carousel
+          transitionTime={1000}
+          showIndicators={true}
+          showStatus={true}
+          showArrows={true}
+          useKeyboardArrows={true}
+        >
           <div>
-            <h3 className="card-title pt-2">
-              <strong>GO LIVE</strong>
-            </h3>
+            <div>
+              {props.resume && <Header resume={props.resume} />}
+              <div id="Display">
+                {props.resume && <ProfileSection resume={props.resume} />}
 
-            <Link className="btn btn-info" to="/live">
-              LIVE
-            </Link>
+                {props.resume && <EducationSection resume={props.resume} />}
+
+                {props.resume && <ExperienceSection resume={props.resume} />}
+
+                {props.resume && <SkillSection resume={props.resume} />}
+
+                {props.resume && <ProjectSection resume={props.resume} />}
+
+                {props.resume && <FooterSection resume={props.resume} />}
+              </div>
+              <div
+                style={{
+                  backgroundColor: "black"
+                }}
+              >
+                <div className="text-white text-center  align-items-center rgba-black-strong py-5 px-4">
+                  <div>
+                    <h3 className="card-title pt-2">
+                      <strong>GO LIVE</strong>
+                    </h3>
+
+                    <Link className="btn btn-info" to="/live">
+                      LIVE
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <Footer />
+            </div>
           </div>
-        </div>
+          <div>
+            <img src="assets/2.jpeg" />
+            <p className="legend">Legend 2</p>
+          </div>
+        </Carousel>
       </div>
-
-      <Footer />
-    </div>
-  );
-};
+    );
+  }
+}
 
 const mapStateToProps = state => {
   return { resume: state.resume.resume };

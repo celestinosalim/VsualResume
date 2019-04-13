@@ -19,6 +19,11 @@ class EducationModal extends Component {
     this.setState({
       modal: !this.state.modal
     });
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
   };
 
   saveEducationChangesSubmit = (e, obj) => {

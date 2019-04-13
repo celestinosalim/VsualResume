@@ -1,6 +1,6 @@
 //BASE_URL
 
-export const BASE_URL = "https://visualresume-api.herokuapp.com";
+export const BASE_URL = "http://localhost:3001";
 
 //Authentication Types
 export const AUTHENTICATION_REQUEST = "AUTHENTICATION_REQUEST";

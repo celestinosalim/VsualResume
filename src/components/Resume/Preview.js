@@ -16,6 +16,9 @@ import SkillSection from "./PreviewSections/SkillSection";
 import ProjectSection from "./PreviewSections/ProjectSection";
 import FooterSection from "./PreviewSections/FooterSection";
 
+//TEMPLATE 2
+import SecondTemplate from "./SecondTemplate/Test";
+
 // STYLE
 //------------------------------------------------------------------------------------------
 import "../../style/preview.css";
@@ -38,6 +41,7 @@ class Preview extends Component {
         >
           <div>
             <div>
+              <img src="" />
               {props.resume && <Header resume={props.resume} />}
               <div id="Display">
                 {props.resume && <ProfileSection resume={props.resume} />}
@@ -73,8 +77,8 @@ class Preview extends Component {
             </div>
           </div>
           <div>
-            <img src="assets/2.jpeg" />
-            <p className="legend">Legend 2</p>
+            <img src="" />
+            <SecondTemplate />
           </div>
         </Carousel>
       </div>

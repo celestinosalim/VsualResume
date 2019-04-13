@@ -18,10 +18,17 @@ import SideNavPage from "./SideNavPage";
 //------------------------------------------------------------------------------------------
 import "../../style/preview.css";
 
+const timing = () => {
+  setTimeout(() => {
+    window.location.pathname = localStorage.getItem("user");
+  }, 1000);
+};
+
 const Live = props => {
   return (
     <div>
       {window.scrollTo(0, 50)}
+      {timing()}
       {props.resume && <Header resume={props.resume} />}
       <div id="Display">
         <section id="profilelive">

@@ -12,9 +12,11 @@ import ResumeContainer from "./ResumeContainer";
 import "../style/MainContainer.css";
 import Live from "../components/Resume/Live";
 import Resume from "../components/Resume/Resume";
+import Resume2 from "../components/Resume/Resume2";
 import { connect } from "react-redux";
 import { requestResume } from "../store/actions/ResumeActions";
 import { BASE_URL } from "../store/actions/ActionTypes";
+import { requestUser } from "../store/actions/UserActions";
 
 class MainContainer extends Component {
   state = {
@@ -22,6 +24,7 @@ class MainContainer extends Component {
   };
   componentDidMount() {
     this.props.requestResume();
+    this.props.requestUser();
     fetch(`${BASE_URL}/api/resumes${window.location.pathname}`)
       .then(response => response.json())
       .then(resume =>
@@ -33,7 +36,6 @@ class MainContainer extends Component {
   }
 
   render() {
-    // console.log(this.props);
     return (
       <div>
         <Route
@@ -74,6 +76,6 @@ const mapStateToProps = state => {
 export default withRouter(
   connect(
     mapStateToProps,
-    { requestResume }
+    { requestResume, requestUser }
   )(MainContainer)
 );

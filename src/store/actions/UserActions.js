@@ -16,7 +16,10 @@ export const requestUser = user => {
       }
     })
       .then(response => response.json())
-      .then(user => dispatch(getUserInfo(user)))
+      .then(user => {
+        localStorage.setItem("user", user.user.username);
+        dispatch(getUserInfo(user));
+      })
       .catch(error => console.log(error));
   };
 };

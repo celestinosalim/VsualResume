@@ -26,8 +26,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 class Preview extends Component {
-  state = {};
-
   render() {
     let props = this.props;
     return (

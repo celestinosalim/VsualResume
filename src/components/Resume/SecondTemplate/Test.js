@@ -8,7 +8,9 @@ class SecondTemplate extends Component {
       <div
         style={{ color: "red", fontSize: "100px", backgroundColor: "white" }}
       >
-        "Hello"{" "}
+        <div>
+          <img src="https://fortunedotcom.files.wordpress.com/2017/02/google-company-search-logo-fact-checking-truth-news.jpg" />
+        </div>
       </div>
     );
   }

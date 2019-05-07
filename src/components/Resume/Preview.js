@@ -18,12 +18,12 @@ class Preview extends Component {
     return (
       <div className="page" style={{ paddingRight: "2em", paddingLeft: "2em" }}>
         <Carousel showThumbs={false} emulateTouch transitionTime={1000}>
-          <div>
-            <img src="" />
+          <div id="1">
+            <img src="" alt="" />
             <Template1 />
           </div>
-          <div>
-            <img src="" />
+          <div id="2">
+            <img src="" alt="" />
             <Template2 />
           </div>
         </Carousel>

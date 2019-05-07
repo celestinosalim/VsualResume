@@ -9,7 +9,7 @@ class Template2 extends Component {
     return (
       <div>
         <div>
-          <Link className="btn btn" to="/live">
+          <Link className="btn btn-blue" to="/live">
             SELECT TEMPLATE
           </Link>
           <div style={{ color: "red" }}>

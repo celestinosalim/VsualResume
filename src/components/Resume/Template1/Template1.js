@@ -15,10 +15,10 @@ class Template1 extends Component {
     let props = this.props;
     return (
       <div>
-        <Link className="btn btn" to="/live">
+        <Link className="btn btn-red" to="/live">
           SELECT TEMPLATE
         </Link>
-        <img src="" />
+        <img src="" alt="" />
         {props.resume && <Header resume={props.resume} />}
         <div id="Display">
           {props.resume && <ProfileSection resume={props.resume} />}

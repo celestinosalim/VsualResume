@@ -2,17 +2,17 @@ import React from "react";
 // TEMPLATE
 //------------------------------------------------------------------------------------------
 
-import HeaderLive from "./LiveSections/HeaderLive";
-import ProfileSection from "./PreviewSections/ProfileSection";
-import EducationSection from "./PreviewSections/EducationSection";
-import ExperienceSection from "./PreviewSections/ExperienceSection";
-import SkillSection from "./PreviewSections/SkillSection";
-import ProjectSection from "./PreviewSections/ProjectSection";
-import FooterSection from "./PreviewSections/FooterSection";
-import SideNavPage from "./SideNavPage";
+import HeaderLive from "../LiveSections/HeaderLive";
+import ProfileSection from "../PreviewSections/ProfileSection";
+import EducationSection from "../PreviewSections/EducationSection";
+import ExperienceSection from "../PreviewSections/ExperienceSection";
+import SkillSection from "../PreviewSections/SkillSection";
+import ProjectSection from "../PreviewSections/ProjectSection";
+import FooterSection from "../PreviewSections/FooterSection";
+import SideNavPage from "../SideNavPage";
 // STYLE
 //------------------------------------------------------------------------------------------
-import "../../style/preview.css";
+import "../../../style/preview.css";
 
 const Resume = props => {
   return (

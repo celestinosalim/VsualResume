@@ -25,14 +25,14 @@ class MainContainer extends Component {
   componentDidMount() {
     this.props.requestResume();
     this.props.requestUser();
-    fetch(`${BASE_URL}/api/resumes${window.location.pathname}`)
-      .then(response => response.json())
-      .then(resume =>
-        this.setState({
-          resume
-        })
-      )
-      .catch(err => console.log(err));
+    // fetch(`${BASE_URL}/api/resumes${window.location.pathname}`)
+    //   .then(response => response.json())
+    //   .then(resume =>
+    //     this.setState({
+    //       resume
+    //     })
+    //   )
+    // .catch(err => console.log(err));
   }
 
   render() {

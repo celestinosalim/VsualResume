@@ -9,16 +9,31 @@ import ProjectSection from "../PreviewSections/ProjectSection";
 import FooterSection from "../PreviewSections/FooterSection";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { updateTemplate } from "../../../store/actions/TemplateActions";
 
 class Template1 extends Component {
+  setTemplate = e => {
+    let templateId = 1;
+
+    if (this.props.resume) {
+      let resumeId = this.props.resume.id;
+      this.props.updateTemplate(resumeId, templateId);
+      console.log(this.props.resume);
+    }
+  };
   render() {
     let props = this.props;
+
     return (
       <div>
-        <Link className="btn btn" to="/live">
+        <Link
+          onClick={e => this.setTemplate(e)}
+          className="btn btn-red"
+          to="/live"
+        >
           SELECT TEMPLATE
         </Link>
-        <img src="" />
+        <img src="" alt="" />
         {props.resume && <Header resume={props.resume} />}
         <div id="Display">
           {props.resume && <ProfileSection resume={props.resume} />}
@@ -48,4 +63,7 @@ const mapStateToProps = state => {
   return { resume: state.resume.resume };
 };
 
-export default connect(mapStateToProps)(Template1);
+export default connect(
+  mapStateToProps,
+  { updateTemplate }
+)(Template1);

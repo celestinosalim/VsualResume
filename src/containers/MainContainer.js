@@ -11,8 +11,8 @@ import ProfileContainer from "./ProfileContainer";
 import ResumeContainer from "./ResumeContainer";
 import "../style/MainContainer.css";
 import Live from "../components/Resume/Live";
-import Resume from "../components/Resume/Resume";
-import Resume2 from "../components/Resume/Resume2";
+import Resume from "../components/Resume/Template1/Resume";
+import Resume2 from "../components/Resume/Template2/Resume2";
 import { connect } from "react-redux";
 import { requestResume } from "../store/actions/ResumeActions";
 import { BASE_URL } from "../store/actions/ActionTypes";
@@ -25,14 +25,14 @@ class MainContainer extends Component {
   componentDidMount() {
     this.props.requestResume();
     this.props.requestUser();
-    // fetch(`${BASE_URL}/api/resumes${window.location.pathname}`)
-    //   .then(response => response.json())
-    //   .then(resume =>
-    //     this.setState({
-    //       resume
-    //     })
-    //   )
-    // .catch(err => console.log(err));
+    fetch(`${BASE_URL}/api/resumes${window.location.pathname}`)
+      .then(response => response.json())
+      .then(resume =>
+        this.setState({
+          resume
+        })
+      )
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -53,12 +53,21 @@ class MainContainer extends Component {
                   <Route path="/logout" render={() => <Logout />} />
                   <Route path="/resume" render={() => <ResumeContainer />} />
                   <Route path="/live" render={() => <Live />} />
-                  {this.state.resume !== null && (
-                    <Route
-                      path={`${location.pathname}`}
-                      render={() => <Resume resume={this.state.resume} />}
-                    />
-                  )}
+                  {this.state.resume !== null &&
+                    this.state.resume.template === 1 && (
+                      <Route
+                        path={`${location.pathname}`}
+                        render={() => <Resume resume={this.state.resume} />}
+                      />
+                    )}
+                  {this.state.resume !== null &&
+                    this.state.resume.template === 2 && (
+                      <Route
+                        path={`${location.pathname}`}
+                        render={() => <Resume2 resume={this.state.resume} />}
+                      />
+                    )}
+                  }
                 </Switch>
               </CSSTransition>
             </TransitionGroup>

@@ -80,3 +80,54 @@ input[type="date"]:required:invalid::-webkit-datetime-edit {
 input[type="date"]:focus::-webkit-datetime-edit {
   color: black !important;
 }
+
+.table {
+  padding-top: 35px;
+  padding-bottom: 30px;
+}
+
+ul#horizontal-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  justify-content: center;
+  text-align: center;
+}
+
+ul#horizontal-list li {
+  float: left;
+}
+
+.slide1 {
+  min-height: 3100px;
+}
+
+.slide2 {
+  min-height: 5800px;
+}
+
+#socialm {
+  padding-left: 365px;
+}
+
+@media screen and (max-width: 600px) {
+  ul#horizontal-list li {
+    font-size: 10px;
+  }
+  #carousel {
+    min-width: 376;
+    min-height: 520px;
+  }
+  #socialm {
+    padding-left: 0px;
+  }
+  .slide1 {
+    width: 100%;
+    min-height: 4000px;
+  }
+  .slide2 {
+    width: 100%;
+    min-height: 7000px;
+  }
+}

@@ -5,6 +5,7 @@
   "dependencies": {
     "jwt-decode": "^2.2.0",
     "mdbreact": "^4.8.5-patch.1",
+    "pure-react-carousel": "^1.19.4",
     "react": "^16.6.3",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.6.3",
@@ -20,7 +21,8 @@
     "react-transition-group": "^2.5.1",
     "react-ui-cards": "^1.5.0",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "vs-template1": "^1.0.68"
   },
   "scripts": {
     "start": "react-scripts start",

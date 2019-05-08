@@ -23,7 +23,6 @@ export const updateTemplate = (resumeId, template) => {
         }
       })
     })
-      .then(res => console.log(res))
       .then(response => response.json())
       .then(resume => {
         dispatch(setTemplate(resume));

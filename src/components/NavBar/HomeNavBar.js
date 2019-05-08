@@ -9,20 +9,8 @@ const scrollToTop = () => {
 };
 
 const HomeNavBar = () => {
-  const navStyle = {
-    backgroundColor: "#FFF",
-    position: "fixed",
-    top: 0,
-    width: "100%",
-    zIndex: "500",
-    fontWeight: "bold"
-  };
-
   return (
-    <nav
-      className="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar"
-      style={navStyle}
-    >
+    <nav className="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar home-nav-bar">
       <Link
         className="navbar-brand"
         activeClass="active"

@@ -60,11 +60,13 @@ class Resume2 extends Component {
       <div>
         {resume && (
           <div>
-            <Intro
-              name={resume.profile.name}
-              profession={resume.profile.headline}
-              link={"#about"}
-            />
+            <div>
+              <Intro
+                name={resume.profile.name}
+                profession={resume.profile.headline}
+                link={"#about"}
+              />
+            </div>
 
             <SideBar
               name="Menu"

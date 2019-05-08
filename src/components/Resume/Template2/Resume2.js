@@ -51,7 +51,7 @@ const mediaToRender = media => {
   return media.map(media => {
     return {
       name: media.name,
-      link: media.logo
+      link: media.link
     };
   });
 };

@@ -8,6 +8,7 @@ const setTemplate = resume => {
 };
 
 export const updateTemplate = (resumeId, template) => {
+  console.log(template);
   return dispatch => {
     return fetch(`${types.BASE_URL}/api/resumes/${resumeId}`, {
       method: "PATCH",
@@ -22,6 +23,7 @@ export const updateTemplate = (resumeId, template) => {
         }
       })
     })
+      .then(res => console.log(res))
       .then(response => response.json())
       .then(resume => {
         dispatch(setTemplate(resume));

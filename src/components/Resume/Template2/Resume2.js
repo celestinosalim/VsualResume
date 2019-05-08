@@ -33,21 +33,17 @@ const skillsToRender = skill => {
 };
 
 const ProjectstoRender = projects => {
-  let arr = [];
-
   return projects.map(project => {
     return {
       imageURL: project.image,
       title: project.name,
       link: project.url,
-      languages: ["aa"]
+      languages: project.description.split(",")
     };
   });
 };
 
 const mediaToRender = media => {
-  let arr = [];
-
   return media.map(media => {
     return {
       name: media.name,
@@ -64,11 +60,13 @@ class Resume2 extends Component {
       <div>
         {resume && (
           <div>
-            <Intro
-              name={resume.profile.name}
-              profession={resume.profile.headline}
-              link={"#about"}
-            />
+            <div>
+              <Intro
+                name={resume.profile.name}
+                profession={resume.profile.headline}
+                link={"#about"}
+              />
+            </div>
 
             <SideBar
               name="Menu"

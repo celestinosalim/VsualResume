@@ -180,7 +180,7 @@ class ProfileForm extends Component {
                 </div>
 
                 <div className="col-md-4 mb-3">
-                  <label htmlFor="headline"> Headline</label>
+                  <label htmlFor="headline"> Profession</label>
                   <input
                     className="form-control"
                     value={this.state.headline}
@@ -189,7 +189,7 @@ class ProfileForm extends Component {
                     name="headline"
                     pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
                     minLength="5"
-                    maxLength="50"
+                    maxLength="30"
                     required
                   />
                   <div className="invalid-feedback">
@@ -209,7 +209,7 @@ class ProfileForm extends Component {
                     required
                     pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
                     minLength="15"
-                    maxLength="300"
+                    maxLength="700"
                   />
                   <div className="invalid-feedback">
                     Please provide a valid description about yourself.

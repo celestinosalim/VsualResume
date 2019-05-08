@@ -54,13 +54,13 @@ class MainContainer extends Component {
                   <Route path="/logout" render={() => <Logout />} />
                   <Route path="/resume" render={() => <ResumeContainer />} />
                   <Route path="/live" render={() => <Live />} />
-                  {/* {this.state.resume !== null &&
+                  {this.state.resume !== null &&
                     this.state.resume.template === 1 && (
                       <Route
                         path={`${location.pathname}`}
                         render={() => <Resume resume={this.state.resume} />}
                       />
-                    )} */}
+                    )}
                   {this.state.resume !== null &&
                     this.state.resume.template === 2 && (
                       <Route

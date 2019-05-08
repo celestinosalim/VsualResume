@@ -24,6 +24,9 @@ export default (state = initialState, action) => {
     case types.UPDATE_SOCIALMEDIA:
       return { ...state, ...action.social_medium };
 
+    case types.UPDATE_TEMPLATE:
+      return { ...state, ...action.template };
+
     default:
       return state;
   }

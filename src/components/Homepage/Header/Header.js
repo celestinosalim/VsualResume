@@ -21,19 +21,12 @@ const Header = () => {
     >
       <div>
         <div>
-          <div
-            className="content"
-            style={{
-              textAlign: "center",
-              fontSize: "30px",
-              fontFamily: "Open Sans, sans-serif"
-            }}
-          >
-            <h1 style={{ fontWeight: "bolder" }}>
+          <div className="content">
+            <h1 id="content-texth1" style={{ fontWeight: "bolder" }}>
               Create a Must-Have Portfolio
             </h1>
             <hr />
-            <h2 style={{ fontWeight: "bolder" }}>
+            <h2 id="content-texth2" style={{ fontWeight: "bolder" }}>
               With VisualResume, you can create beautiful interactive resume
               pages in just a few minutes. An amazing portfolio website, that
               makes it easy for people to contact you, or see your projects.

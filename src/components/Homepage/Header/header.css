@@ -1,5 +1,5 @@
 .Hero {
-  width: 100%;
+  /* width: 100%; */
   position: relative;
   background-size: cover;
   min-height: 1000px;
@@ -65,4 +65,35 @@
   width: 100%;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+@media (max-width: 600px) {
+  .Hero {
+    width: 100%;
+    min-height: 100%;
+  }
+
+  .Hero .content {
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    min-height: 290px;
+  }
+
+  #content-texth1 {
+    padding-top: 70px;
+    justify-content: left;
+    text-align: justify;
+    font-size: 10px;
+  }
+  #content-texth2 {
+    margin-top: 100px;
+    justify-content: left;
+    text-align: justify;
+    font-size: 12px;
+    margin-right: 20px;
+    padding-right: 10px;
+    color: #0d0e0dc9;
+    box-shadow: 0px 0px 30px #0f9bec;
+  }
 }

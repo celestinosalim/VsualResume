@@ -74,6 +74,7 @@
   }
 
   .Hero .content {
+    padding-top: 70px;
     width: 100%;
     position: relative;
     background-size: cover;
@@ -81,10 +82,12 @@
   }
 
   #content-texth1 {
-    padding-top: 70px;
     justify-content: left;
     text-align: justify;
     font-size: 10px;
+    width: 40%;
+    color: #0d0e0dc9;
+    box-shadow: 0px 0px 30px #0f9bec;
   }
   #content-texth2 {
     margin-top: 100px;

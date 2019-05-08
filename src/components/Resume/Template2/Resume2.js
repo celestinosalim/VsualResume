@@ -11,21 +11,22 @@ import {
 const sidebar = {
   navLinks: [
     {
-      pathName: "Link1",
-      pathRef: "/first"
+      pathName: "About",
+      pathRef: "about"
     },
     {
-      pathName: "Link2",
-      pathRef: "/second"
+      pathName: "Skills",
+      pathRef: "skills"
     },
     {
-      pathName: "Link3",
-      pathRef: "/third"
+      pathName: "Projects",
+      pathRef: "projects"
+    },
+    {
+      pathName: "Contact",
+      pathRef: "footer"
     }
-  ],
-  name: "MENU",
-  color: "black",
-  linkColor: "black"
+  ]
 };
 
 const skillsToRender = skill => {
@@ -55,16 +56,16 @@ const mediaToRender = media => {
 class Resume2 extends Component {
   render() {
     let { resume } = this.props;
-    console.log(resume);
+
     return (
       <div>
         {resume && (
           <div>
-            <div>
+            <div id="intro">
               <Intro
                 name={resume.profile.name}
                 profession={resume.profile.headline}
-                link={"#about"}
+                link={"about"}
               />
             </div>
 
@@ -85,12 +86,15 @@ class Resume2 extends Component {
             <div id="skills">
               <Skills skills={[...skillsToRender(resume.tools)]} />
             </div>
-
-            <ProjectContainer projects={ProjectstoRender(resume.projects)} />
-            <Footer
-              name={resume.profile.name}
-              media={mediaToRender(resume.social_medium)}
-            />
+            <div id="projects">
+              <ProjectContainer projects={ProjectstoRender(resume.projects)} />
+            </div>
+            <div id="footer">
+              <Footer
+                name={resume.profile.name}
+                media={mediaToRender(resume.social_medium)}
+              />
+            </div>
           </div>
         )}
       </div>

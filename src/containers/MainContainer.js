@@ -26,6 +26,7 @@ class MainContainer extends Component {
     this.props.requestResume();
     this.props.requestUser();
     fetch(`${BASE_URL}/api/resumes${window.location.pathname}`)
+      // .then(res => console.log(res))
       .then(response => response.json())
       .then(resume =>
         this.setState({

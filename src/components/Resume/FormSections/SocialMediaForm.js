@@ -6,7 +6,8 @@ class SocialMediaForm extends Component {
   state = {
     social_medium: [
       {
-        name: ""
+        name: "",
+        link: ""
       }
     ]
   };
@@ -25,7 +26,8 @@ class SocialMediaForm extends Component {
       social_medium: [
         ...this.state.social_medium,
         {
-          name: ""
+          name: "",
+          link: ""
         }
       ]
     });
@@ -45,20 +47,36 @@ class SocialMediaForm extends Component {
 
   socialMediaToAdd = () => {
     let { social_medium } = this.state;
-    let { name } = this.state.social_medium;
+    let { name, link } = this.state.social_medium;
 
     return social_medium.map((social_medium, idx) => {
       return (
         <div key={idx}>
           <div>
             <Container>
-              <label htmlFor="name">
-                Ex: https://www.facebook.com/VisualResume
-              </label>
+              <label htmlFor="name">Ex: linkedin</label>
               <input
                 className="form-control"
                 value={name}
                 name="name"
+                onChange={e => this.handleDynamicInputsChange(e, idx)}
+                type="text"
+                required
+                // pattern="^\S[a-zA-Z\d\-_.,@\s]+$"
+                minLength="5"
+                maxLength="100"
+              />
+              <div className="invalid-feedback">
+                Cannot be empty! You must Have at least one Social Media.
+              </div>
+              <div className="valid-feedback">Looks good!</div>
+              <label htmlFor="link">
+                Ex: https://www.linkedin.com/in/celestinosalim/
+              </label>
+              <input
+                className="form-control"
+                value={link}
+                name="link"
                 onChange={e => this.handleDynamicInputsChange(e, idx)}
                 type="text"
                 required

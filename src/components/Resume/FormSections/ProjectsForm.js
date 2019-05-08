@@ -100,7 +100,9 @@ class ProjectsForm extends Component {
             </div>
 
             <div className="col-md-4 mb-3">
-              <label htmlFor="description">Description</label>
+              <label htmlFor="description">
+                Languages Ex. Rails, Javascript.
+              </label>
               <textarea
                 className="form-control"
                 rows="3"
@@ -110,7 +112,7 @@ class ProjectsForm extends Component {
                 required
               />
               <div className="invalid-feedback">
-                Please provide a valid description.
+                Languages must be separated by commas, Ex. Rails, Javascript.
               </div>
               <div className="valid-feedback">Looks good!</div>
             </div>

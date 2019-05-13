@@ -55,3 +55,23 @@
 .form-submit:hover {
   opacity: 0.8;
 }
+
+@media (max-width: 600px) {
+  .center {
+    padding-top: 10em;
+    padding-bottom: 10em;
+    background-color: #ffffff;
+    position: none;
+    display: inline;
+    justify-content: none;
+    align-items: none;
+  }
+
+  .card {
+    margin-left: 5px;
+  }
+
+  .form-item {
+    width: auto;
+  }
+}

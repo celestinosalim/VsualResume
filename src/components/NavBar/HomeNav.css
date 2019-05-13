@@ -178,41 +178,7 @@
   color: #438496;
 }
 
-@media (max-width: 600px) {
-  .home-nav-bar {
-    top: 0;
-    width: 100%;
-    z-index: 500;
-    font-weight: bold;
-  }
-  .logoNav {
-    height: 50px;
-    width: 50px;
-    position: fixed;
-  }
-  .navbar-nav > li {
-    padding-top: 10px;
-    font-size: 10px;
-  }
-}
-
-@media (max-width: 600px) {
-  #login {
-    padding-left: 105px;
-    color: #438496;
-  }
-
-  #logout {
-    padding-left: 105px;
-    color: #cd5360;
-  }
-  .logoNav {
-    height: 50px;
-    width: 50px;
-  }
-}
-
-@media (min-width: 767px) {
+@media only screen and (max-width: 1025px) {
   #login {
     /* padding-left: 105px; */
     color: #438496;
@@ -235,5 +201,64 @@
   .navbar-brand {
     padding-left: 0px;
     padding-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home-nav-bar {
+    top: 0;
+    width: 100%;
+    z-index: 500;
+    font-weight: bold;
+  }
+  .logoNav {
+    height: 50px;
+    width: 50px;
+    /* position: fixed; */
+  }
+  .navbar-nav > li {
+    padding-top: 10px;
+    font-size: 10px;
+  }
+
+  #login {
+    padding-left: 105px;
+    color: #438496;
+  }
+
+  #logout {
+    padding-left: 105px;
+    color: #cd5360;
+  }
+  .logoNav {
+    height: 50px;
+    width: 50px;
+  }
+  #howitworks:hover {
+    background-size: 4%;
+  }
+  #home:hover {
+    background-size: 4%;
+  }
+  #aboutus:hover {
+    background-size: 4%;
+  }
+  #contactus:hover {
+    background-size: 4%;
+  }
+  #pricing:hover {
+    background-size: 4%;
+  }
+  #myVSR:hover {
+    background-size: 4%;
+  }
+  #resumereview:hover {
+    background-size: 4%;
+  }
+  #logout:hover {
+    background-size: 4%;
+  }
+  #profile:hover {
+    background-size: 4%;
   }
 }

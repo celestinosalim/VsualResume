@@ -61,6 +61,14 @@ class Resume2 extends Component {
       <div>
         {resume && (
           <div>
+          <SideBar
+            name="Menu"
+            navLinks={sidebar.navLinks}
+            color="#00aced"
+            linkColor="#00aced"
+          />
+          </div>
+          <div>
             <div id="intro">
               <Intro
                 name={resume.profile.name}
@@ -68,13 +76,6 @@ class Resume2 extends Component {
                 link={"about"}
               />
             </div>
-
-            <SideBar
-              name="Menu"
-              navLinks={sidebar.navLinks}
-              color="#00aced"
-              linkColor="#00aced"
-            />
 
             <div id="about">
               <About

@@ -23,7 +23,7 @@
     "react-ui-cards": "^1.5.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "vs-template1": "^1.0.85"
+    "vs-template1": "^1.0.86"
   },
   "scripts": {
     "start": "react-scripts start",

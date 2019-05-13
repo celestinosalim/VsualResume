@@ -43,73 +43,82 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="center">
-        <div className="card">
-          <h1>Login</h1>
-          <form onSubmit={this.handleLoginSubmit}>
-            <input
-              className="form-item"
-              placeholder="Username..."
-              name="username"
-              type="username"
-              value={this.state.username}
-              onChange={this.handleChange}
-            />
-            <input
-              className="form-item"
-              placeholder="Password..."
-              name="password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-            <input type="submit" name="Submit" className="form-submit" />
-          </form>
-        </div>
-        {/*
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="center">
+            <div className="col-md-6 col-sm-12">
+              <div className="card">
+                <h1>Login</h1>
+                <form onSubmit={this.handleLoginSubmit}>
+                  <input
+                    className="form-item"
+                    placeholder="Username..."
+                    name="username"
+                    type="username"
+                    value={this.state.username}
+                    onChange={this.handleChange}
+                  />
+                  <input
+                    className="form-item"
+                    placeholder="Password..."
+                    name="password"
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                  />
+                  <input type="submit" name="Submit" className="form-submit" />
+                </form>
+              </div>
+            </div>
+            {/*
         SIGN UP FORM
         //
         //
         //
         */}
+            <br />
+            <div className="col-md-6 col-sm-12">
+              <div className="card">
+                <h1>Sign Up</h1>
+                <form onSubmit={this.handleSignUpSubmit}>
+                  <input
+                    className="form-item"
+                    placeholder="Username..."
+                    name="signup_username"
+                    type="text"
+                    value={this.state.signup_username}
+                    onChange={this.handleChange}
+                  />
+                  <input
+                    className="form-item"
+                    placeholder="Email..."
+                    name="signup_email"
+                    type="email"
+                    value={this.state.signup_email}
+                    onChange={this.handleChange}
+                  />
+                  <input
+                    className="form-item"
+                    placeholder="Password..."
+                    name="signup_password"
+                    type="password"
+                    value={this.state.signup_password}
+                    onChange={this.handleChange}
+                  />
+                  <input
+                    className="form-item"
+                    placeholder="Avatar..."
+                    name="avatar"
+                    type="avatar"
+                    value={this.state.avatar}
+                    onChange={this.handleChange}
+                  />
 
-        <div className="card">
-          <h1>Sign Up</h1>
-          <form onSubmit={this.handleSignUpSubmit}>
-            <input
-              className="form-item"
-              placeholder="Username..."
-              name="signup_username"
-              type="text"
-              value={this.state.signup_username}
-              onChange={this.handleChange}
-            />
-            <input
-              className="form-item"
-              placeholder="Email..."
-              name="signup_email"
-              type="email"
-              value={this.state.signup_email}
-              onChange={this.handleChange}
-            />
-            <input
-              className="form-item"
-              placeholder="Password..."
-              name="signup_password"
-              type="password"
-              value={this.state.signup_password}
-              onChange={this.handleChange}
-            />
-            <input
-              className="form-item"
-              placeholder="Avatar..."
-              name="avatar"
-              type="avatar"
-              value={this.state.avatar}
-              onChange={this.handleChange}
-            />
-            <input type="submit" name="Submit" className="form-submit" />
-          </form>
+                  <input type="submit" name="Submit" className="form-submit" />
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

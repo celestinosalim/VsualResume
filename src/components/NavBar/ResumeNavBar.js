@@ -19,9 +19,11 @@ const ResumeNavBar = () => {
       className="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar"
       style={navStyle}
     >
-      <a className="navbar-brand-resume" href="/">
-        <img className="logoNav" src={logo} alt="logo" />
-      </a>
+      <div style={{ paddingLeft: "150px" }}>
+        <a className="navbar-brand" href="/">
+          <img className="logoNav" src={logo} alt="logo" />
+        </a>
+      </div>
       <button
         className="navbar-toggler"
         type="button"
@@ -43,6 +45,7 @@ const ResumeNavBar = () => {
               </Link>
             ) : null}
           </li> */}
+
           <li className="nav-item">
             {localStorage.getItem("token") &&
             localStorage.getItem("token") !== "undefined" ? (

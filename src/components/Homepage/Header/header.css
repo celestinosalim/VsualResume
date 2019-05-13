@@ -100,3 +100,39 @@
     box-shadow: 0px 0px 30px #0f9bec;
   }
 }
+
+@media (min-width: 767px) {
+  .Hero {
+    width: 100%;
+    min-height: 100%;
+  }
+
+  .Hero .content {
+    padding-top: 70px;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    min-height: 500px;
+  }
+
+  #content-texth1 {
+    justify-content: left;
+    text-align: justify;
+    font-size: 10px;
+    width: 40%;
+    color: white;
+    box-shadow: 0px 0px 30px #0f9bec;
+  }
+  #content-texth2 {
+    margin-top: 00px;
+    display: block;
+    width: 300px;
+    justify-content: left;
+    text-align: justify;
+    font-size: 12px;
+    margin-right: 20px;
+    padding-right: 10px;
+    color: white;
+    box-shadow: 0px 0px 30px #0f9bec;
+  }
+}

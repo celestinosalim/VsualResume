@@ -195,3 +195,45 @@
     font-size: 10px;
   }
 }
+
+@media (max-width: 600px) {
+  #login {
+    padding-left: 105px;
+    color: #438496;
+  }
+
+  #logout {
+    padding-left: 105px;
+    color: #cd5360;
+  }
+  .logoNav {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media (min-width: 767px) {
+  #login {
+    /* padding-left: 105px; */
+    color: #438496;
+  }
+
+  #logout {
+    /* padding-left: 105px; */
+    color: #cd5360;
+  }
+  .logoNav {
+    height: 50px;
+    width: 50px;
+  }
+
+  .navbar-nav > li {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .navbar-brand {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

@@ -4,6 +4,8 @@ import "font-awesome/css/font-awesome.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import App from "./App";
+import "./style/App.css";
+
 import * as serviceWorker from "./serviceWorker";
 
 import { Provider } from "react-redux";
@@ -13,7 +15,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App />
+      <div className="index">
+        <App />
+      </div>
     </Router>
   </Provider>,
   document.getElementById("root")

@@ -5,6 +5,7 @@ class App extends Component {
   async componentDidMount() {
     await import("bootstrap/dist/css/bootstrap.min.css");
     await import("bootstrap/dist/js/bootstrap.bundle.min");
+    await import("./style/App.css");
   }
 
   render() {

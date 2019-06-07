@@ -9,7 +9,7 @@ import {
   MDBBtn
 } from "mdbreact";
 
-import team from "../../../images/alex.JPG";
+import team from "../../../images/alex.png";
 
 const AboutUs = () => {
   return (

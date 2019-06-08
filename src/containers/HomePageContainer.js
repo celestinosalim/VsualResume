@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import HomeNavBar from "../components/NavBar/HomeNavBar";
 import Header from "../components/Homepage/Header/Header";
 import HowItWorks from "../components/Homepage/Section1/HowItWorks";
@@ -7,42 +7,39 @@ import Pricing from "../components/Homepage/Section3/Pricing";
 import { withRouter } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 
-const HomePageContainer = props => {
-  // console.log("homecontainer", props);
+class HomePageContainer extends Component {
+  async componentDidMount() {
+    await import("font-awesome/css/font-awesome.min.css");
+  }
 
-  return (
-    <div className="page">
-      <div>
-        <HomeNavBar />
+  render() {
+    return (
+      <div className="page">
+        <div>
+          <HomeNavBar />
+        </div>
+        <div>
+          <Header />
+        </div>
+        <div>
+          <section id="section-1">
+            <HowItWorks />
+          </section>
+        </div>
+        <div>
+          <section id="section-2">
+            <AboutUs />
+          </section>
+        </div>
+        <div>
+          <section id="section-3">
+            <Pricing />
+          </section>
+        </div>
+        <Footer />
       </div>
-      <div>
-        <Header />
-      </div>
-      <div>
-        <section id="section-1">
-          <HowItWorks />
-        </section>
-      </div>
-      <div>
-        <section id="section-2">
-          <AboutUs />
-        </section>
-      </div>
-      <div>
-        <section id="section-3">
-          <Pricing />
-        </section>
-      </div>
-      <Footer />
-    </div>
-  );
-};
-
-// const mapStateToProps = state => {
-//   return {
-//     user: state.currentUser,
-//     resume: state.resume
-//   };
-// };
+    );
+  }
+}
 
 export default withRouter(HomePageContainer);

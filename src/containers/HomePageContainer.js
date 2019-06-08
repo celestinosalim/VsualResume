@@ -8,10 +8,6 @@ import { withRouter } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 
 class HomePageContainer extends Component {
-  async componentDidMount() {
-    await import("font-awesome/css/font-awesome.min.css");
-  }
-
   render() {
     return (
       <div className="page">

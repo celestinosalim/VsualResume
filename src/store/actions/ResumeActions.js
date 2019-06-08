@@ -16,14 +16,17 @@ export const getResumetoUser = resume => {
 export const requestResume = resume => {
   return dispatch => {
     let token = "Bearer " + localStorage.getItem("token");
-    return fetch(`${types.BASE_URL}/api/userResume`, {
-      method: "GET",
-      headers: {
-        Authorization: token
-      }
-    })
-      .then(response => response.json())
-      .then(resume => dispatch(getResume(resume)))
-      .catch(error => console.log(error));
+
+    if (resume !== undefined) {
+      return fetch(`${types.BASE_URL}/api/userResume`, {
+        method: "GET",
+        headers: {
+          Authorization: token
+        }
+      })
+        .then(response => response.json())
+        .then(resume => dispatch(getResume(resume)))
+        .catch(error => false);
+    }
   };
 };

@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Animation,
   MDBRow,
   MDBCol,
   MDBCard,
@@ -18,32 +17,22 @@ const AboutUs = () => {
         className="my-5 px-1 pb-5 text-center"
         style={{ backgroundColor: "#fff" }}
       >
-        <Animation type="flipInY" infinite>
-          <MDBIcon
-            className="red-text pr-3"
-            icon=" fa-user-secret"
-            size="5x"
-            fixed
-          />
-        </Animation>
         <MDBCardBody>
           <h2 className="h1-responsive font-weight-bold my-5">About Us</h2>
           <p className="grey-text w-responsive mx-auto mb-5">
-            Visual Resume is designed to make your life easy, ever wanted to
-            have your own portfolio website? we make it for you, 15 min and boom
-            done.
+            Visual Resume was created by Celestion Salim as a graduation project
+            for the Software Engineering Immersive Program at Flatiron School.
+            Creating personal portfolios was time consuming but Celestino
+            realized that by creating just a few templates, anyone could have a
+            beautiful resume available online.
           </p>
           <MDBRow>
             <MDBCol md="4" className="mb-md-0 mb-5">
-              <h6
+              {/* <h6
                 className="text-uppercase grey-text mb-3"
                 style={{ paddingTop: "300px" }}
-              >
-                Easy content management system that gives you the tools to
-                create in 3 easy steps your own interactive resume.
-              </h6>
+              /> */}
             </MDBCol>
-
             <MDBCol md="4" className="mb-md-0 mb-5">
               <img
                 tag="img"
@@ -87,17 +76,10 @@ const AboutUs = () => {
             </MDBCol>
 
             <MDBCol md="4" className="mb-md-0 mb-5">
-              <h6
+              {/* <h6
                 className="text-uppercase grey-text mb-3"
                 style={{ paddingTop: "300px" }}
-              >
-                Hi, My name is Celestino, I decided to create Visual Resume
-                before graduating from Flatiron School. I was struggling with
-                creating my personal portfolio i wanted it to be perfect, but it
-                was so hard to decide on what to go for. Thats why i created
-                VSR, now i have access to unlimited templates by just filling a
-                form.
-              </h6>
+              /> */}
             </MDBCol>
           </MDBRow>
         </MDBCardBody>

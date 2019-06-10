@@ -4,7 +4,7 @@ const HowItWorks = () => {
   return (
     <div className="Sections">
       <section className="text-center my-5">
-        <MDBIcon className="red-text pr-3" icon="cog" spin size="5x" fixed />
+        <MDBIcon className="red-text pr-3" icon="cog" size="5x" fixed />
         <h2
           className="h1-responsive font-weight-bold my-5"
           style={{ color: "#438496" }}
@@ -29,14 +29,12 @@ const HowItWorks = () => {
               fixed
             />
             <h5 className="font-weight-bold my-4" style={{ color: "#438496" }}>
-              1. Fill Out A Form
+              1. Input Your Information
             </h5>
             <p
               className="font-weight-bold mb-md-0 mb-5"
               style={{ color: "#286da8" }}
-            >
-              Input all the information that you want to show on your resume.
-            </p>
+            />
           </div>
 
           <div className="col-md-4">
@@ -47,14 +45,12 @@ const HowItWorks = () => {
               fixed
             />
             <h5 className="font-weight-bold my-4" style={{ color: "#438496" }}>
-              2. Choose Template
+              2. Choose A Template
             </h5>
             <p
               className="font-weight-bold mb-md-0 mb-5"
               style={{ color: "#286da8" }}
-            >
-              Pick a template that suits you.
-            </p>
+            />
           </div>
 
           <div className="col-md-4">
@@ -65,9 +61,7 @@ const HowItWorks = () => {
             <p
               className="font-weight-bold mb-md-0 mb-5"
               style={{ color: "#286da8" }}
-            >
-              Enjoy your personal Interactive Resume.
-            </p>
+            />
           </div>
         </div>
         <div>
@@ -77,10 +71,10 @@ const HowItWorks = () => {
         <MDBRow>
           <div className="col-md-4" />
           <div className="col-md-4" style={{ textAlign: "center" }}>
-            <MDBIcon icon="quote-left" size="3x" pull="left" />
+            {/* <MDBIcon icon="quote-left" size="3x" pull="left" />
             <h3>If you can dream it, you can do it....</h3>
             <MDBIcon icon="quote-right" size="3x" pull="right" />
-            <h3>(Walt Disney)</h3>
+            <h3>(Walt Disney)</h3> */}
           </div>
         </MDBRow>
       </section>

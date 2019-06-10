@@ -23,16 +23,24 @@ class MainContainer extends Component {
     resume: null
   };
   componentDidMount() {
-    this.props.requestResume();
-    this.props.requestUser();
-    fetch(`${BASE_URL}/api/resumes${window.location.pathname}`)
-      .then(response => response.json())
-      .then(resume =>
-        this.setState({
-          resume
-        })
-      )
-      .catch(err => console.log(err));
+    if (localStorage.getItem("token")) {
+      this.props.requestResume();
+      this.props.requestUser();
+    }
+    if (
+      !window.location.pathname.includes("/login") &&
+      !window.location.pathname.includes("/resume") &&
+      !window.location.pathname.includes("/profile")
+    ) {
+      fetch(`${BASE_URL}/api/resumes${window.location.pathname}`)
+        .then(response => response.json())
+        .then(resume =>
+          this.setState({
+            resume
+          })
+        )
+        .catch(err => console.log(err));
+    }
   }
 
   render() {

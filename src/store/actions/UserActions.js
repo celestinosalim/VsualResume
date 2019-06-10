@@ -9,21 +9,20 @@ export const getUserInfo = user => {
 export const requestUser = user => {
   return dispatch => {
     let token = "Bearer " + localStorage.getItem("token");
-    if (user !== undefined) {
-      return fetch(`${types.BASE_URL}/api/profile`, {
-        method: "GET",
-        headers: {
-          Authorization: token
+
+    return fetch(`${types.BASE_URL}/api/profile`, {
+      method: "GET",
+      headers: {
+        Authorization: token
+      }
+    })
+      .then(response => response.json())
+      .then(user => {
+        if (user.user) {
+          localStorage.setItem("user", user.user.username);
+          dispatch(getUserInfo(user));
         }
       })
-        .then(response => response.json())
-        .then(user => {
-          if (user.user) {
-            localStorage.setItem("user", user.user.username);
-            dispatch(getUserInfo(user));
-          }
-        })
-        .catch(error => console.error(error));
-    }
+      .catch(error => console.error(error));
   };
 };

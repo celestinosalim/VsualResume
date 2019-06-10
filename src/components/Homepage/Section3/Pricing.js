@@ -5,8 +5,7 @@ import {
   MDBCard,
   MDBCardBody,
   MDBBtn,
-  MDBIcon,
-  Animation
+  MDBIcon
 } from "mdbreact";
 
 const Pricing = () => {
@@ -14,9 +13,9 @@ const Pricing = () => {
     <div className="Sections" id="pricingsection">
       <section className="text-center my-5">
         <br />
-        <Animation type="bounce" infinite>
-          <MDBIcon className="red-text pr-3" icon=" fa-usd" size="5x" fixed />
-        </Animation>
+
+        <MDBIcon className="red-text pr-3" icon=" fa-usd" size="5x" fixed />
+
         <h2
           className="h1-responsive font-weight-bold text-center my-5"
           style={{ color: "#438496" }}

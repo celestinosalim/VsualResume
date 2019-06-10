@@ -18,7 +18,12 @@ const AboutUs = () => {
         style={{ backgroundColor: "#fff" }}
       >
         <MDBCardBody>
-          <h2 className="h1-responsive font-weight-bold my-5">About Us</h2>
+          <h2
+            className="h1-responsive font-weight-bold my-5"
+            style={{ color: "#438496" }}
+          >
+            About Us
+          </h2>
           <p className="grey-text w-responsive mx-auto mb-5">
             Visual Resume was created by Celestion Salim as a graduation project
             for the Software Engineering Immersive Program at Flatiron School.

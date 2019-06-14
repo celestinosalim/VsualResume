@@ -45,7 +45,7 @@ class MainContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ overflowX: "hidden" }}>
         <Route
           render={({ location }) => (
             <TransitionGroup>
